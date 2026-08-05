@@ -265,7 +265,8 @@ function pageDocument({ titleZh, titleEn, descriptionZh, descriptionEn, path, ac
   const canonical = site.url + (path === "/" ? "" : path);
   const title = titleZh === "Michael Silvester" ? titleZh : titleZh + " — Michael Silvester";
   const socialTitle = titleZh === titleEn ? titleZh : titleZh + " / " + titleEn;
-  const bootScript = "try{const l=localStorage.getItem('ms-language');if(l)document.documentElement.dataset.lang=l;const t=localStorage.getItem('ms-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}";
+  // Read an explicit URL language before CSS paints; it must override a saved device preference.
+  const bootScript = "try{const p=new URLSearchParams(location.search).get('lang');const l=p==='en'||p==='zh'?p:localStorage.getItem('ms-language');if(l)document.documentElement.dataset.lang=l;const t=localStorage.getItem('ms-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}";
   return (
     "<!doctype html>" +
     '<html lang="zh-CN" data-lang="zh">' +

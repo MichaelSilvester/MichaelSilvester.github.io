@@ -20,6 +20,18 @@ npm run check
 
 `npm run check` 会先重新构建，再检查双语结构和全部站内链接。构建产物位于 `dist/`。仓库中的 GitHub Actions 会自动构建并发布到 GitHub Pages。
 
+## 链接指定语言
+
+页面链接可以使用 `lang=zh` 或 `lang=en` 明确指定中文或英文，例如：
+
+```text
+/journal/primeplayer-technical-support/?lang=zh
+/journal/primeplayer-technical-support/?lang=en
+/journal/?filter=primeplayer&lang=en
+```
+
+链接指定的语言优先于浏览器中保存的语言选择。进入页面后，站内导航会自动保留当前语言；点击页面右上角的语言切换按钮，也会同步更新当前网址。
+
 ## 写一篇新文章
 
 1. 复制 `content/posts/` 中任意一个 `.md` 文件，并直接用文件名确定网址。例如 `my-new-post.md` 会生成 `/journal/my-new-post/`，不需要填写 `slug`。

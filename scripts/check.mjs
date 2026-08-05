@@ -138,8 +138,22 @@ async function collectHtml(directory) {
 
 // Resolve every root-relative link so deployment cannot ship a dead navigation path.
 const htmlFiles = await collectHtml(join(root, "dist"));
+const siteScript = await readFile(join(root, "dist", "assets", "site.js"), "utf8");
+for (const requiredLanguageBehavior of [
+  'searchParams.get("lang")',
+  'searchParams.set("lang", language)',
+  "syncInternalLanguageLinks",
+]) {
+  if (!siteScript.includes(requiredLanguageBehavior)) {
+    throw new Error("Language-aware links are missing: " + requiredLanguageBehavior);
+  }
+}
+
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
+  if (!html.includes("new URLSearchParams(location.search).get('lang')")) {
+    throw new Error(file + " does not read the URL language before first paint");
+  }
   for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {
     const href = decodeURIComponent(match[1]);
     const target = extname(href)
@@ -153,4 +167,4 @@ for (const file of htmlFiles) {
   }
 }
 
-console.log("Checked " + htmlFiles.length + " pages, feeds, bilingual structure, links, and " + postPages + " article pages.");
+console.log("Checked " + htmlFiles.length + " pages, feeds, bilingual structure, language-aware links, and " + postPages + " article pages.");

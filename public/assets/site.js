@@ -5,8 +5,35 @@
   const menuButton = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".site-nav");
 
-  function setLanguage(language) {
-    const next = language === "en" ? "en" : "zh";
+  function normalizeLanguage(language) {
+    return language === "en" || language === "zh" ? language : null;
+  }
+
+  function languageFromUrl() {
+    return normalizeLanguage(new URL(window.location.href).searchParams.get("lang"));
+  }
+
+  // Keep the explicit language on same-origin page links while preserving filters and hashes.
+  function syncInternalLanguageLinks(language) {
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#")) return;
+
+      let url;
+      try {
+        url = new URL(href, window.location.href);
+      } catch (_) {
+        return;
+      }
+      if (url.origin !== window.location.origin || !/^https?:$/.test(url.protocol)) return;
+
+      url.searchParams.set("lang", language);
+      link.setAttribute("href", url.pathname + url.search + url.hash);
+    });
+  }
+
+  function setLanguage(language, updateUrl) {
+    const next = normalizeLanguage(language) || "zh";
     root.dataset.lang = next;
     root.lang = next === "en" ? "en" : "zh-CN";
     try {
@@ -14,6 +41,13 @@
     } catch (_) {
       // The preference is optional when storage is unavailable.
     }
+
+    if (updateUrl && window.history?.replaceState) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", next);
+      window.history.replaceState({}, "", url);
+    }
+    syncInternalLanguageLinks(next);
   }
 
   function setTheme(theme) {
@@ -27,7 +61,14 @@
   }
 
   languageButton?.addEventListener("click", function () {
-    setLanguage(root.dataset.lang === "en" ? "zh" : "en");
+    setLanguage(root.dataset.lang === "en" ? "zh" : "en", true);
+  });
+
+  // An explicit link language wins over the saved preference prepared by the inline boot script.
+  setLanguage(languageFromUrl() || root.dataset.lang, false);
+
+  window.addEventListener("popstate", function () {
+    setLanguage(languageFromUrl() || root.dataset.lang, false);
   });
 
   themeButton?.addEventListener("click", function () {
