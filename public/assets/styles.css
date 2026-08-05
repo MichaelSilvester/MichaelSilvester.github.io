@@ -1083,35 +1083,14 @@ h2 em {
   align-content: flex-start;
 }
 
-.filter-toggle {
+.filter-label {
   width: 100%;
   flex: 0 0 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 0;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  background: transparent;
+  margin-bottom: 0.8rem;
   color: var(--ink-soft);
-  cursor: pointer;
-  font: 500 var(--font-ui) var(--mono);
+  font: 500 var(--font-meta) var(--mono);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-}
-
-.filter-toggle:hover {
-  color: var(--ink);
-}
-
-.filter-toggle-icon {
-  font-size: 1.15rem;
-  line-height: 1;
-  transition: transform 160ms ease;
-}
-
-.filter-toggle[aria-expanded="true"] .filter-toggle-icon {
-  transform: rotate(45deg);
 }
 
 .filter-options {
@@ -1120,11 +1099,6 @@ h2 em {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem;
-  padding-top: 0.85rem;
-}
-
-.filter-options[hidden] {
-  display: none;
 }
 
 .filter-bar button[data-filter] {
@@ -1153,6 +1127,12 @@ h2 em {
   display: grid;
   grid-template-columns: 145px minmax(0, 1fr);
   gap: 2rem;
+}
+
+/* Author grid styles must never override the semantic hidden state used by filtering. */
+.journal-grid .article-card[hidden],
+.empty-state[hidden] {
+  display: none !important;
 }
 
 .journal-grid .article-card-link {

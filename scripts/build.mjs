@@ -1,4 +1,5 @@
 import { copyFile, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { site } from "../content/site.mjs";
@@ -6,6 +7,7 @@ import { apps } from "../content/apps.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const output = join(root, "dist");
+let assetVersion = "";
 
 const ui = {
   home: { zh: "首页", en: "Home" },
@@ -48,6 +50,12 @@ function escapeHtml(value = "") {
     .split("<").join("&lt;")
     .split(">").join("&gt;")
     .split('"').join("&quot;");
+}
+
+// Asset URLs must change with their contents so a Pages deploy cannot reuse stale interaction code.
+function versionedAsset(path) {
+  if (!assetVersion) throw new Error("Asset version must be prepared before rendering pages.");
+  return path + "?v=" + assetVersion;
 }
 
 function inlineMarkdown(value) {
@@ -286,13 +294,13 @@ function pageDocument({ titleZh, titleEn, descriptionZh, descriptionEn, path, ac
       '<link rel="alternate" type="application/rss+xml" title="Michael Silvester RSS" href="/rss.xml">' +
       '<link rel="manifest" href="/site.webmanifest">' +
       '<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23151515%22/><text x=%2232%22 y=%2241%22 text-anchor=%22middle%22 font-size=%2226%22 fill=%22%23c8ff3d%22 font-family=%22Arial%22>MS</text></svg>">' +
-      '<link rel="stylesheet" href="/assets/styles.css">' +
+      '<link rel="stylesheet" href="' + versionedAsset("/assets/styles.css") + '">' +
       "<script>" + bootScript + "</script>" +
     "</head>" +
     '<body class="' + bodyClass + '">' +
       '<a class="skip-link" href="#content">' + bi("跳到正文", "Skip to content") + "</a>" +
       '<div class="page-shell">' + header(active) + '<main id="content">' + content + "</main>" + footer() + "</div>" +
-      '<script src="/assets/site.js" defer></script>' +
+      '<script src="' + versionedAsset("/assets/site.js") + '" defer></script>' +
     "</body></html>"
   );
 }
@@ -403,10 +411,8 @@ function journalPage(posts) {
     '<button type="button" data-filter="' + item[0] + '"' + (firstActive && index === 0 ? ' class="active"' : "") + ">" + bi(item[1], item[2]) + "</button>"
   ).join("");
   const filterGroup = (labelZh, labelEn, items, panelId, firstActive = false) =>
-    '<div class="filter-group"><button class="filter-toggle" type="button" data-filter-toggle="' + panelId +
-      '" aria-expanded="false" aria-controls="' + panelId + '">' + bi(labelZh, labelEn) +
-      '<span class="filter-toggle-icon" aria-hidden="true">＋</span></button>' +
-      '<div class="filter-options" id="' + panelId + '" hidden>' + filterButtons(items, firstActive) + "</div></div>";
+    '<div class="filter-group"><span class="filter-label">' + bi(labelZh, labelEn) + "</span>" +
+      '<div class="filter-options" id="' + panelId + '">' + filterButtons(items, firstActive) + "</div></div>";
   const content =
     '<section class="page-intro section"><span class="eyebrow">JOURNAL / ' + bi("文章", "Writing") + "</span>" +
       bi("App 功能、<br><em>使用方式与更新记录</em>。", "App features,<br><em>usage guides, and updates.</em>", "h1") +
@@ -631,6 +637,10 @@ async function main() {
   await mkdir(output, { recursive: true });
   await copyDirectory(join(root, "public"), output);
   await writeFile(join(output, ".nojekyll"), "");
+
+  const styles = await readFile(join(root, "public", "assets", "styles.css"));
+  const script = await readFile(join(root, "public", "assets", "site.js"));
+  assetVersion = createHash("sha256").update(styles).update(script).digest("hex").slice(0, 12);
 
   const filenames = (await readdir(join(root, "content", "posts"))).filter((name) => name.endsWith(".md"));
   const posts = [];

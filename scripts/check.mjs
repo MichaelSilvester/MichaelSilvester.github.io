@@ -75,12 +75,12 @@ if (!journal.includes("分钟阅读") || !journal.includes("min read")) {
   throw new Error("Generated article cards are missing automatic reading time");
 }
 for (const panelId of ["app-filter-options", "category-filter-options"]) {
-  if (!journal.includes('data-filter-toggle="' + panelId + '" aria-expanded="false" aria-controls="' + panelId + '"')) {
-    throw new Error("Journal is missing an interactive filter heading for " + panelId);
+  if (!journal.includes('class="filter-options" id="' + panelId + '">')) {
+    throw new Error("Journal is missing an always-visible filter panel for " + panelId);
   }
-  if (!journal.includes('class="filter-options" id="' + panelId + '" hidden')) {
-    throw new Error("Journal is missing a collapsible filter panel for " + panelId);
-  }
+}
+if (journal.includes("data-filter-toggle") || journal.includes("filter-toggle-icon")) {
+  throw new Error("Journal still contains collapsible filter controls");
 }
 for (const category of new Set(sourceRecords.map((post) => post.category))) {
   if (!journal.includes('data-filter="' + category + '"')) {
@@ -147,11 +147,14 @@ async function collectHtml(directory) {
 // Resolve every root-relative link so deployment cannot ship a dead navigation path.
 const htmlFiles = await collectHtml(join(root, "dist"));
 const siteScript = await readFile(join(root, "dist", "assets", "site.js"), "utf8");
+const siteStyles = await readFile(join(root, "dist", "assets", "styles.css"), "utf8");
+if (!siteStyles.includes(".journal-grid .article-card[hidden]")) {
+  throw new Error("Article filters are missing an explicit hidden-card display rule");
+}
 for (const requiredLanguageBehavior of [
   'searchParams.get("lang")',
   'searchParams.set("lang", language)',
   "syncInternalLanguageLinks",
-  "setFilterPanelExpanded",
 ]) {
   if (!siteScript.includes(requiredLanguageBehavior)) {
     throw new Error("Language-aware links are missing: " + requiredLanguageBehavior);
@@ -160,6 +163,11 @@ for (const requiredLanguageBehavior of [
 
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
+  const styleVersion = html.match(/\/assets\/styles\.css\?v=([a-f0-9]{12})/);
+  const scriptVersion = html.match(/\/assets\/site\.js\?v=([a-f0-9]{12})/);
+  if (!styleVersion || !scriptVersion || styleVersion[1] !== scriptVersion[1]) {
+    throw new Error(file + " does not use matching content-versioned assets");
+  }
   if (!html.includes("new URLSearchParams(location.search).get('lang')")) {
     throw new Error(file + " does not read the URL language before first paint");
   }
