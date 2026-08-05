@@ -74,6 +74,14 @@ if (generatedOrder.join("\n") !== expectedOrder.join("\n")) {
 if (!journal.includes("分钟阅读") || !journal.includes("min read")) {
   throw new Error("Generated article cards are missing automatic reading time");
 }
+for (const panelId of ["app-filter-options", "category-filter-options"]) {
+  if (!journal.includes('data-filter-toggle="' + panelId + '" aria-expanded="false" aria-controls="' + panelId + '"')) {
+    throw new Error("Journal is missing an interactive filter heading for " + panelId);
+  }
+  if (!journal.includes('class="filter-options" id="' + panelId + '" hidden')) {
+    throw new Error("Journal is missing a collapsible filter panel for " + panelId);
+  }
+}
 for (const category of new Set(sourceRecords.map((post) => post.category))) {
   if (!journal.includes('data-filter="' + category + '"')) {
     throw new Error("Journal is missing a filter for category " + category);
@@ -143,6 +151,7 @@ for (const requiredLanguageBehavior of [
   'searchParams.get("lang")',
   'searchParams.set("lang", language)',
   "syncInternalLanguageLinks",
+  "setFilterPanelExpanded",
 ]) {
   if (!siteScript.includes(requiredLanguageBehavior)) {
     throw new Error("Language-aware links are missing: " + requiredLanguageBehavior);

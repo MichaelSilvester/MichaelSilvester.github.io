@@ -90,8 +90,35 @@
   });
 
   const filterButtons = document.querySelectorAll("[data-filter]");
+  const filterToggles = document.querySelectorAll("[data-filter-toggle]");
   const articleCards = document.querySelectorAll(".journal-grid .article-card");
   const emptyState = document.querySelector(".empty-state");
+
+  // The filter headings are disclosures, not filters themselves; keep their ARIA state and panels aligned.
+  function setFilterPanelExpanded(toggle, expanded) {
+    const panel = document.getElementById(toggle.dataset.filterToggle);
+    if (!panel) return;
+    toggle.setAttribute("aria-expanded", String(expanded));
+    panel.hidden = !expanded;
+  }
+
+  function revealFilterPanel(filter) {
+    const activeButton = Array.from(filterButtons).find(function (button) {
+      return button.dataset.filter === filter;
+    });
+    const panel = activeButton?.closest(".filter-options");
+    if (!panel) return;
+    const toggle = Array.from(filterToggles).find(function (item) {
+      return item.dataset.filterToggle === panel.id;
+    });
+    if (toggle) setFilterPanelExpanded(toggle, true);
+  }
+
+  filterToggles.forEach(function (toggle) {
+    toggle.addEventListener("click", function () {
+      setFilterPanelExpanded(toggle, toggle.getAttribute("aria-expanded") !== "true");
+    });
+  });
 
   function applyArticleFilter(filter, updateUrl) {
     const activeButton = Array.from(filterButtons).find(function (button) {
@@ -127,7 +154,9 @@
   });
 
   if (filterButtons.length) {
-    applyArticleFilter(new URLSearchParams(window.location.search).get("filter") || "all", false);
+    const requestedFilter = new URLSearchParams(window.location.search).get("filter") || "all";
+    applyArticleFilter(requestedFilter, false);
+    if (requestedFilter !== "all") revealFilterPanel(requestedFilter);
   }
 
 })();

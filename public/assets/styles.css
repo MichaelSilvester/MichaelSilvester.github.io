@@ -1080,19 +1080,54 @@ h2 em {
   flex: 1 1 320px;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.6rem;
+  align-content: flex-start;
 }
 
-.filter-label {
-  flex-basis: 100%;
-  margin-bottom: 0.2rem;
+.filter-toggle {
+  width: 100%;
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
   color: var(--ink-soft);
-  font: 500 var(--font-meta) var(--mono);
+  cursor: pointer;
+  font: 500 var(--font-ui) var(--mono);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.filter-bar button {
+.filter-toggle:hover {
+  color: var(--ink);
+}
+
+.filter-toggle-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform 160ms ease;
+}
+
+.filter-toggle[aria-expanded="true"] .filter-toggle-icon {
+  transform: rotate(45deg);
+}
+
+.filter-options {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0.85rem;
+}
+
+.filter-options[hidden] {
+  display: none;
+}
+
+.filter-bar button[data-filter] {
   padding: 0.7rem 1rem;
   border: 1px solid var(--line);
   border-radius: 99px;
@@ -1101,8 +1136,8 @@ h2 em {
   font: 500 var(--font-ui) var(--mono);
 }
 
-.filter-bar button:hover,
-.filter-bar button.active {
+.filter-bar button[data-filter]:hover,
+.filter-bar button[data-filter].active {
   border-color: var(--ink);
   background: var(--ink);
   color: var(--paper);
@@ -2232,7 +2267,7 @@ h2 em {
     padding-bottom: 0.4rem;
   }
 
-  .filter-bar button {
+  .filter-bar button[data-filter] {
     flex: 0 0 auto;
   }
 

@@ -402,14 +402,19 @@ function journalPage(posts) {
   const filterButtons = (items, firstActive = false) => items.map((item, index) =>
     '<button type="button" data-filter="' + item[0] + '"' + (firstActive && index === 0 ? ' class="active"' : "") + ">" + bi(item[1], item[2]) + "</button>"
   ).join("");
+  const filterGroup = (labelZh, labelEn, items, panelId, firstActive = false) =>
+    '<div class="filter-group"><button class="filter-toggle" type="button" data-filter-toggle="' + panelId +
+      '" aria-expanded="false" aria-controls="' + panelId + '">' + bi(labelZh, labelEn) +
+      '<span class="filter-toggle-icon" aria-hidden="true">＋</span></button>' +
+      '<div class="filter-options" id="' + panelId + '" hidden>' + filterButtons(items, firstActive) + "</div></div>";
   const content =
     '<section class="page-intro section"><span class="eyebrow">JOURNAL / ' + bi("文章", "Writing") + "</span>" +
       bi("App 功能、<br><em>使用方式与更新记录</em>。", "App features,<br><em>usage guides, and updates.</em>", "h1") +
       bi("文章内容以 PrimePlayer 与 MagicDesk 当前项目中已经实现的功能为依据。", "Articles are based on features currently implemented in PrimePlayer and MagicDesk.", "p") +
     "</section>" +
     '<section class="section journal-listing"><div class="filter-bar" role="group" aria-label="Article filters">' +
-      '<div class="filter-group"><span class="filter-label">' + bi("查看", "View") + "</span>" + filterButtons(appFilters, true) + "</div>" +
-      '<div class="filter-group"><span class="filter-label">' + bi("文章分类", "Categories") + "</span>" + filterButtons(usedCategories) + "</div>" +
+      filterGroup("查看", "View", appFilters, "app-filter-options", true) +
+      filterGroup("文章分类", "Categories", usedCategories, "category-filter-options") +
     '</div><div class="journal-grid">' + posts.map((post) => articleCard(post)).join("") + "</div>" +
       '<p class="empty-state" hidden>' + bi("这个分类里还没有文章。", "No articles in this category yet.") + "</p></section>";
 
