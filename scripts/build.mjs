@@ -263,7 +263,7 @@ function footer() {
         bi("PrimePlayer 与 MagicDesk 开发者。", "Developer of PrimePlayer and MagicDesk.", "p") +
       "</div>" +
       '<div class="footer-links"><a href="/journal/">' + bi("文章", "Journal") + '</a><a href="/apps/">' + bi("App", "Apps") +
-        '</a><a href="' + site.github + '" rel="me">GitHub</a></div>' +
+        "</a></div>" +
       '<p class="copyright">© ' + year + " Michael Silvester</p>" +
     "</footer>"
   );
@@ -564,8 +564,8 @@ function aboutPage() {
       "</div></div></div></section>" +
     '<section class="section contact-section"><span class="eyebrow">CONTACT</span>' +
       bi("有想法，或者只是想打个招呼？", "Have an idea, or just want to say hello?", "h2") +
-      bi("你可以通过 GitHub 或电子邮件联系我。", "You can reach me on GitHub or by email.", "p") +
-      '<div><a class="button button-dark" href="' + site.github + '">GitHub ↗</a><a class="button button-ghost" href="mailto:' + site.email + '">' + bi("发送邮件", "Send email") + "</a></div></section>";
+      bi("你可以通过电子邮件联系我。", "You can reach me by email.", "p") +
+      '<div><a class="button button-dark" href="mailto:' + site.email + '">' + bi("发送邮件", "Send email") + "</a></div></section>";
 
   return pageDocument({
     titleZh: "关于",
