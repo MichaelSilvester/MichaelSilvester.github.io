@@ -71,6 +71,7 @@ const expectedOrder = sourceRecords.map((post) => post.routeName);
 if (generatedOrder.join("\n") !== expectedOrder.join("\n")) {
   throw new Error("Journal articles are not sorted by their full publication time");
 }
+
 if (!journal.includes("分钟阅读") || !journal.includes("min read")) {
   throw new Error("Generated article cards are missing automatic reading time");
 }
@@ -105,9 +106,11 @@ for (let index = 0; index < sourceRecords.length; index += 1) {
   const html = await readFile(join(root, "dist", "journal", current.routeName, "index.html"), "utf8");
   const actual = Array.from(html.matchAll(/class="post-nav-link[^"]*" href="\/journal\/([^/]+)\//g))
     .map((match) => decodeURIComponent(match[1]));
+  // sourceRecords is newest-first, but detail navigation reads chronologically:
+  // the older neighbor is previous and the newer neighbor is next.
   const expected = [];
-  if (index > 0) expected.push(sourceRecords[index - 1].routeName);
   if (index < sourceRecords.length - 1) expected.push(sourceRecords[index + 1].routeName);
+  if (index > 0) expected.push(sourceRecords[index - 1].routeName);
   if (actual.join("\n") !== expected.join("\n")) {
     throw new Error(current.routeName + " has incorrect previous/next article links");
   }
