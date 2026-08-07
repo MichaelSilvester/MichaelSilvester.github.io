@@ -1,7 +1,7 @@
 export const site = {
   author: "Michael Silvester",
   url: "https://michaelsilvester.github.io",
-  email: "MichaelLynxCN@gmail.com",
+  email: "MichaelSilvesterCN@gmail.com",
   location: {
     zh: "PrimePlayer · MagicDesk",
     en: "PrimePlayer · MagicDesk",

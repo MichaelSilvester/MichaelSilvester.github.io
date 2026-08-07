@@ -13,7 +13,7 @@ excerptEn: How PrimePlayer handles local media, settings, permissions, network p
 
 **生效日期：2026 年 8 月 5 日**
 
-如果你对本隐私政策有任何疑问，请发送邮件至 [MichaelLynxCN+PrimePlayer@gmail.com](mailto:MichaelLynxCN+PrimePlayer@gmail.com) 联系我们。
+如果你对本隐私政策有任何疑问，请发送邮件至 [MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com) 联系我们。
 
 ## 1. 概述
 
@@ -166,7 +166,7 @@ Face ID 或 Touch ID 仅用于验证你是否有权访问或管理受保护的�
 
 本 App 并非专门面向 14 周岁以下儿童设计，也不会有意要求儿童提供姓名、联系方式或身份信息。
 
-如果父母或监护人认为儿童通过本 App 向我们提供了个人信息，请发送邮件至 [MichaelLynxCN+PrimePlayer@gmail.com](mailto:MichaelLynxCN+PrimePlayer@gmail.com) 联系我们。我们会依据适用法律审查并处理该请求。
+如果父母或监护人认为儿童通过本 App 向我们提供了个人信息，请发送邮件至 [MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com) 联系我们。我们会依据适用法律审查并处理该请求。
 
 ## 10. 跨境数据处理
 
@@ -184,14 +184,14 @@ Face ID 或 Touch ID 仅用于验证你是否有权访问或管理受保护的�
 
 ## 12. 联系我们
 
-联系邮箱：[MichaelLynxCN+PrimePlayer@gmail.com](mailto:MichaelLynxCN+PrimePlayer@gmail.com)
+联系邮箱：[MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com)
 
 <!-- en -->
 **Last Updated: August 5, 2026**
 
 **Effective Date: August 5, 2026**
 
-If you have any questions about this Privacy Policy, contact us at [MichaelLynxCN+PrimePlayer@gmail.com](mailto:MichaelLynxCN+PrimePlayer@gmail.com).
+If you have any questions about this Privacy Policy, contact us at [MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com).
 
 ## 1. Overview
 
@@ -344,7 +344,7 @@ No storage or transmission method can guarantee absolute security. Protect your 
 
 The App is not specifically designed for children under the age of 14 and does not intentionally request that children provide names, contact details, or identity information.
 
-If a parent or guardian believes that a child has provided personal information to us through the App, contact us at [MichaelLynxCN+PrimePlayer@gmail.com](mailto:MichaelLynxCN+PrimePlayer@gmail.com). We will review and address the request in accordance with applicable law.
+If a parent or guardian believes that a child has provided personal information to us through the App, contact us at [MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com). We will review and address the request in accordance with applicable law.
 
 ## 10. International Data Processing
 
@@ -362,4 +362,4 @@ The revised policy will include an updated “Last Updated” and “Effective D
 
 ## 12. Contact Us
 
-Contact Email: [MichaelLynxCN+PrimePlayer@gmail.com](mailto:MichaelLynxCN+PrimePlayer@gmail.com)
+Contact Email: [MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com)

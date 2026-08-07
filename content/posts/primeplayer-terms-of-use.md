@@ -259,7 +259,7 @@ Apple 并非本协议所约定 App 功能的提供者。除 Apple 条款或适�
 
 ## 19. 联系我们
 
-联系邮箱：[MichaelLynxCN+PrimePlayer@gmail.com](mailto:MichaelLynxCN+PrimePlayer@gmail.com)
+联系邮箱：[MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com)
 
 <!-- en -->
 **Version: 1.0**
@@ -512,4 +512,4 @@ You may also submit a complaint to a consumer association, market-regulation aut
 
 ## 19. Contact Us
 
-Contact Email: [MichaelLynxCN+PrimePlayer@gmail.com](mailto:MichaelLynxCN+PrimePlayer@gmail.com)
+Contact Email: [MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com)

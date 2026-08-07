@@ -93,7 +93,7 @@ PrimePlayer 支持 HTTP/HTTPS（包括 HLS/M3U8）、FTP/FTPS、RTP、RTSP/RTSPS
 
 如果以上信息没有解决你的问题，请发送邮件至：
 
-[MichaelLynxCN+PrimePlayer@gmail.com](mailto:MichaelLynxCN+PrimePlayer@gmail.com)
+[MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com)
 
 为了帮助我们排查，请提供：
 
@@ -198,7 +198,7 @@ You can manage or cancel your subscription there. After cancellation, membership
 
 If the information above does not resolve your issue, contact us at:
 
-[MichaelLynxCN+PrimePlayer@gmail.com](mailto:MichaelLynxCN+PrimePlayer@gmail.com)
+[MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com)
 
 To help us investigate, please include:
 
