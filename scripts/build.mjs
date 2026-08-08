@@ -513,13 +513,25 @@ function appsPage() {
   });
 }
 
+function appDownloadAction(app) {
+  if (app.appStore) {
+    // App Store 地址必须来自内容配置；新窗口属性可避免外部页面控制本站标签页。
+    return '<a class="button button-dark" href="' + app.appStore.url + '" target="_blank" rel="noopener noreferrer" aria-label="' +
+      app.name + ' App Store">' +
+      bi(app.appStore.label.zh, app.appStore.label.en) + " ↗</a>";
+  }
+
+  return '<a class="button button-dark" href="' + app.download + '">' +
+    bi("下载即将开放", "Download coming soon") + "</a>";
+}
+
 function appPage(app, posts) {
   const appPosts = posts.filter((post) => post.app === app.slug);
   const content =
     '<section class="app-hero section app-' + app.accent + '"><div class="app-hero-copy"><a class="back-link" href="/apps/">← ' + bi("所有 App", "All apps") + "</a>" +
       '<div class="app-title-row"><span class="app-icon app-icon-large">' + app.monogram + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h1>" + app.name + "</h1></div></div>" +
       bi(app.tagline.zh, app.tagline.en, "p", "app-hero-tagline") + bi(app.description.zh, app.description.en, "p", "app-hero-description") +
-      '<div class="app-hero-actions" id="download-coming-soon"><a class="button button-dark" href="' + app.download + '">' + bi("下载即将开放", "Download coming soon") + '</a><span class="status-dot">' + bi(app.status.zh, app.status.en) + "</span></div>" +
+      '<div class="app-hero-actions"' + (app.appStore ? "" : ' id="download-coming-soon"') + ">" + appDownloadAction(app) + '<span class="status-dot">' + bi(app.status.zh, app.status.en) + "</span></div>" +
     '</div><div class="app-hero-visual">' + visual(app) + "</div></section>" +
     '<section class="app-facts"><div><span>' + bi("平台", "Platform") + "</span><strong>" + app.platform + "</strong></div><div><span>" +
       bi("版本", "Version") + "</span><strong>" + app.version + "</strong></div><div><span>" + bi("系统要求", "Requires") + "</span><strong>" + app.system + "</strong></div></section>" +

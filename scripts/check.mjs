@@ -136,6 +136,18 @@ for (const name of ["PrimePlayer", "MagicDesk", "Michael Silvester"]) {
   if (!homepage.includes(name)) throw new Error("Homepage is missing " + name);
 }
 
+const primePlayerPage = await readFile(join(root, "dist", "apps", "primeplayer", "index.html"), "utf8");
+const primePlayerStoreUrl = "https://apps.apple.com/app/id6799107071";
+if (!primePlayerPage.includes('href="' + primePlayerStoreUrl + '"') ||
+    !primePlayerPage.includes('target="_blank" rel="noopener noreferrer" aria-label="PrimePlayer App Store"')) {
+  throw new Error("PrimePlayer page is missing its safe App Store link");
+}
+for (const label of ["前往 App Store", "View on the App Store"]) {
+  if (!primePlayerPage.includes(label)) {
+    throw new Error("PrimePlayer App Store link is missing label: " + label);
+  }
+}
+
 async function collectHtml(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const files = [];

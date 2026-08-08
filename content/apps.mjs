@@ -17,7 +17,11 @@ export const apps = [
     accent: "lime",
     version: "Preview",
     system: "iOS / iPadOS 18+",
-    download: "#download-coming-soon",
+    appStore: {
+      id: "6799107071",
+      url: "https://apps.apple.com/app/id6799107071",
+      label: { zh: "前往 App Store", en: "View on the App Store" },
+    },
     features: [
       { zh: "本地与网络视频播放", en: "Local and network playback" },
       { zh: "媒体库、文件夹与播放列表", en: "Library, folders, and playlists" },

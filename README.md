@@ -44,7 +44,7 @@ npm run check
 ## 发布前需要确认
 
 - `content/site.mjs`：确认个人简介、支持邮箱与 GitHub 链接。
-- `content/apps.mjs`：App 上架后，把 `Preview` 和 `#download-coming-soon` 换成正式版本号与下载地址。
+- `content/apps.mjs`：PrimePlayer 已配置 App Store 地址；获得正式版本号后更新 `Preview`。MagicDesk 上架后，再替换它的 `#download-coming-soon` 与版本信息。
 - `content/posts/primeplayer-terms-of-use.md` 与 `content/posts/primeplayer-privacy-policy.md`：发布前确认生效日期，并按实际发布地区完成必要的法律审阅。
 - `public/og.png`：如需自定义社交平台分享封面，可替换此图片。
 
