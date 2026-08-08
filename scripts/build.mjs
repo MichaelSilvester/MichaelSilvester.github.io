@@ -262,8 +262,12 @@ function footer() {
       '<div><div class="footer-name">Michael Silvester</div>' +
         bi("PrimePlayer 与 MagicDesk 开发者。", "Developer of PrimePlayer and MagicDesk.", "p") +
       "</div>" +
-      '<div class="footer-links"><a href="/journal/">' + bi("文章", "Journal") + '</a><a href="/apps/">' + bi("App", "Apps") +
-        "</a></div>" +
+      '<div class="footer-links">' +
+        '<a href="/journal/">' + bi("文章", "Journal") + "</a>" +
+        '<a href="/apps/">' + bi("App", "Apps") + "</a>" +
+        // Keep footer navigation aligned with header labels and bilingual consistency: Journal -> App -> About.
+        '<a href="/about/">' + bi("关于", "About") + "</a>" +
+      "</div>" +
       '<p class="copyright">© ' + year + " Michael Silvester</p>" +
     "</footer>"
   );
