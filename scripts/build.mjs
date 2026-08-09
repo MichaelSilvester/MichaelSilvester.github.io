@@ -454,10 +454,10 @@ function adjacentPostLink(target, direction) {
 function postPage(post, allPosts) {
   const app = apps.find((item) => item.slug === post.app);
   const position = allPosts.indexOf(post);
-  // allPosts is newest-first: the older neighbor is the previous article,
-  // while the newer neighbor is the next article in chronological reading order.
-  const previous = position < allPosts.length - 1 ? allPosts[position + 1] : null;
-  const next = position > 0 ? allPosts[position - 1] : null;
+  // allPosts is newest-first. The site convention intentionally assigns the
+  // newer neighbor to "上一篇" and the older neighbor to "下一篇".
+  const previous = position > 0 ? allPosts[position - 1] : null;
+  const next = position < allPosts.length - 1 ? allPosts[position + 1] : null;
   const category = articleCategory(post);
   const content =
     '<article class="post"><header class="post-header section"><a class="back-link" href="/journal/">← ' + bi("所有文章", "All writing") + "</a>" +

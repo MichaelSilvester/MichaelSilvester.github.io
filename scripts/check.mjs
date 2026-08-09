@@ -106,11 +106,11 @@ for (let index = 0; index < sourceRecords.length; index += 1) {
   const html = await readFile(join(root, "dist", "journal", current.routeName, "index.html"), "utf8");
   const actual = Array.from(html.matchAll(/class="post-nav-link[^"]*" href="\/journal\/([^/]+)\//g))
     .map((match) => decodeURIComponent(match[1]));
-  // sourceRecords is newest-first, but detail navigation reads chronologically:
-  // the older neighbor is previous and the newer neighbor is next.
+  // sourceRecords is newest-first. Detail navigation intentionally labels the
+  // newer neighbor as previous and the older neighbor as next.
   const expected = [];
-  if (index < sourceRecords.length - 1) expected.push(sourceRecords[index + 1].routeName);
   if (index > 0) expected.push(sourceRecords[index - 1].routeName);
+  if (index < sourceRecords.length - 1) expected.push(sourceRecords[index + 1].routeName);
   if (actual.join("\n") !== expected.join("\n")) {
     throw new Error(current.routeName + " has incorrect previous/next article links");
   }
