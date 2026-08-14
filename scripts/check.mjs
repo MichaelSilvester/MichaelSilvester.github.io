@@ -27,9 +27,17 @@ const sourcePosts = (await readdir(join(root, "content", "posts"))).filter((name
 if (postPages !== sourcePosts.length) {
   throw new Error("Generated article count does not match content/posts");
 }
-for (const routeName of ["primeplayer-terms-of-use", "primeplayer-privacy-policy", "primeplayer-technical-support"]) {
+const requiredProductDocuments = [
+  "primeplayer-privacy-policy",
+  "primeplayer-terms-of-use",
+  "primeplayer-technical-support",
+  "magicdesk-privacy-policy",
+  "magicdesk-terms-of-use",
+  "magicdesk-technical-support",
+];
+for (const routeName of requiredProductDocuments) {
   if (!postDirs.some((entry) => entry.isDirectory() && entry.name === routeName)) {
-    throw new Error("Missing required PrimePlayer article: " + routeName);
+    throw new Error("Missing required product document: " + routeName);
   }
 }
 
@@ -70,6 +78,18 @@ const generatedOrder = Array.from(journal.matchAll(/class="article-card-link" hr
 const expectedOrder = sourceRecords.map((post) => post.routeName);
 if (generatedOrder.join("\n") !== expectedOrder.join("\n")) {
   throw new Error("Journal articles are not sorted by their full publication time");
+}
+
+// These entries define the intended timeline from earliest to latest. The
+// journal renders newest-first, so its generated card order must be the reverse.
+const requiredChronologicalOrder = requiredProductDocuments.concat([
+  "primeplayer-playback-gestures",
+  "primeplayer-import-and-library",
+  "magicdesk-wallpaper-workflow",
+]);
+const requiredPublicationOrder = [...requiredChronologicalOrder].reverse();
+if (generatedOrder.join("\n") !== requiredPublicationOrder.join("\n")) {
+  throw new Error("Articles do not match the required earliest-to-latest timeline");
 }
 
 if (!journal.includes("分钟阅读") || !journal.includes("min read")) {
