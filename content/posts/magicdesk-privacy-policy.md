@@ -15,7 +15,7 @@ excerptEn: How MagicDesk handles wallpaper media, settings, and permissions loca
 
 MagicDesk（以下简称“本 App”）是一款适用于 macOS 的动态壁纸播放器和管理工具。本隐私政策说明本 App 如何处理与你有关的信息。
 
-如果你对本隐私政策有任何疑问，请发送邮件至 [MichaeLLynxCN@gmail.com](mailto:MichaeLLynxCN@gmail.com) 联系我们。
+如果你对本隐私政策有任何疑问，请发送邮件至 [MichaelSilvesterCN+MagicDesk@gmail.com](mailto:MichaelSilvesterCN+MagicDesk@gmail.com) 联系我们。
 
 ## 1. 政策摘要
 
@@ -145,7 +145,7 @@ MagicDesk 当前可能提供“永久移除水印”的一次性非消耗型 App
 
 本 App 面向普通用户，不以收集儿童个人信息为目的，也不提供开发者账号注册功能。
 
-如果父母或监护人认为儿童通过支持邮件向我们提供了个人信息，请发送邮件至 [MichaeLLynxCN@gmail.com](mailto:MichaeLLynxCN@gmail.com) 联系我们。我们会依据适用法律审查并处理该请求。
+如果父母或监护人认为儿童通过支持邮件向我们提供了个人信息，请发送邮件至 [MichaelSilvesterCN+MagicDesk@gmail.com](mailto:MichaelSilvesterCN+MagicDesk@gmail.com) 联系我们。我们会依据适用法律审查并处理该请求。
 
 ## 15. 跨境处理
 
@@ -163,7 +163,7 @@ MagicDesk 当前可能提供“永久移除水印”的一次性非消耗型 App
 
 开发者：Michael Silvester
 
-联系邮箱：[MichaeLLynxCN@gmail.com](mailto:MichaeLLynxCN@gmail.com)
+联系邮箱：[MichaelSilvesterCN+MagicDesk@gmail.com](mailto:MichaelSilvesterCN+MagicDesk@gmail.com)
 
 关联文档：[MagicDesk 用户协议](/journal/magicdesk-terms-of-use/)
 
@@ -174,7 +174,7 @@ MagicDesk 当前可能提供“永久移除水印”的一次性非消耗型 App
 
 MagicDesk (the “App”) is a live-wallpaper player and management tool for macOS. This Privacy Policy explains how the App handles information relating to you.
 
-If you have questions about this Privacy Policy, contact us at [MichaeLLynxCN@gmail.com](mailto:MichaeLLynxCN@gmail.com).
+If you have questions about this Privacy Policy, contact us at [MichaelSilvesterCN+MagicDesk@gmail.com](mailto:MichaelSilvesterCN+MagicDesk@gmail.com).
 
 ## 1. Summary
 
@@ -304,7 +304,7 @@ No device, storage system, or network transmission can be guaranteed completely 
 
 The App is intended for a general audience, does not seek to collect children’s personal information, and does not provide developer-operated account registration.
 
-If a parent or guardian believes that a child provided personal information through a support email, contact us at [MichaeLLynxCN@gmail.com](mailto:MichaeLLynxCN@gmail.com). We will review and address the request in accordance with applicable law.
+If a parent or guardian believes that a child provided personal information through a support email, contact us at [MichaelSilvesterCN+MagicDesk@gmail.com](mailto:MichaelSilvesterCN+MagicDesk@gmail.com). We will review and address the request in accordance with applicable law.
 
 ## 15. International Processing
 
@@ -322,6 +322,6 @@ If a change materially affects how information is processed, we will provide not
 
 Developer: Michael Silvester
 
-Contact Email: [MichaeLLynxCN@gmail.com](mailto:MichaeLLynxCN@gmail.com)
+Contact Email: [MichaelSilvesterCN+MagicDesk@gmail.com](mailto:MichaelSilvesterCN+MagicDesk@gmail.com)
 
 Related Document: [MagicDesk Terms of Use](/journal/magicdesk-terms-of-use/)

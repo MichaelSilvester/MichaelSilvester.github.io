@@ -226,7 +226,7 @@ App 内购买由 Apple 通过 App Store 和 StoreKit 处理。你需要使用有
 
 开发者：Michael Silvester
 
-联系邮箱：[MichaeLLynxCN@gmail.com](mailto:MichaeLLynxCN@gmail.com)
+联系邮箱：[MichaelSilvesterCN+MagicDesk@gmail.com](mailto:MichaelSilvesterCN+MagicDesk@gmail.com)
 
 相关文档：[MagicDesk 隐私政策](/journal/magicdesk-privacy-policy/)
 
@@ -448,6 +448,6 @@ If any provision is held invalid or unenforceable, the remaining provisions rema
 
 Developer: Michael Silvester
 
-Contact Email: [MichaeLLynxCN@gmail.com](mailto:MichaeLLynxCN@gmail.com)
+Contact Email: [MichaelSilvesterCN+MagicDesk@gmail.com](mailto:MichaelSilvesterCN+MagicDesk@gmail.com)
 
 Related Document: [MagicDesk Privacy Policy](/journal/magicdesk-privacy-policy/)

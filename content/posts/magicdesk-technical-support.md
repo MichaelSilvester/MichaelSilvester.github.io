@@ -220,15 +220,11 @@ MagicDesk 可以驻留在菜单栏并继续显示动态壁纸。你可以在“�
 
 如果提示没有可恢复的购买，请核对 Apple 账户、网络和购买记录。退款、撤销或未验证的交易不会恢复为有效权益。
 
-### 如何申请退款？
-
-付款和退款由 Apple 处理。请前往 [reportaproblem.apple.com](https://reportaproblem.apple.com/) 登录购买时使用的 Apple 账户，并按 Apple 提示提交申请。退款资格和结果由 Apple 及适用法律决定。
-
 ## 联系支持
 
 如果以上步骤没有解决问题，请发送邮件至：
 
-[MichaeLLynxCN@gmail.com](mailto:MichaeLLynxCN@gmail.com)
+[MichaelSilvesterCN+MagicDesk@gmail.com](mailto:MichaelSilvesterCN+MagicDesk@gmail.com)
 
 为了更快定位问题，建议附上：
 
@@ -460,15 +456,11 @@ Use the same Apple Account that made the purchase, then:
 
 If no restorable purchase is found, check the Apple Account, network, and purchase history. A refunded, revoked, or unverified transaction does not restore an active entitlement.
 
-### How do I request a refund?
-
-Apple handles payment and refund requests. Visit [reportaproblem.apple.com](https://reportaproblem.apple.com/), sign in with the Apple Account used for the purchase, and follow Apple’s instructions. Apple and applicable law determine eligibility and the outcome.
-
 ## Contact Support
 
 If these steps do not resolve the issue, email:
 
-[MichaeLLynxCN@gmail.com](mailto:MichaeLLynxCN@gmail.com)
+[MichaelSilvesterCN+MagicDesk@gmail.com](mailto:MichaelSilvesterCN+MagicDesk@gmail.com)
 
 To help us investigate, include:
 
