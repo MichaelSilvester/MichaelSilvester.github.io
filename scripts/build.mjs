@@ -238,9 +238,24 @@ function appNameList(lang) {
   return names.slice(0, -1).join(", ") + ", and " + names[names.length - 1];
 }
 
+// A plain "Name: kind" label list reads as a spec sheet, not a sentence. This
+// builds a real sentence per app instead, joined like the original two-app
+// copy ("X is a video player for iPhone and iPad; Y is ..."), so it still
+// reads naturally however many apps are in content/apps.mjs.
 function appKindSummary(lang) {
-  const separator = lang === "zh" ? "　" : "  ";
-  return apps.map((app) => app.name + (lang === "zh" ? "：" : ": ") + app.kind[lang]).join(separator);
+  if (lang === "zh") {
+    return apps
+      .map((app) => app.name + " 是 " + app.platform.split(" · ").join(" 与 ") + " " + app.kind.zh)
+      .join("；");
+  }
+  return apps
+    .map((app) => {
+      const article = /^[aeiou]/i.test(app.kind.en) ? "an" : "a";
+      const kindLower = app.kind.en.charAt(0).toLowerCase() + app.kind.en.slice(1);
+      const platformText = app.platform.split(" · ").join(" and ");
+      return app.name + " is " + article + " " + kindLower + " for " + platformText;
+    })
+    .join("; ");
 }
 
 function navLink(key, href, active) {
@@ -511,8 +526,8 @@ function postPage(post, allPosts) {
 function appsPage() {
   const content =
     '<section class="page-intro apps-intro section"><span class="eyebrow">APPS / ' + bi("作品", "Software") + "</span>" +
-      bi("iPhone、iPad 与 Mac 上的<br><em>App。</em>", "Apps for<br><em>iPhone, iPad, and Mac.</em>", "h1") +
-      bi(appKindSummary("zh"), appKindSummary("en"), "p") +
+      bi("iPhone、iPad 与 Mac 上的<br><em>全部 App。</em>", "All my apps for<br><em>iPhone, iPad, and Mac.</em>", "h1") +
+      bi(appKindSummary("zh") + "。", appKindSummary("en") + ".", "p") +
     '</section><section class="section app-showcase-list">' + apps.map((app, index) =>
       '<article class="app-showcase app-' + app.accent + '"><div class="app-showcase-copy"><div class="app-index">0' + (index + 1) + "</div>" +
         '<div class="app-title-row"><span class="app-icon">' + app.monogram + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h2>" + app.name + "</h2></div></div>" +

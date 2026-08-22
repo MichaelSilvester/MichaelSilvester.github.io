@@ -69,7 +69,7 @@ export const apps = [
     monogram: "P",
     platform: "macOS",
     status: { zh: "持续开发中", en: "In active development" },
-    kind: { zh: "图片查看与编辑", en: "Image viewer and editor" },
+    kind: { zh: "图片查看与编辑工具", en: "Image viewer and editor" },
     tagline: {
       zh: "批量查看、编辑与叠加图片和 GIF。",
       en: "View, edit, and stack images and GIFs in bulk.",
