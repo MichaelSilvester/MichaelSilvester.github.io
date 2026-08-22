@@ -7,7 +7,7 @@ export const site = {
     en: "Independent developer",
   },
   bio: {
-    zh: "我是几款 macOS 与 iOS App 的开发者。这个博客用于整理这些 App 的功能说明、开发记录与使用文章。",
-    en: "I develop a small lineup of macOS and iOS apps. This blog collects feature descriptions, development notes, and usage articles for them.",
+    zh: "我是 macOS 与 iOS 的开发者。本博客用于展示我所开发的 App 的功能说明、开发记录与相关文章。",
+    en: "I'm a macOS and iOS developer. This blog showcases feature descriptions, development notes, and related articles for the apps I build.",
   },
 };

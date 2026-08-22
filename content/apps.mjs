@@ -85,7 +85,11 @@ export const apps = [
     accent: "orange",
     version: "1.0.0",
     system: "macOS 15+",
-    download: "#download-coming-soon",
+    appStore: {
+      id: "6800329040",
+      url: "https://apps.apple.com/app/id6800329040",
+      label: { zh: "前往 App Store", en: "View on the App Store" },
+    },
     features: [
       { zh: "文件夹缩略图批量浏览", en: "Batch browsing with folder thumbnails" },
       { zh: "图片与 GIF 叠加合成，动图可叠动图", en: "Image and GIF stacking, including GIF-on-GIF" },
