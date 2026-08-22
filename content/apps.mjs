@@ -14,6 +14,10 @@ export const apps = [
       zh: "面向 iPhone 和 iPad 的视频播放器，支持从相册、本地文件、同一 Wi-Fi 下的浏览器和网络地址导入或播放视频，并提供媒体库、播放列表、字幕、画中画等功能。",
       en: "A video player for iPhone and iPad. Import or play video from Photos, local files, a browser on the same Wi-Fi network, and network URLs, with a media library, playlists, subtitles, Picture in Picture, and more.",
     },
+    story: {
+      zh: "PrimePlayer 可以从相册与“文件”导入视频，也支持同一 Wi-Fi 下通过浏览器传输文件和添加网络视频。导入内容可通过媒体库、文件夹、收藏和播放列表整理；播放时可以使用字幕与音轨、画中画、倍速、截图和 GIF 录制等功能。",
+      en: "PrimePlayer imports video from Photos and Files, transfers files through a browser on the same Wi-Fi network, and opens network video. Organize media with a library, folders, favorites, and playlists, then use subtitles and audio tracks, Picture in Picture, playback speed, screenshots, and GIF capture while watching.",
+    },
     accent: "lime",
     version: "Preview",
     system: "iOS / iPadOS 18+",
@@ -44,6 +48,10 @@ export const apps = [
       zh: "面向 macOS 的动态壁纸播放器，支持把本地或在线图片、GIF、视频和网页设置为壁纸，并提供素材库、多显示器分配、播放控制和智能省电功能。",
       en: "A live wallpaper player for macOS. Set local or online images, GIFs, videos, and webpages as wallpaper, with a media library, per-display assignment, playback controls, and smart power saving.",
     },
+    story: {
+      zh: "MagicDesk 可导入本地图片、GIF 和视频，也可通过 URL 添加在线图片、视频或网页。壁纸素材可使用搜索、标签、收藏和自定义列表整理，并能分别设置到不同显示器；菜单栏与全局快捷键用于控制播放，智能省电会在游戏、全屏工作或使用电池时暂停动态内容。",
+      en: "MagicDesk imports local images, GIFs, and videos, and adds online images, videos, or webpages by URL. Organize wallpapers with search, tags, favorites, and custom lists, assign them per display, control playback from the menu bar or global shortcuts, and pause motion automatically during games, full-screen work, or battery use.",
+    },
     accent: "blue",
     version: "Preview",
     system: "macOS 14+",
@@ -53,6 +61,36 @@ export const apps = [
       { zh: "搜索、标签、收藏与自定义列表", en: "Search, tags, favorites, and custom lists" },
       { zh: "多显示器独立设置", en: "Independent multi-display setup" },
       { zh: "全局快捷键与智能省电", en: "Global shortcuts and smart power saving" },
+    ],
+  },
+  {
+    slug: "picturium",
+    name: "Picturium",
+    monogram: "P",
+    platform: "macOS",
+    status: { zh: "持续开发中", en: "In active development" },
+    kind: { zh: "图片查看与编辑", en: "Image viewer and editor" },
+    tagline: {
+      zh: "批量查看、编辑与叠加图片和 GIF。",
+      en: "View, edit, and stack images and GIFs in bulk.",
+    },
+    description: {
+      zh: "面向 macOS 的图片查看与编辑工具，支持浏览和播放常见图片格式、相机 RAW 与 GIF 动图，提供文件夹缩略图批量浏览、裁剪、涂鸦标注、马赛克遮挡等编辑功能，还可以将多张图片或动图叠加合成，包括动图叠动图。",
+      en: "An image viewer and editor for macOS. Browse and play common image formats, camera RAW files, and animated GIFs, browse folders in bulk with thumbnails, crop, annotate, and pixelate images, and stack multiple images or GIFs together — including GIF-on-GIF stacking.",
+    },
+    story: {
+      zh: "Picturium 支持拖入、打开面板或在 Finder 中直接打开三种方式导入图片和文件夹，并以缩略图批量浏览整理内容；进入编辑模式后可以裁剪、旋转、涂鸦、添加文字与马赛克遮挡，还能把多张图片或 GIF 叠加合成，做出动图叠动图的效果；完成后可以保存覆盖原文件，或导出为新文件保留原图。",
+      en: "Picturium opens images and folders by drag-and-drop, the Open panel, or directly from Finder, then browses them in bulk as thumbnails. In editing mode you can crop, rotate, draw, add text, and pixelate sensitive areas, and stack multiple images or GIFs together — including GIF-on-GIF — then save back to the original file or export a new copy.",
+    },
+    accent: "orange",
+    version: "1.0.0",
+    system: "macOS 15+",
+    download: "#download-coming-soon",
+    features: [
+      { zh: "文件夹缩略图批量浏览", en: "Batch browsing with folder thumbnails" },
+      { zh: "图片与 GIF 叠加合成，动图可叠动图", en: "Image and GIF stacking, including GIF-on-GIF" },
+      { zh: "播放、暂停 GIF 等动态图片", en: "Play and pause GIFs and other animated images" },
+      { zh: "裁剪、涂鸦、文字与马赛克编辑", en: "Crop, draw, text, and mosaic editing" },
     ],
   },
 ];

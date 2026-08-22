@@ -8,6 +8,7 @@ const required = [
   "dist/apps/index.html",
   "dist/apps/primeplayer/index.html",
   "dist/apps/magicdesk/index.html",
+  "dist/apps/picturium/index.html",
   "dist/about/index.html",
   "dist/sitemap.xml",
   "dist/rss.xml",
@@ -34,6 +35,9 @@ const requiredProductDocuments = [
   "magicdesk-privacy-policy",
   "magicdesk-terms-of-use",
   "magicdesk-technical-support",
+  "picturium-privacy-policy",
+  "picturium-terms-of-use",
+  "picturium-technical-support",
 ];
 for (const routeName of requiredProductDocuments) {
   if (!postDirs.some((entry) => entry.isDirectory() && entry.name === routeName)) {
@@ -152,7 +156,7 @@ for (let index = 0; index < sourceRecords.length; index += 1) {
 }
 
 const homepage = await readFile(join(root, "dist", "index.html"), "utf8");
-for (const name of ["PrimePlayer", "MagicDesk", "Michael Silvester"]) {
+for (const name of ["PrimePlayer", "MagicDesk", "Picturium", "Michael Silvester"]) {
   if (!homepage.includes(name)) throw new Error("Homepage is missing " + name);
 }
 

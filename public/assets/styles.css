@@ -851,6 +851,10 @@ h2 em {
   background: var(--blue);
 }
 
+.app-card.app-orange {
+  background: var(--orange);
+}
+
 .app-card-copy {
   padding: 2.15rem 2.15rem 0;
 }
@@ -877,6 +881,10 @@ h2 em {
 
 .app-blue .app-icon {
   color: #a9bdff;
+}
+
+.app-orange .app-icon {
+  color: #ffc4a3;
 }
 
 .app-card h3 {
@@ -1430,6 +1438,10 @@ h2 em {
   background: var(--blue);
 }
 
+.app-showcase.app-orange {
+  background: var(--orange);
+}
+
 .app-showcase-copy {
   position: relative;
   z-index: 2;
@@ -1578,6 +1590,10 @@ h2 em {
 
 .app-hero.app-blue .app-hero-visual {
   background: var(--blue);
+}
+
+.app-hero.app-orange .app-hero-visual {
+  background: var(--orange);
 }
 
 .app-hero-visual .product-visual {

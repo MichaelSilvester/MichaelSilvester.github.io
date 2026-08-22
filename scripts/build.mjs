@@ -227,6 +227,22 @@ function bi(zh, en, tag = "span", className = "") {
   );
 }
 
+// Copy that lists every app by name reads from content/apps.mjs through these
+// helpers instead of naming apps directly, so the lineup can grow without a
+// hunt through this file for stale mentions of only the first two apps.
+function appNameList(lang) {
+  const names = apps.map((app) => app.name);
+  if (names.length === 1) return names[0];
+  if (lang === "zh") return names.slice(0, -1).join("、") + " 与 " + names[names.length - 1];
+  if (names.length === 2) return names.join(" and ");
+  return names.slice(0, -1).join(", ") + ", and " + names[names.length - 1];
+}
+
+function appKindSummary(lang) {
+  const separator = lang === "zh" ? "　" : "  ";
+  return apps.map((app) => app.name + (lang === "zh" ? "：" : ": ") + app.kind[lang]).join(separator);
+}
+
 function navLink(key, href, active) {
   const current = key === active ? ' aria-current="page" class="active"' : "";
   return '<a href="' + href + '"' + current + ">" + bi(ui[key].zh, ui[key].en) + "</a>";
@@ -260,7 +276,7 @@ function footer() {
   return (
     '<footer class="site-footer">' +
       '<div><div class="footer-name">Michael Silvester</div>' +
-        bi("PrimePlayer 与 MagicDesk 开发者。", "Developer of PrimePlayer and MagicDesk.", "p") +
+        bi(appNameList("zh") + " 开发者。", "Developer of " + appNameList("en") + ".", "p") +
       "</div>" +
       '<div class="footer-links">' +
         '<a href="/journal/">' + bi("文章", "Journal") + "</a>" +
@@ -320,9 +336,12 @@ function visual(app, compact = false) {
       "</div>"
     );
   }
+  // Any non-PrimePlayer app currently shares this generic macOS desktop-chrome
+  // mockup; the menu-bar label reads from app.name so it never misdescribes a
+  // future Mac app (like Picturium) as "MagicDesk".
   return (
     '<div class="product-visual magicdesk-visual' + compactClass + '" aria-hidden="true">' +
-      '<div class="desktop-menu"><b>●</b><span>MagicDesk</span><span>File</span><span>Edit</span><i>09:41</i></div>' +
+      '<div class="desktop-menu"><b>●</b><span>' + app.name + '</span><span>File</span><span>Edit</span><i>09:41</i></div>' +
       '<div class="desktop-sky"><span class="cloud cloud-one"></span><span class="cloud cloud-two"></span><i class="mountain mountain-one"></i><i class="mountain mountain-two"></i></div>' +
       '<div class="desktop-dock"><span></span><span></span><span></span><span></span></div>' +
     "</div>"
@@ -367,19 +386,21 @@ function homePage(posts) {
     '<section class="hero section">' +
       '<div class="hero-copy"><span class="eyebrow">' + bi("设计 · 开发 · 记录", "Design · Build · Notes") + "</span>" +
         bi("记录 App 功能、<br>使用方式与<br><em>开发进展。</em>", "App features,<br>usage guides, and<br><em>development notes.</em>", "h1") +
-        bi("我是 Michael，PrimePlayer 与 MagicDesk 的开发者。这里集中介绍两款 App，并发布基于实际功能的相关文章。", "I am Michael, the developer of PrimePlayer and MagicDesk. This site introduces both apps and publishes articles based on their actual features.", "p", "hero-intro") +
+        bi(site.bio.zh, site.bio.en, "p", "hero-intro") +
         '<div class="hero-actions"><a class="button button-dark" href="/journal/">' + bi("开始阅读", "Start reading") + ' <span>↗</span></a>' +
           '<a class="button button-ghost" href="/apps/">' + bi("看看我的 App", "Explore my apps") + "</a></div>" +
       "</div>" +
-      '<div class="hero-stage" aria-label="PrimePlayer and MagicDesk previews">' +
+      // The stage only ever spotlights the first two apps in content/apps.mjs;
+      // that is a deliberate, fixed two-card layout, not an exhaustive list.
+      '<div class="hero-stage" aria-label="App previews">' +
         '<div class="stage-note"><span>01</span>' + bi("正在构建", "Now building") + "</div>" +
         '<div class="stage-card stage-prime">' + visual(apps[0], true) + "</div>" +
         '<div class="stage-card stage-magic">' + visual(apps[1], true) + "</div>" +
-        '<div class="stage-caption"><span>PrimePlayer</span><i></i><span>MagicDesk</span></div>' +
+        '<div class="stage-caption"><span>' + apps[0].name + '</span><i></i><span>' + apps[1].name + "</span></div>" +
       "</div>" +
     "</section>" +
-    '<section class="ticker" aria-hidden="true"><div>PRIMEPLAYER <i>✦</i> MAGICDESK <i>✦</i> ' +
-      bi("APP 功能与开发记录", "APP FEATURES & DEVELOPMENT") + " <i>✦</i> PRIMEPLAYER <i>✦</i> MAGICDESK</div></section>" +
+    '<section class="ticker" aria-hidden="true"><div>' + apps.map((app) => app.name.toUpperCase()).join(" <i>✦</i> ") + " <i>✦</i> " +
+      bi("APP 功能与开发记录", "APP FEATURES & DEVELOPMENT") + " <i>✦</i> " + apps.map((app) => app.name.toUpperCase()).join(" <i>✦</i> ") + "</div></section>" +
     '<section class="section latest-section"><div class="section-heading"><div><span class="section-number">01</span>' +
       bi("最近文章", "Latest writing", "h2") + "</div><a class=\"text-link\" href=\"/journal/\">" + bi(ui.allWriting.zh, ui.allWriting.en) + " <span>↗</span></a></div>" +
       '<div class="article-grid">' + featured.map((post) => articleCard(post, true)).join("") + "</div></section>" +
@@ -387,14 +408,14 @@ function homePage(posts) {
       bi("我的 App", "My apps", "h2") + "</div><a class=\"text-link\" href=\"/apps/\">" + bi(ui.allApps.zh, ui.allApps.en) + " <span>↗</span></a></div>" +
       '<div class="app-grid">' + apps.map(appCard).join("") + "</div></section>" +
     '<section class="section manifesto"><span class="manifesto-mark">✦</span>' +
-      bi("PrimePlayer 面向 iPhone 与 iPad，<br>MagicDesk 面向 Mac。", "PrimePlayer is for iPhone and iPad.<br>MagicDesk is for Mac.", "h2") +
+      bi("为 iPhone、iPad 与 Mac<br>打造的 App。", "Apps built for<br>iPhone, iPad, and Mac.", "h2") +
       '<p>FEATURES · GUIDES · DEVELOPMENT</p></section>';
 
   return pageDocument({
     titleZh: "Michael Silvester",
     titleEn: "Michael Silvester",
-    descriptionZh: "Michael Silvester 的博客与 App 展示，介绍 PrimePlayer、MagicDesk 的功能、使用方式与开发记录。",
-    descriptionEn: "Michael Silvester's blog and app showcase for PrimePlayer and MagicDesk features, guides, and development notes.",
+    descriptionZh: "Michael Silvester 的博客与 App 展示，介绍 " + appNameList("zh") + " 的功能、使用方式与开发记录。",
+    descriptionEn: "Michael Silvester's blog and app showcase for " + appNameList("en") + " features, guides, and development notes.",
     path: "/",
     active: "home",
     content,
@@ -403,11 +424,7 @@ function homePage(posts) {
 }
 
 function journalPage(posts) {
-  const appFilters = [
-    ["all", "全部", "All"],
-    ["primeplayer", "PrimePlayer", "PrimePlayer"],
-    ["magicdesk", "MagicDesk", "MagicDesk"],
-  ];
+  const appFilters = [["all", "全部", "All"], ...apps.map((app) => [app.slug, app.name, app.name])];
   const usedCategories = Array.from(new Set(posts.map((post) => post.category)))
     .map((key) => [key, articleCategories[key]?.zh, articleCategories[key]?.en])
     .filter((item) => item[1] && item[2]);
@@ -420,7 +437,7 @@ function journalPage(posts) {
   const content =
     '<section class="page-intro section"><span class="eyebrow">JOURNAL / ' + bi("文章", "Writing") + "</span>" +
       bi("App 功能、<br><em>使用方式与更新记录</em>。", "App features,<br><em>usage guides, and updates.</em>", "h1") +
-      bi("文章内容以 PrimePlayer 与 MagicDesk 当前项目中已经实现的功能为依据。", "Articles are based on features currently implemented in PrimePlayer and MagicDesk.", "p") +
+      bi("文章内容以 " + appNameList("zh") + " 当前项目中已经实现的功能为依据。", "Articles are based on features currently implemented in " + appNameList("en") + ".", "p") +
     "</section>" +
     '<section class="section journal-listing"><div class="filter-bar" role="group" aria-label="Article filters">' +
       filterGroup("查看", "View", appFilters, "app-filter-options", true) +
@@ -431,8 +448,8 @@ function journalPage(posts) {
   return pageDocument({
     titleZh: "文章",
     titleEn: "Journal",
-    descriptionZh: "PrimePlayer 与 MagicDesk 的功能说明、使用方式和开发记录。",
-    descriptionEn: "Feature descriptions, usage guides, and development notes for PrimePlayer and MagicDesk.",
+    descriptionZh: appNameList("zh") + " 的功能说明、使用方式和开发记录。",
+    descriptionEn: "Feature descriptions, usage guides, and development notes for " + appNameList("en") + ".",
     path: "/journal/",
     active: "journal",
     content,
@@ -494,8 +511,8 @@ function postPage(post, allPosts) {
 function appsPage() {
   const content =
     '<section class="page-intro apps-intro section"><span class="eyebrow">APPS / ' + bi("作品", "Software") + "</span>" +
-      bi("iPhone、iPad 与 Mac 上的<br><em>两款 App。</em>", "Two apps for<br><em>iPhone, iPad, and Mac.</em>", "h1") +
-      bi("PrimePlayer 是 iPhone 与 iPad 视频播放器；MagicDesk 是 Mac 动态壁纸播放器。", "PrimePlayer is a video player for iPhone and iPad; MagicDesk is a live wallpaper player for Mac.", "p") +
+      bi("iPhone、iPad 与 Mac 上的<br><em>App。</em>", "Apps for<br><em>iPhone, iPad, and Mac.</em>", "h1") +
+      bi(appKindSummary("zh"), appKindSummary("en"), "p") +
     '</section><section class="section app-showcase-list">' + apps.map((app, index) =>
       '<article class="app-showcase app-' + app.accent + '"><div class="app-showcase-copy"><div class="app-index">0' + (index + 1) + "</div>" +
         '<div class="app-title-row"><span class="app-icon">' + app.monogram + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h2>" + app.name + "</h2></div></div>" +
@@ -508,8 +525,8 @@ function appsPage() {
   return pageDocument({
     titleZh: "App",
     titleEn: "Apps",
-    descriptionZh: "Michael Silvester 的 App：iPhone 与 iPad 视频播放器 PrimePlayer，以及 macOS 动态壁纸播放器 MagicDesk。",
-    descriptionEn: "PrimePlayer for iPhone and iPad, and MagicDesk for macOS, by Michael Silvester.",
+    descriptionZh: "Michael Silvester 的 App：" + appKindSummary("zh") + "。",
+    descriptionEn: "Michael Silvester's apps — " + appKindSummary("en") + ".",
     path: "/apps/",
     active: "apps",
     content,
@@ -542,9 +559,7 @@ function appPage(app, posts) {
     '<section class="section app-features"><div class="section-heading"><div><span class="section-number">01</span>' + bi("核心特点", "Highlights", "h2") +
       '</div></div><div class="feature-grid">' + app.features.map((feature, index) => '<div class="feature-item"><span>0' + (index + 1) + "</span><h3>" + bi(feature.zh, feature.en) + "</h3></div>").join("") + "</div></section>" +
     '<section class="section app-story"><div><span class="section-number">02</span>' + bi("功能概览", "How it works", "h2") + "</div><div>" +
-      (app.slug === "primeplayer"
-        ? bi("PrimePlayer 可以从相册与“文件”导入视频，也支持同一 Wi-Fi 下通过浏览器传输文件和添加网络视频。导入内容可通过媒体库、文件夹、收藏和播放列表整理；播放时可以使用字幕与音轨、画中画、倍速、截图和 GIF 录制等功能。", "PrimePlayer imports video from Photos and Files, transfers files through a browser on the same Wi-Fi network, and opens network video. Organize media with a library, folders, favorites, and playlists, then use subtitles and audio tracks, Picture in Picture, playback speed, screenshots, and GIF capture while watching.", "p")
-        : bi("MagicDesk 可导入本地图片、GIF 和视频，也可通过 URL 添加在线图片、视频或网页。壁纸素材可使用搜索、标签、收藏和自定义列表整理，并能分别设置到不同显示器；菜单栏与全局快捷键用于控制播放，智能省电会在游戏、全屏工作或使用电池时暂停动态内容。", "MagicDesk imports local images, GIFs, and videos, and adds online images, videos, or webpages by URL. Organize wallpapers with search, tags, favorites, and custom lists, assign them per display, control playback from the menu bar or global shortcuts, and pause motion automatically during games, full-screen work, or battery use.", "p")) +
+      bi(app.story.zh, app.story.en, "p") +
       '<a class="text-link" href="/about/">' + bi("了解开发者", "Meet the developer") + " ↗</a></div></section>" +
     '<section class="section app-writing"><div class="section-heading"><div><span class="section-number">03</span>' + bi("相关文章", "Related writing", "h2") +
       '</div><a class="text-link" href="/journal/">' + bi(ui.allWriting.zh, ui.allWriting.en) + ' ↗</a></div><div class="article-grid">' +
@@ -572,11 +587,11 @@ function aboutPage() {
         '<div class="about-location"><span>●</span>' + bi(site.location.zh, site.location.en) + "</div>" +
       "</div></section>" +
     '<section class="section about-story"><div><span class="section-number">01</span>' + bi("我在做什么", "What I do", "h2") + "</div><div class=\"about-prose\">" +
-      bi("我是 PrimePlayer 与 MagicDesk 的开发者。PrimePlayer 是面向 iPhone 与 iPad 的视频播放器；MagicDesk 是面向 macOS 的动态壁纸播放器。", "I develop PrimePlayer and MagicDesk. PrimePlayer is a video player for iPhone and iPad; MagicDesk is a live wallpaper player for macOS.", "p") +
-      bi("这个博客集中展示两款 App 的信息，并发布功能说明、使用方式与开发记录。", "This blog presents both apps and publishes feature descriptions, usage guides, and development notes.", "p") +
+      bi(site.bio.zh + " " + appKindSummary("zh") + "。", site.bio.en + " " + appKindSummary("en") + ".", "p") +
+      bi("这个博客集中展示这些 App 的信息，并发布功能说明、使用方式与开发记录。", "This blog presents these apps and publishes feature descriptions, usage guides, and development notes.", "p") +
     "</div></section>" +
     '<section class="values"><div class="section"><div class="section-heading"><div><span class="section-number">02</span>' + bi("站点内容", "What you will find", "h2") +
-      '</div></div><div class="value-grid"><div><span>01</span>' + bi("App 信息", "App details", "h3") + bi("查看 PrimePlayer 与 MagicDesk 的平台、系统要求和功能清单。", "View platforms, system requirements, and feature lists for PrimePlayer and MagicDesk.", "p") +
+      '</div></div><div class="value-grid"><div><span>01</span>' + bi("App 信息", "App details", "h3") + bi("查看 " + appNameList("zh") + " 的平台、系统要求和功能清单。", "View platforms, system requirements, and feature lists for " + appNameList("en") + ".", "p") +
       '</div><div><span>02</span>' + bi("功能文章", "Feature guides", "h3") + bi("根据 App 中已经实现的功能整理使用说明。", "Read guides based on features already implemented in each app.", "p") +
       '</div><div><span>03</span>' + bi("开发记录", "Development notes", "h3") + bi("后续用于发布版本变化和新增功能。", "A place for future release changes and newly added features.", "p") +
       "</div></div></div></section>" +
@@ -588,8 +603,8 @@ function aboutPage() {
   return pageDocument({
     titleZh: "关于",
     titleEn: "About",
-    descriptionZh: "关于 Michael Silvester，以及 PrimePlayer 和 MagicDesk 的基本信息。",
-    descriptionEn: "About Michael Silvester, PrimePlayer, and MagicDesk.",
+    descriptionZh: "关于 Michael Silvester，以及 " + appNameList("zh") + " 的基本信息。",
+    descriptionEn: "About Michael Silvester, " + appNameList("en") + ".",
     path: "/about/",
     active: "about",
     content,
@@ -634,7 +649,8 @@ async function copyDirectory(source, destination) {
 }
 
 async function buildFeeds(posts) {
-  const urls = ["/", "/journal/", "/apps/", "/apps/primeplayer/", "/apps/magicdesk/", "/about/"]
+  const urls = ["/", "/journal/", "/apps/", "/about/"]
+    .concat(apps.map((app) => "/apps/" + app.slug + "/"))
     .concat(posts.map(postUrl));
   const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     urls.map((path) => "  <url><loc>" + site.url + (path === "/" ? "" : path) + "</loc></url>").join("\n") + "\n</urlset>";
