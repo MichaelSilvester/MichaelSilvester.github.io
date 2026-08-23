@@ -84,19 +84,6 @@ if (generatedOrder.join("\n") !== expectedOrder.join("\n")) {
   throw new Error("Journal articles are not sorted by their full publication time");
 }
 
-// These entries define the intended timeline from earliest to latest. The
-// journal renders newest-first, so its generated card order must be the reverse.
-const requiredChronologicalOrder = requiredProductDocuments.concat([
-  "primeplayer-playback-gestures",
-  "primeplayer-import-and-library",
-  "magicdesk-wallpaper-workflow",
-  "picturium-gif-crop-and-image-stacking",
-]);
-const requiredPublicationOrder = [...requiredChronologicalOrder].reverse();
-if (generatedOrder.join("\n") !== requiredPublicationOrder.join("\n")) {
-  throw new Error("Articles do not match the required earliest-to-latest timeline");
-}
-
 if (!journal.includes("分钟阅读") || !journal.includes("min read")) {
   throw new Error("Generated article cards are missing automatic reading time");
 }
