@@ -90,6 +90,7 @@ const requiredChronologicalOrder = requiredProductDocuments.concat([
   "primeplayer-playback-gestures",
   "primeplayer-import-and-library",
   "magicdesk-wallpaper-workflow",
+  "picturium-gif-crop-and-image-stacking",
 ]);
 const requiredPublicationOrder = [...requiredChronologicalOrder].reverse();
 if (generatedOrder.join("\n") !== requiredPublicationOrder.join("\n")) {
