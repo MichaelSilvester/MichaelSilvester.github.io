@@ -872,11 +872,19 @@ h2 em {
   display: grid;
   place-items: center;
   flex: 0 0 auto;
+  overflow: hidden;
   border-radius: 14px;
   background: #151515;
   color: var(--lime);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
   font: 600 1.2rem var(--display);
+}
+
+.app-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .app-blue .app-icon {

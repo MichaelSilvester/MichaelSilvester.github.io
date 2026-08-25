@@ -384,7 +384,7 @@ function articleCard(post, large = false) {
 function appCard(app) {
   return (
     '<article class="app-card app-' + app.accent + '">' +
-      '<div class="app-card-copy"><div class="app-card-head"><span class="app-icon">' + app.monogram + '</span><span class="eyebrow">' +
+      '<div class="app-card-copy"><div class="app-card-head"><span class="app-icon">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + '</span><span class="eyebrow">' +
         bi(app.kind.zh, app.kind.en) + "</span></div>" +
         '<h3>' + app.name + "</h3>" +
         bi(app.tagline.zh, app.tagline.en, "p", "app-tagline") +
@@ -530,7 +530,7 @@ function appsPage() {
       bi(appKindSummary("zh") + "。", appKindSummary("en") + ".", "p") +
     '</section><section class="section app-showcase-list">' + apps.map((app, index) =>
       '<article class="app-showcase app-' + app.accent + '"><div class="app-showcase-copy"><div class="app-index">0' + (index + 1) + "</div>" +
-        '<div class="app-title-row"><span class="app-icon">' + app.monogram + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h2>" + app.name + "</h2></div></div>" +
+        '<div class="app-title-row"><span class="app-icon">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h2>" + app.name + "</h2></div></div>" +
         bi(app.tagline.zh, app.tagline.en, "p", "app-tagline") + bi(app.description.zh, app.description.en, "p", "app-description") +
         '<ul class="feature-pills">' + app.features.map((feature) => "<li>" + bi(feature.zh, feature.en) + "</li>").join("") + "</ul>" +
         '<a class="button button-dark" href="/apps/' + app.slug + '/">' + bi("进入 App 页面", "Open app page") + " <span>↗</span></a></div>" +
@@ -549,12 +549,29 @@ function appsPage() {
   });
 }
 
+// apps.apple.com without a region segment can resolve to the visitor's own
+// App Store account/IP region, which skews toward the US store even when the
+// page is being read in Chinese; force the China storefront for zh and leave
+// the configured URL (Apple's own region auto-detection) for en.
+function appStoreUrlForLocale(url, locale) {
+  if (locale !== "zh") return url;
+  return url.replace("https://apps.apple.com/app/", "https://apps.apple.com/cn/app/");
+}
+
 function appDownloadAction(app) {
   if (app.appStore) {
     // App Store 地址必须来自内容配置；新窗口属性可避免外部页面控制本站标签页。
-    return '<a class="button button-dark" href="' + app.appStore.url + '" target="_blank" rel="noopener noreferrer" aria-label="' +
-      app.name + ' App Store">' +
-      bi(app.appStore.label.zh, app.appStore.label.en) + " ↗</a>";
+    const ariaLabel = app.name + " App Store";
+    const zhUrl = appStoreUrlForLocale(app.appStore.url, "zh");
+    const enUrl = appStoreUrlForLocale(app.appStore.url, "en");
+    return (
+      '<span class="lang-copy lang-zh"><a class="button button-dark" href="' + zhUrl +
+        '" target="_blank" rel="noopener noreferrer" aria-label="' + ariaLabel + '">' +
+        app.appStore.label.zh + " ↗</a></span>" +
+      '<span class="lang-copy lang-en"><a class="button button-dark" href="' + enUrl +
+        '" target="_blank" rel="noopener noreferrer" aria-label="' + ariaLabel + '">' +
+        app.appStore.label.en + " ↗</a></span>"
+    );
   }
 
   return '<a class="button button-dark" href="' + app.download + '">' +
@@ -565,7 +582,7 @@ function appPage(app, posts) {
   const appPosts = posts.filter((post) => post.app === app.slug);
   const content =
     '<section class="app-hero section app-' + app.accent + '"><div class="app-hero-copy"><a class="back-link" href="/apps/">← ' + bi("所有 App", "All apps") + "</a>" +
-      '<div class="app-title-row"><span class="app-icon app-icon-large">' + app.monogram + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h1>" + app.name + "</h1></div></div>" +
+      '<div class="app-title-row"><span class="app-icon app-icon-large">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h1>" + app.name + "</h1></div></div>" +
       bi(app.tagline.zh, app.tagline.en, "p", "app-hero-tagline") + bi(app.description.zh, app.description.en, "p", "app-hero-description") +
       '<div class="app-hero-actions"' + (app.appStore ? "" : ' id="download-coming-soon"') + ">" + appDownloadAction(app) + '<span class="status-dot">' + bi(app.status.zh, app.status.en) + "</span></div>" +
     '</div><div class="app-hero-visual">' + visual(app) + "</div></section>" +
