@@ -25,7 +25,7 @@ const ui = {
 const articleCategories = {
   product: { zh: "产品", en: "Product" },
   design: { zh: "设计", en: "Design" },
-  thought: { zh: "思考", en: "Thinking" },
+  reflection: { zh: "感想", en: "Reflections" },
   legal: { zh: "法律", en: "Legal" },
   support: { zh: "支持", en: "Support" },
 };
@@ -86,9 +86,19 @@ function markdownToHtml(markdown) {
 
   for (const rawLine of lines) {
     const line = rawLine.trim();
+    const image = line.match(/^!\[([^\]]*)\]\((\/[^\s)]+)\)$/);
     if (!line) {
       flushParagraph();
       closeList();
+    } else if (image) {
+      flushParagraph();
+      closeList();
+      // Article images must use a root-relative site asset. Keeping the syntax
+      // standalone avoids accidentally interpreting linked text as executable markup.
+      html.push(
+        '<figure class="article-image"><img src="' + escapeHtml(image[2]) +
+        '" alt="' + escapeHtml(image[1]) + '" loading="lazy" decoding="async"></figure>'
+      );
     } else if (line.startsWith("## ")) {
       flushParagraph();
       closeList();

@@ -1323,6 +1323,18 @@ h2 em {
   margin: 0 0 1.65rem;
 }
 
+.prose .article-image {
+  margin: 2.5rem 0 3rem;
+}
+
+.prose .article-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+}
+
 .prose blockquote {
   margin: 3rem 0;
   padding: 2rem 2.2rem;

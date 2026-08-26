@@ -36,7 +36,7 @@ npm run check
 
 1. 复制 `content/posts/` 中任意一个 `.md` 文件，并直接用文件名确定网址。例如 `my-new-post.md` 会生成 `/journal/my-new-post/`，不需要填写 `slug`。
 2. 修改顶部元数据。`date` 可写 `2026-08-05`，也可写 `2026-08-05 14:30:25`；未写时间时按 `00:00:00` 排序，网页仍只展示年月日。
-3. `app` 可填 `primeplayer`、`magicdesk` 或 `general`；`category` 可填 `product`、`design`、`thought`、`legal` 或 `support`。
+3. `app` 可填 `primeplayer`、`magicdesk` 或 `general`；`category` 可填 `product`、`design`、`reflection`、`legal` 或 `support`。
 4. 标题和摘要可直接填写 `title`、`excerpt`，这种内容始终显示一次。需要双语切换时填写 `titleZh`、`titleEn`、`excerptZh`、`excerptEn`；只有一个本地化字段时会直接显示已有文本。
 5. 在同一个文件的 `<!-- zh -->` 和 `<!-- en -->` 区域分别写中文和英文，确保两种语言内容同步。阅读时间会根据正文自动计算，不要填写 `readTime`。
 6. 运行 `npm run check`。文章页、文章列表、分类入口和对应 App 页会自动更新并接受排序与链接检查。
