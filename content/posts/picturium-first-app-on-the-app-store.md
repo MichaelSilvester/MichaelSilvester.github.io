@@ -19,8 +19,6 @@ excerptEn: After countless rounds of work on PrimePlayer, Picturium overtook it 
 
 当前设计的 App 都不含广告，也希望 App 付费能撑得起这个账号，日后也不会有烦人的广告和数不尽的弹窗，有的只是便利和简洁。
 
-希望永远也不必依靠制造大量垃圾 App、发广告、贴牛皮癣来赚广告费维持账号运作。这离不开设计、开发与优化，也离不开每个用户的支持。
-
 <!-- en -->
 After all this time, my first App is finally on the App Store. I originally thought the PrimePlayer video player would be the first to launch, but its complexity, the care put into every detail, and round after round of review have made the process exceptionally demanding. In the end, the relatively simple Picturium came from behind and reached the App Store first.
 
@@ -31,5 +29,3 @@ It took countless rounds of refinement and adjustment, thinking through features
 I'm very happy. I'll keep improving it and designing features that are more useful and more delightful. I hope we can all enjoy the happiness and convenience that every App brings.
 
 None of the Apps I currently design contain ads. I hope paid Apps can sustain this developer account so that there will be no annoying ads or endless pop-ups in the future—only simplicity and convenience.
-
-I hope I never have to keep this account running by churning out piles of throwaway Apps and plastering them with ads for ad revenue. Making that possible depends on thoughtful design, development, and continued improvement, as well as the support of every user.
