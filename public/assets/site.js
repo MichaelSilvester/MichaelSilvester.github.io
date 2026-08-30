@@ -133,4 +133,37 @@
     applyArticleFilter(requestedFilter, false);
   }
 
+  // Page view counters: article pages show their own count, the homepage
+  // shows a site-wide count under a fixed "home" slug. Same Worker endpoint,
+  // same rule either way: the Worker lives on a workers.dev subdomain, which
+  // can occasionally fail to resolve on some networks, so any failure or slow
+  // response just leaves that counter hidden instead of showing an error.
+  document.querySelectorAll(".view-counter[data-slug]").forEach(function (viewsEl) {
+    if (!window.fetch) return;
+    const slug = viewsEl.dataset.slug;
+    const endpoint = "https://ms-blog-views-counter.michaellynxcn.workers.dev/?slug=" + encodeURIComponent(slug);
+    const controller = typeof AbortController === "function" ? new AbortController() : null;
+    const timeoutId = controller ? setTimeout(function () { controller.abort(); }, 6000) : null;
+
+    fetch(endpoint, controller ? { signal: controller.signal } : {})
+      .then(function (response) {
+        if (!response.ok) throw new Error("views request failed");
+        return response.json();
+      })
+      .then(function (data) {
+        const views = Number(data && data.views);
+        if (!Number.isFinite(views)) return;
+        viewsEl.querySelectorAll(".view-counter-count").forEach(function (node) {
+          node.textContent = String(views);
+        });
+        viewsEl.hidden = false;
+      })
+      .catch(function () {
+        // Silent: no count is better than a broken-looking page.
+      })
+      .finally(function () {
+        if (timeoutId) clearTimeout(timeoutId);
+      });
+  });
+
 })();

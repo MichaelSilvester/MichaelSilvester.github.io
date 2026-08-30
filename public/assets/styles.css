@@ -293,6 +293,7 @@ h2 em {
   margin-top: 2.35rem;
 }
 
+
 .button {
   min-height: 50px;
   display: inline-flex;
@@ -960,6 +961,17 @@ h2 em {
   letter-spacing: 0.1em;
 }
 
+.manifesto-views {
+  position: absolute;
+  left: 50%;
+  bottom: 2.4rem;
+  margin: 0;
+  color: var(--ink-soft);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  transform: translateX(-50%);
+}
+
 .site-footer {
   min-height: 260px;
   display: grid;
@@ -1285,6 +1297,11 @@ h2 em {
 .post-byline div:last-child > span {
   color: var(--ink-soft);
   font: 400 var(--font-meta)/1.65 var(--mono);
+}
+
+.view-counter-count {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .post-rule {

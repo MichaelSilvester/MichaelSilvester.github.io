@@ -435,7 +435,10 @@ function homePage(posts) {
       '<div class="app-grid">' + apps.map(appCard).join("") + "</div></section>" +
     '<section class="section manifesto"><span class="manifesto-mark">✦</span>' +
       bi("为 iPhone、iPad 与 Mac<br>打造的 App。", "Apps built for<br>iPhone, iPad, and Mac.", "h2") +
-      '<p>FEATURES · GUIDES · DEVELOPMENT</p></section>';
+      '<p>FEATURES · GUIDES · DEVELOPMENT</p>' +
+      '<p class="view-counter manifesto-views" data-slug="home" hidden>' +
+        bi('全站 <b class="view-counter-count"></b> 次访问', '<b class="view-counter-count"></b> visits site-wide') +
+      "</p></section>";
 
   return pageDocument({
     titleZh: "Michael Silvester",
@@ -511,7 +514,11 @@ function postPage(post, allPosts) {
       renderPostText(post.excerptText, "p", "post-deck") +
     '</header><div class="post-rule"></div><div class="post-layout section"><aside class="post-author"><div class="post-byline"><div class="avatar">MS</div>' +
       '<div><strong>Michael Silvester</strong><span><time datetime="' + post.published.isoValue + '">' + post.published.display + "</time> · " +
-        bi(post.readingTime.zh, post.readingTime.en) + '</span></div></div></aside><div class="post-body">' +
+        bi(post.readingTime.zh, post.readingTime.en) +
+        '<span class="view-counter" data-slug="' + escapeHtml(post.routeName) + '" hidden> · ' +
+          bi('阅读 <b class="view-counter-count"></b> 次', '<b class="view-counter-count"></b> views') +
+        "</span>" +
+      '</span></div></div></aside><div class="post-body">' +
       bi(markdownToHtml(post.bodyZh), markdownToHtml(post.bodyEn), "div", "prose") + "</div>" +
     "</div></article>" +
     (app ? '<section class="section related-app"><div class="related-app-copy"><span class="eyebrow">' + bi("文中提到", "Mentioned in this story") + "</span><h2>" + app.name + "</h2>" +
