@@ -1,3 +1,7 @@
+// Production builds replace this shared fallback with each App's current
+// App Store version whenever public Apple metadata is available.
+const appStoreVersionFallback = "1.0.0";
+
 export const apps = [
   {
     slug: "primeplayer",
@@ -20,7 +24,7 @@ export const apps = [
       en: "PrimePlayer imports video from Photos and Files, transfers files through a browser on the same Wi-Fi network, and opens network video. Organize media with a library, folders, favorites, and playlists, then use subtitles and audio tracks, Picture in Picture, playback speed, screenshots, and GIF capture while watching.",
     },
     accent: "lime",
-    version: "Preview",
+    version: appStoreVersionFallback,
     system: "iOS / iPadOS 18+",
     appStore: {
       id: "6799107071",
@@ -55,7 +59,7 @@ export const apps = [
       en: "MagicDesk imports local images, GIFs, and videos, and adds online images, videos, or webpages by URL. Organize wallpapers with search, tags, favorites, and custom lists, assign them per display, control playback from the menu bar or global shortcuts, and pause motion automatically during games, full-screen work, or battery use.",
     },
     accent: "blue",
-    version: "1.0.0",
+    version: appStoreVersionFallback,
     system: "macOS 14+",
     appStore: {
       id: "6799659224",
@@ -90,7 +94,7 @@ export const apps = [
       en: "Picturium opens images and folders by drag-and-drop, the Open panel, or directly from Finder, then browses them in bulk as thumbnails. In editing mode you can crop, rotate, draw, add text, and pixelate sensitive areas, and stack multiple images or GIFs together — including GIF-on-GIF — then save back to the original file or export a new copy.",
     },
     accent: "orange",
-    version: "1.0.0",
+    version: appStoreVersionFallback,
     system: "macOS 15+",
     appStore: {
       id: "6800329040",
