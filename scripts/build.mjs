@@ -516,7 +516,7 @@ function postPage(post, allPosts) {
       '<div><strong>Michael Silvester</strong><span><time datetime="' + post.published.isoValue + '">' + post.published.display + "</time> · " +
         bi(post.readingTime.zh, post.readingTime.en) +
         '<span class="view-counter" data-slug="' + escapeHtml(post.routeName) + '" hidden> · ' +
-          bi('阅读 <b class="view-counter-count"></b> 次', '<b class="view-counter-count"></b> views') +
+          bi('<b class="view-counter-count"></b> 次阅读', '<b class="view-counter-count"></b> views') +
         "</span>" +
       '</span></div></div></aside><div class="post-body">' +
       bi(markdownToHtml(post.bodyZh), markdownToHtml(post.bodyEn), "div", "prose") + "</div>" +
