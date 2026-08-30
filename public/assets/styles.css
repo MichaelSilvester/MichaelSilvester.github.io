@@ -1288,6 +1288,16 @@ h2 em {
   display: block;
 }
 
+/* .post-byline span above sets display:block on every span it contains,
+   including the view counter and its bilingual copies — an author rule that
+   otherwise beats the native [hidden] default and makes the "阅读 N 次" label
+   flash on screen before the count is fetched. Reassert [hidden] here so the
+   whole counter (label and number together) stays invisible until JS reveals
+   it in one step. */
+.post-byline .view-counter[hidden] {
+  display: none;
+}
+
 .post-byline strong {
   margin-bottom: 0.35rem;
   font-size: 0.92rem;
