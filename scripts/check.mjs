@@ -1,7 +1,17 @@
 import { readFile, readdir } from "node:fs/promises";
 import { extname, join } from "node:path";
+import { versionFromLookupPayload } from "./app-store-metadata.mjs";
 
 const root = process.cwd();
+
+// Keep remote metadata parsing strict so a malformed lookup response cannot
+// silently replace the configured fallback version during deployment.
+if (versionFromLookupPayload({ results: [{ trackId: 6799659224, version: "1.2.3" }] }, "6799659224") !== "1.2.3" ||
+    versionFromLookupPayload({ results: [{ trackId: 6799659224, version: "<b>1.2</b>" }] }, "6799659224") !== null ||
+    versionFromLookupPayload({ results: [{ trackId: 1, version: "9.9" }] }, "6799659224") !== null) {
+  throw new Error("App Store version metadata validation is incorrect");
+}
+
 const required = [
   "dist/index.html",
   "dist/journal/index.html",
@@ -148,15 +158,24 @@ for (const name of ["PrimePlayer", "MagicDesk", "Picturium", "Michael Silvester"
   if (!homepage.includes(name)) throw new Error("Homepage is missing " + name);
 }
 
-const primePlayerPage = await readFile(join(root, "dist", "apps", "primeplayer", "index.html"), "utf8");
-const primePlayerStoreUrl = "https://apps.apple.com/app/id6799107071";
-if (!primePlayerPage.includes('href="' + primePlayerStoreUrl + '"') ||
-    !primePlayerPage.includes('target="_blank" rel="noopener noreferrer" aria-label="PrimePlayer App Store"')) {
-  throw new Error("PrimePlayer page is missing its safe App Store link");
-}
-for (const label of ["前往 App Store", "View on the App Store"]) {
-  if (!primePlayerPage.includes(label)) {
-    throw new Error("PrimePlayer App Store link is missing label: " + label);
+// Product-store links are release-critical: validate the configured ID, the
+// Chinese storefront variant, and safe external-link attributes together.
+for (const product of [
+  { slug: "primeplayer", name: "PrimePlayer", id: "6799107071" },
+  { slug: "magicdesk", name: "MagicDesk", id: "6799659224" },
+]) {
+  const page = await readFile(join(root, "dist", "apps", product.slug, "index.html"), "utf8");
+  const storeUrl = "https://apps.apple.com/app/id" + product.id;
+  const zhStoreUrl = "https://apps.apple.com/cn/app/id" + product.id;
+  if (!page.includes('href="' + storeUrl + '"') ||
+      !page.includes('href="' + zhStoreUrl + '"') ||
+      !page.includes('target="_blank" rel="noopener noreferrer" aria-label="' + product.name + ' App Store"')) {
+    throw new Error(product.name + " page is missing its safe localized App Store links");
+  }
+  for (const label of ["前往 App Store", "View on the App Store"]) {
+    if (!page.includes(label)) {
+      throw new Error(product.name + " App Store link is missing label: " + label);
+    }
   }
 }
 

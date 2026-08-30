@@ -44,10 +44,12 @@ npm run check
 ## 发布前需要确认
 
 - `content/site.mjs`：确认个人简介、支持邮箱与 GitHub 链接。
-- `content/apps.mjs`：PrimePlayer 已配置 App Store 地址；获得正式版本号后更新 `Preview`。MagicDesk 上架后，再替换它的 `#download-coming-soon` 与版本信息。
+- `content/apps.mjs`：PrimePlayer、MagicDesk 与 Picturium 均已配置 App Store 地址；其中的版本号是 Apple 元数据不可用时的构建兜底值。
 - `content/posts/primeplayer-terms-of-use.md` 与 `content/posts/primeplayer-privacy-policy.md`：发布前确认生效日期，并按实际发布地区完成必要的法律审阅。
 - `public/og.png`：如需自定义社交平台分享封面，可替换此图片。
 
 ## 发布到 GitHub Pages
 
 首次发布需要在 GitHub 仓库的 **Settings → Pages → Build and deployment** 中，将 Source 选择为 **GitHub Actions**。之后推送到 `main` 分支即可自动发布。
+
+部署构建会通过 Apple 官方 Lookup API 读取 App Store 当前版本；工作流也会每天定时重新部署，因此商店版本更新后不需要手动修改网站。若 App 尚未公开、Apple 接口超时或返回异常，构建会继续使用 `content/apps.mjs` 中的兜底版本，不会中断发布。本地构建默认不联网；如需手动验证同步，可运行 `FETCH_APP_STORE_METADATA=1 npm run build`。

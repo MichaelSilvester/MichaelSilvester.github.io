@@ -55,9 +55,13 @@ export const apps = [
       en: "MagicDesk imports local images, GIFs, and videos, and adds online images, videos, or webpages by URL. Organize wallpapers with search, tags, favorites, and custom lists, assign them per display, control playback from the menu bar or global shortcuts, and pause motion automatically during games, full-screen work, or battery use.",
     },
     accent: "blue",
-    version: "Preview",
+    version: "1.0.0",
     system: "macOS 14+",
-    download: "#download-coming-soon",
+    appStore: {
+      id: "6799659224",
+      url: "https://apps.apple.com/app/id6799659224",
+      label: { zh: "前往 App Store", en: "View on the App Store" },
+    },
     features: [
       { zh: "图片、GIF、视频与网页壁纸", en: "Image, GIF, video, and webpage wallpapers" },
       { zh: "搜索、标签、收藏与自定义列表", en: "Search, tags, favorites, and custom lists" },

@@ -4,6 +4,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { site } from "../content/site.mjs";
 import { apps } from "../content/apps.mjs";
+import { synchronizeAppStoreVersions } from "./app-store-metadata.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const output = join(root, "dist");
@@ -707,6 +708,12 @@ async function buildFeeds(posts) {
 }
 
 async function main() {
+  // Production builds may resolve public App Store versions dynamically. Local
+  // builds remain offline and use content/apps.mjs unless explicitly enabled.
+  await synchronizeAppStoreVersions(apps, {
+    enabled: process.env.FETCH_APP_STORE_METADATA === "1",
+  });
+
   // dist is generated output only. Cleaning it first prevents deleted articles
   // from surviving a later deployment as stale pages.
   await rm(output, { recursive: true, force: true });
