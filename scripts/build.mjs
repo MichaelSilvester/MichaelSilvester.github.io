@@ -437,7 +437,7 @@ function homePage(posts) {
       bi("为 iPhone、iPad 与 Mac<br>打造的 App。", "Apps built for<br>iPhone, iPad, and Mac.", "h2") +
       '<p>FEATURES · GUIDES · DEVELOPMENT</p>' +
       '<p class="view-counter manifesto-views" data-slug="home" hidden>' +
-        bi('全站 <b class="view-counter-count"></b> 次访问', '<b class="view-counter-count"></b> visits site-wide') +
+        bi('<b class="view-counter-count"></b> 次访问', '<b class="view-counter-count"></b> visits') +
       "</p></section>";
 
   return pageDocument({
