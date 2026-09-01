@@ -307,19 +307,29 @@ function header(active) {
   );
 }
 
-function footer() {
+function footer(active) {
   const year = new Date().getFullYear();
+  // Keep footer navigation aligned with header labels and bilingual consistency: Journal -> App -> About.
+  // The footer always links to the OTHER three top-level sections (out of
+  // Home / Journal / Apps / About): whichever section is active (and its
+  // subpages, which share the same active key) hides its own link since
+  // the header nav already covers it.
+  const footerNavItems = [
+    { key: "home", href: "/", zh: "首页", en: "Home" },
+    { key: "journal", href: "/journal/", zh: "文章", en: "Journal" },
+    { key: "apps", href: "/apps/", zh: "App", en: "Apps" },
+    { key: "about", href: "/about/", zh: "关于", en: "About" },
+  ];
+  const footerLinks = footerNavItems
+    .filter((item) => item.key !== active)
+    .map((item) => '<a href="' + item.href + '">' + bi(item.zh, item.en) + "</a>")
+    .join("");
   return (
     '<footer class="site-footer">' +
       '<div><div class="footer-name">Michael Silvester</div>' +
         bi(appNameList("zh") + " 开发者。", "Developer of " + appNameList("en") + ".", "p") +
       "</div>" +
-      '<div class="footer-links">' +
-        '<a href="/journal/">' + bi("文章", "Journal") + "</a>" +
-        '<a href="/apps/">' + bi("App", "Apps") + "</a>" +
-        // Keep footer navigation aligned with header labels and bilingual consistency: Journal -> App -> About.
-        '<a href="/about/">' + bi("关于", "About") + "</a>" +
-      "</div>" +
+      '<div class="footer-links">' + footerLinks + "</div>" +
       '<p class="copyright">© ' + year + " Michael Silvester</p>" +
     "</footer>"
   );
@@ -355,7 +365,7 @@ function pageDocument({ titleZh, titleEn, descriptionZh, descriptionEn, path, ac
     "</head>" +
     '<body class="' + bodyClass + '">' +
       '<a class="skip-link" href="#content">' + bi("跳到正文", "Skip to content") + "</a>" +
-      '<div class="page-shell">' + header(active) + '<main id="content">' + content + "</main>" + footer() + "</div>" +
+      '<div class="page-shell">' + header(active) + '<main id="content">' + content + "</main>" + footer(active) + "</div>" +
       '<script src="' + versionedAsset("/assets/site.js") + '" defer></script>' +
     "</body></html>"
   );
@@ -432,7 +442,6 @@ function homePage(posts) {
         '<div class="stage-note"><span>01</span>' + bi("正在构建", "Now building") + "</div>" +
         '<div class="stage-card stage-prime">' + visual(apps[0], true) + "</div>" +
         '<div class="stage-card stage-magic">' + visual(apps[1], true) + "</div>" +
-        '<div class="stage-caption"><span>' + apps[0].name + '</span><i></i><span>' + apps[1].name + "</span></div>" +
       "</div>" +
     "</section>" +
     '<section class="ticker" aria-hidden="true"><div>' + apps.map((app) => app.name.toUpperCase()).join(" <i>✦</i> ") + " <i>✦</i> " +
