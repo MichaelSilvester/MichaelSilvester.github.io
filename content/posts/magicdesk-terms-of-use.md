@@ -1,6 +1,7 @@
 ---
 date: 2026-08-05 11:56:00
 app: magicdesk
+pin: -1
 category: legal
 featured: false
 titleZh: MagicDesk 用户协议

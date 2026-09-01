@@ -1,6 +1,7 @@
 ---
 date: 2026-08-05 11:54:00
 app: primeplayer
+pin: -1
 category: support
 featured: false
 titleZh: PrimePlayer 开发者技术支持

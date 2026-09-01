@@ -148,6 +148,15 @@ function renderPostText(field, tag, className) {
   return "<" + tag + ' class="' + className + '">' + escapeHtml(field.zh) + "</" + tag + ">";
 }
 
+function parsePin(value, filename) {
+  if (value === undefined || value === "") return 0;
+  const pin = Number(value);
+  if (!Number.isInteger(pin)) {
+    throw new Error(filename + " pin must be an integer.");
+  }
+  return pin;
+}
+
 function parsePostDate(value, filename) {
   const match = String(value || "").match(/^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2}):(\d{2}))?$/);
   if (!match) {
@@ -220,6 +229,7 @@ function parsePost(source, filename) {
     titleText: resolvePostText(meta, "title", filename),
     excerptText: resolvePostText(meta, "excerpt", filename),
     published: parsePostDate(meta.date, filename),
+    pin: parsePin(meta.pin, filename),
     featured: meta.featured === "true",
     bodyZh,
     bodyEn,
@@ -738,6 +748,7 @@ async function main() {
     posts.push(parsePost(await readFile(join(root, "content", "posts", filename), "utf8"), filename));
   }
   posts.sort((a, b) =>
+    (b.pin - a.pin) ||
     b.published.sortValue.localeCompare(a.published.sortValue) ||
     a.routeName.localeCompare(b.routeName)
   );

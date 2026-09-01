@@ -1,6 +1,7 @@
 ---
 date: 2026-08-05 11:55:00
 app: magicdesk
+pin: -1
 category: legal
 featured: false
 titleZh: MagicDesk 隐私政策

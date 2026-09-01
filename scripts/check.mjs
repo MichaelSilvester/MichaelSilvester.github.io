@@ -72,16 +72,21 @@ for (const filename of sourcePosts) {
   const source = await readFile(join(root, "content", "posts", filename), "utf8");
   const category = source.match(/^category\s*:\s*(.+)$/m);
   const app = source.match(/^app\s*:\s*(.+)$/m);
+  const pinLine = source.match(/^pin\s*:\s*(.+)$/m);
   if (!category) throw new Error(filename + " is missing an article category");
   if (!app) throw new Error(filename + " is missing an app association");
+  const pin = pinLine ? Number(pinLine[1].trim()) : 0;
+  if (!Number.isInteger(pin)) throw new Error(filename + " pin must be an integer");
   sourceRecords.push({
     routeName: filename.replace(/\.md$/i, ""),
     sortValue: articleSortValue(source, filename),
     category: category[1].trim(),
     app: app[1].trim(),
+    pin,
   });
 }
 sourceRecords.sort((a, b) =>
+  (b.pin - a.pin) ||
   b.sortValue.localeCompare(a.sortValue) ||
   a.routeName.localeCompare(b.routeName)
 );

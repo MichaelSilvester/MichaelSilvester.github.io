@@ -1,6 +1,7 @@
 ---
 date: 2026-08-05 11:57:30
 app: picturium
+pin: -1
 category: support
 featured: false
 titleZh: Picturium 开发者技术支持

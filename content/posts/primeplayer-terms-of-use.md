@@ -1,6 +1,7 @@
 ---
 date: 2026-08-05 11:53:00
 app: primeplayer
+pin: -1
 category: legal
 featured: false
 titleZh: PrimePlayer 用户协议

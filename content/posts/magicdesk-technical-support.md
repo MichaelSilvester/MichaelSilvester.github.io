@@ -1,6 +1,7 @@
 ---
 date: 2026-08-05 11:57:00
 app: magicdesk
+pin: -1
 category: support
 featured: false
 titleZh: MagicDesk 开发者技术支持

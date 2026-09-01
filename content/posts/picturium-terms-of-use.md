@@ -1,6 +1,7 @@
 ---
 date: 2026-08-05 11:57:20
 app: picturium
+pin: -1
 category: legal
 featured: false
 titleZh: Picturium 用户协议
