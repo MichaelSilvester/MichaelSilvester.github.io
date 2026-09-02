@@ -20,7 +20,7 @@ Picturium（以下简称“本 App”）是一款适用于 macOS 的图片查看
 
 ## 1. 政策摘要
 
-当前版本的 Picturium：
+Picturium 的设计与数据处理方式如下：
 
 - 不要求注册账户或登录；
 - 不包含广告、第三方行为分析 SDK 或跟踪代码；
@@ -156,7 +156,7 @@ If you have questions about this Privacy Policy, contact us at [MichaelSilvester
 
 ## 1. Summary
 
-The current version of Picturium:
+Picturium is designed and handles data as follows:
 
 - Does not require account registration or sign-in;
 - Does not include advertising, third-party behavioral analytics SDKs, or tracking code;

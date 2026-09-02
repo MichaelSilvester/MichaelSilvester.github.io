@@ -12,8 +12,6 @@ excerptEn: Picturium FAQs, purchase assistance, and troubleshooting for opening 
 <!-- zh -->
 使用 Picturium 时遇到问题？你可以在下面查看常见问题、购买帮助和故障排查步骤，也可以联系我们获取进一步支持。
 
-**适用版本：Picturium 1.0.0**
-
 **系统要求：macOS 15.0 或更高版本**
 
 ## 快速开始
@@ -30,7 +28,7 @@ Picturium 支持三种打开方式：
 
 ### 支持哪些文件格式？
 
-当前版本支持：
+Picturium 支持：
 
 - **常见图片：** JPG/JPEG、PNG、GIF、HEIC/HEIF、TIFF、BMP、WebP、ICO、ICNS；
 - **相机 RAW 格式：** DNG、RAW、ARW、CR2、CR3、NEF、ORF、RAF、RW2、SRW；
@@ -141,8 +139,6 @@ Picturium 在 App Store 上以一次性付费下载的方式提供，具体价�
 <!-- en -->
 Having trouble using Picturium? Find answers to common questions, purchase assistance, and troubleshooting steps below, or contact us for further support.
 
-**Applies to: Picturium 1.0.0**
-
 **System Requirement: macOS 15.0 or later**
 
 ## Quick Start
@@ -159,7 +155,7 @@ Opening a folder shows its images as thumbnails; select one to view and edit it.
 
 ### Which file formats are supported?
 
-The current version supports:
+Picturium supports:
 
 - **Common images:** JPG/JPEG, PNG, GIF, HEIC/HEIF, TIFF, BMP, WebP, ICO, and ICNS;
 - **Camera RAW formats:** DNG, RAW, ARW, CR2, CR3, NEF, ORF, RAF, RW2, and SRW; and

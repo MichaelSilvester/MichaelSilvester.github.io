@@ -12,8 +12,6 @@ excerptEn: MagicDesk FAQs, purchase assistance, and troubleshooting for imports,
 <!-- zh -->
 使用 MagicDesk 时遇到问题？你可以在下面查看常见问题、购买帮助和故障排查步骤，也可以联系我们获取进一步支持。
 
-**适用版本：MagicDesk 1.0.0**
-
 **系统要求：macOS 14.0 或更高版本**
 
 ## 快速开始
@@ -29,7 +27,7 @@ MagicDesk 支持两种添加方式：
 
 ### 支持哪些文件格式？
 
-当前版本支持：
+MagicDesk 支持：
 
 - **视频：** MP4、MOV、M4V、AVI；
 - **图片：** JPG/JPEG、PNG、WebP、HEIC/HEIF、BMP、TIFF、AVIF；
@@ -248,8 +246,6 @@ MagicDesk 可以驻留在菜单栏并继续显示动态壁纸。你可以在“�
 <!-- en -->
 Having trouble using MagicDesk? Find answers to common questions, purchase assistance, and troubleshooting steps below, or contact us for further support.
 
-**Applies to: MagicDesk 1.0.0**
-
 **System Requirement: macOS 14.0 or later**
 
 ## Quick Start
@@ -265,7 +261,7 @@ After adding an item, select it, choose Fill, Fit, or Stretch in the preview, an
 
 ### Which file formats are supported?
 
-The current version supports:
+MagicDesk supports:
 
 - **Video:** MP4, MOV, M4V, and AVI;
 - **Images:** JPG/JPEG, PNG, WebP, HEIC/HEIF, BMP, TIFF, and AVIF;

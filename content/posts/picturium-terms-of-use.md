@@ -6,12 +6,10 @@ category: legal
 featured: false
 titleZh: Picturium 用户协议
 titleEn: Picturium Terms of Use
-excerptZh: Picturium 1.0 版用户协议，说明软件许可、图片内容、一次性购买、隐私、责任与争议解决等条款。
-excerptEn: Version 1.0 of the Picturium Terms of Use, covering the software license, image content, the one-time purchase, privacy, liability, and dispute resolution.
+excerptZh: Picturium 用户协议，说明软件许可、图片内容、一次性购买、隐私、责任与争议解决等条款。
+excerptEn: The Picturium Terms of Use, covering the software license, image content, the one-time purchase, privacy, liability, and dispute resolution.
 ---
 <!-- zh -->
-**版本：1.0**
-
 **最后更新：2026 年 8 月 5 日**
 
 **生效日期：2026 年 8 月 5 日**
@@ -41,7 +39,7 @@ Picturium 是一款面向 macOS 的图片查看与编辑工具。其功能可能
 - 通过系统分享功能分享图片；
 - 请求 Finder 打开所选图片的系统“显示简介”窗口。
 
-具体功能、支持格式、界面和可用性以你当前安装的 App 版本为准。
+具体功能、支持格式、界面和可用性以 App 的实际说明为准。
 
 Picturium 不承诺对所有相机型号、图片编码方式或第三方生成的文件提供永久兼容。
 
@@ -194,8 +192,6 @@ Picturium 是一款一次性付费下载的 App，不包含应用内购买或订
 相关文档：[Picturium 隐私政策](/journal/picturium-privacy-policy/)
 
 <!-- en -->
-**Version: 1.0**
-
 **Last Updated: August 5, 2026**
 
 **Effective Date: August 5, 2026**
@@ -225,7 +221,7 @@ Picturium is an image viewing and editing tool for macOS. Its features may inclu
 - Sharing images through the system share feature; and
 - Asking Finder to open the system “Get Info” window for a selected image.
 
-Actual features, supported formats, interface, and availability are determined by your currently installed App version.
+Actual features, supported formats, interface, and availability are determined by the App’s actual functionality.
 
 Picturium does not promise permanent compatibility with every camera model, image encoding, or third-party generated file.
 

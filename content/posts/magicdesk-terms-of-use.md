@@ -6,12 +6,10 @@ category: legal
 featured: false
 titleZh: MagicDesk 用户协议
 titleEn: MagicDesk Terms of Use
-excerptZh: MagicDesk 1.0 版用户协议，说明软件许可、壁纸内容、远程服务、付费功能、隐私、责任与争议解决等条款。
-excerptEn: Version 1.0 of the MagicDesk Terms of Use, covering the software license, wallpaper content, remote services, paid features, privacy, liability, and dispute resolution.
+excerptZh: MagicDesk 用户协议，说明软件许可、壁纸内容、远程服务、付费功能、隐私、责任与争议解决等条款。
+excerptEn: The MagicDesk Terms of Use, covering the software license, wallpaper content, remote services, paid features, privacy, liability, and dispute resolution.
 ---
 <!-- zh -->
-**版本：1.0**
-
 **最后更新：2026 年 8 月 5 日**
 
 **生效日期：2026 年 8 月 5 日**
@@ -43,7 +41,7 @@ MagicDesk 是一款面向 macOS 的动态壁纸播放器和管理工具。其功
 - 在电池供电、游戏或全屏工作时自动暂停动态内容；
 - 购买和恢复“永久移除水印”权益。
 
-具体功能、支持格式、界面和可用性以你当前安装的 App 版本及购买页面为准。
+具体功能、支持格式、界面和可用性以 App 与购买页面的实际说明为准。
 
 MagicDesk 不提供对所有内容格式、编码方式、网站、脚本或远程 URL 的永久兼容，也不运营你添加的第三方内容服务器。
 
@@ -114,9 +112,9 @@ HTTP 连接不提供传输加密。你应优先使用 HTTPS，并仅添加可信
 
 ## 8. 免费功能与付费权益
 
-本 App 可能同时提供免费功能和付费权益。当前版本可能提供“永久移除水印”的一次性非消耗型 App 内购买。
+本 App 可能同时提供免费功能和付费权益，并可能提供“永久移除水印”的一次性非消耗型 App 内购买。
 
-权益内容、价格、货币、税费、促销和可用地区以 App Store 购买页面及当前 App 版本的实际说明为准。购买成功并经 StoreKit 验证后，本 App 会移除其桌面水印；购买不会授予你对第三方壁纸内容的任何额外权利。
+权益内容、价格、货币、税费、促销和可用地区以 App Store 购买页面及 App 内的实际说明为准。购买成功并经 StoreKit 验证后，本 App 会移除其桌面水印；购买不会授予你对第三方壁纸内容的任何额外权利。
 
 开发者可能在未来调整免费功能、付费项目或产品名称。已经合法购买的非消耗型权益将按照购买时的说明、Apple 规则和适用法律处理，不会被不合理减损。
 
@@ -232,8 +230,6 @@ App 内购买由 Apple 通过 App Store 和 StoreKit 处理。你需要使用有
 相关文档：[MagicDesk 隐私政策](/journal/magicdesk-privacy-policy/)
 
 <!-- en -->
-**Version: 1.0**
-
 **Last Updated: August 5, 2026**
 
 **Effective Date: August 5, 2026**
@@ -265,7 +261,7 @@ MagicDesk is a live-wallpaper player and management tool for macOS. Its features
 - Automatically pausing moving content while on battery power, gaming, or working full screen; and
 - Purchasing and restoring the “Permanently Remove Watermark” entitlement.
 
-Actual features, supported formats, interface, and availability are determined by your current App version and purchase screen.
+Actual features, supported formats, interface, and availability are determined by the App and purchase screen.
 
 MagicDesk does not promise permanent compatibility with every content format, encoding, website, script, or remote URL and does not operate the third-party content servers you add.
 
@@ -336,9 +332,9 @@ Except where applicable law provides otherwise, the Developer is not responsible
 
 ## 8. Free Features and Paid Entitlements
 
-The App may provide both free features and paid entitlements. The current version may offer “Permanently Remove Watermark” as a one-time, non-consumable in-app purchase.
+The App may provide both free features and paid entitlements, and may offer “Permanently Remove Watermark” as a one-time, non-consumable in-app purchase.
 
-Benefits, price, currency, taxes, promotions, and regional availability are determined by the App Store purchase screen and the actual description in the current App version. After a successful StoreKit-verified purchase, the App removes its desktop watermark. The purchase does not grant any additional rights to third-party wallpaper content.
+Benefits, price, currency, taxes, promotions, and regional availability are determined by the App Store purchase screen and the actual description in the App. After a successful StoreKit-verified purchase, the App removes its desktop watermark. The purchase does not grant any additional rights to third-party wallpaper content.
 
 The Developer may adjust free features, paid items, or product names in the future. A lawfully acquired non-consumable entitlement will be handled according to the description at purchase, Apple rules, and applicable law, and will not be unreasonably reduced.
 

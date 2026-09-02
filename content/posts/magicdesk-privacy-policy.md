@@ -20,7 +20,7 @@ MagicDesk（以下简称“本 App”）是一款适用于 macOS 的动态壁纸
 
 ## 1. 政策摘要
 
-当前版本的 MagicDesk：
+MagicDesk 的设计与数据处理方式如下：
 
 - 不要求注册开发者账号；
 - 不包含开发者集成的广告或第三方行为分析 SDK；
@@ -92,7 +92,7 @@ MagicDesk 当前可能提供“永久移除水印”的一次性非消耗型 App
 - 当前前台 App 是否存在接近全屏的窗口；
 - App 激活、空间切换和设备唤醒等系统状态变化。
 
-这些信息仅用于决定是否暂停或恢复动态壁纸。当前版本不会把前台 App 或电源状态发送到开发者服务器。
+这些信息仅用于决定是否暂停或恢复动态壁纸。本 App 不会把前台 App 或电源状态发送到开发者服务器。
 
 ## 9. 诊断日志
 
@@ -179,7 +179,7 @@ If you have questions about this Privacy Policy, contact us at [MichaelSilvester
 
 ## 1. Summary
 
-The current version of MagicDesk:
+MagicDesk is designed and handles data as follows:
 
 - Does not require a developer-operated account;
 - Does not include developer-integrated advertising or third-party behavioral analytics SDKs;
@@ -251,7 +251,7 @@ If you enable the relevant power-saving options, the App locally checks:
 - Whether the frontmost app has a window that is approximately full screen; and
 - System-state changes such as app activation, Space changes, and device wake events.
 
-This information is used only to decide whether to pause or resume live wallpapers. The current version does not send the frontmost app or power state to a developer server.
+This information is used only to decide whether to pause or resume live wallpapers. The App does not send the frontmost app or power state to a developer server.
 
 ## 9. Diagnostic Logs
 

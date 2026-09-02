@@ -108,4 +108,35 @@ export const apps = [
       { zh: "裁剪、涂鸦、文字与马赛克编辑", en: "Crop, draw, text, and mosaic editing" },
     ],
   },
+  {
+    slug: "texturo",
+    name: "Texturo",
+    monogram: "T",
+    icon: "/assets/icons/texturo.png",
+    platform: "iPhone · iPad",
+    status: { zh: "即将推出", en: "Coming soon" },
+    kind: { zh: "Markdown 编辑器", en: "Markdown editor" },
+    tagline: {
+      zh: "写作、预览与整理 Markdown 文稿。",
+      en: "Write, preview, and organize Markdown documents.",
+    },
+    description: {
+      zh: "面向 iPhone 和 iPad 的 Markdown 编辑与文稿管理工具，提供沉浸式写作、实时预览、源码编辑、格式工具栏和文档大纲，并支持多级文件夹、排序置顶、私密备注、废纸篓与文件夹加密。",
+      en: "A Markdown editor and document manager for iPhone and iPad, with immersive writing, live preview, source editing, a formatting toolbar, and document outlines, plus nested folders, sorting and move-to-top controls, private notes, Trash, and encrypted folders.",
+    },
+    story: {
+      zh: "Texturo 将 Markdown 写作与本地文稿库结合：可以在沉浸式、实时预览、纯预览和源码模式间切换，通过格式工具栏与文档大纲完成编辑；文稿可使用多级文件夹、自定义排序、修改置顶和私密备注整理。内容保存在设备本地，废纸篓支持恢复，加密文件夹与受保护的废纸篓可使用密码或系统生物识别验证。",
+      en: "Texturo combines Markdown writing with a local document library. Switch between immersive, live-preview, preview-only, and source modes, and edit with a formatting toolbar and document outline. Organize documents with nested folders, custom sorting, move-edited-to-top behavior, and private notes. Content stays on your device, Trash supports recovery, and encrypted folders and protected Trash can use passwords or system biometric authentication.",
+    },
+    accent: "sage",
+    version: appStoreVersionFallback,
+    system: "iOS / iPadOS 17+",
+    download: "#download-coming-soon",
+    features: [
+      { zh: "沉浸式、实时预览、纯预览与源码模式", en: "Immersive, live preview, preview-only, and source modes" },
+      { zh: "格式工具栏、语法高亮与文档大纲", en: "Formatting toolbar, syntax highlighting, and document outline" },
+      { zh: "多级文件夹、自定义排序与修改置顶", en: "Nested folders, custom sorting, and move edited documents to top" },
+      { zh: "本地存储、废纸篓与加密文件夹", en: "Local storage, Trash, and encrypted folders" },
+    ],
+  },
 ];

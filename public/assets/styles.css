@@ -10,6 +10,7 @@
   --lime: #c9ff3d;
   --blue: #789bff;
   --orange: #ff8b5c;
+  --sage: #a7bd91;
   --white: #fffdf7;
   --display: "Manrope", "Noto Sans SC", sans-serif;
   --serif: "Playfair Display", Georgia, serif;
@@ -628,6 +629,136 @@ h2 em {
   background: #f2c75c;
 }
 
+.texturo-visual {
+  display: grid;
+  place-items: end center;
+  padding: 5% 13% 0;
+  background:
+    radial-gradient(circle at 74% 17%, rgba(255, 255, 255, 0.9), transparent 24%),
+    linear-gradient(145deg, #dce8d2 0%, #718a62 100%);
+}
+
+.texturo-device {
+  width: min(76%, 360px);
+  height: 94%;
+  overflow: hidden;
+  border: 5px solid #171815;
+  border-bottom: 0;
+  border-radius: 27px 27px 0 0;
+  background: #f8f5ed;
+  color: #20211e;
+  box-shadow: 0 24px 42px rgba(25, 32, 21, 0.35);
+}
+
+.texturo-status,
+.texturo-nav,
+.texturo-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.texturo-status {
+  height: 9%;
+  justify-content: space-between;
+  padding: 0 8%;
+  font: 600 0.43rem var(--display);
+}
+
+.texturo-status i {
+  width: 27%;
+  height: 8px;
+  border-radius: 99px;
+  background: #171815;
+}
+
+.texturo-status b,
+.texturo-nav b {
+  font-size: 0.45rem;
+  letter-spacing: 0.06em;
+}
+
+.texturo-nav {
+  height: 12%;
+  justify-content: space-between;
+  padding: 0 7%;
+  border-bottom: 1px solid rgba(32, 33, 30, 0.12);
+}
+
+.texturo-nav span {
+  color: #617653;
+  font-size: 1rem;
+}
+
+.texturo-nav strong {
+  font-size: 0.55rem;
+}
+
+.texturo-editor {
+  height: 67%;
+  padding: 12% 11%;
+}
+
+.texturo-editor small {
+  color: #718465;
+  font: 500 0.38rem var(--mono);
+  letter-spacing: 0.08em;
+}
+
+.texturo-editor h4 {
+  margin: 7% 0 6%;
+  font-size: clamp(0.85rem, 2.2vw, 1.35rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.texturo-editor p {
+  margin: 0;
+  color: #65665f;
+  font-size: clamp(0.38rem, 0.75vw, 0.58rem);
+  line-height: 1.65;
+}
+
+.texturo-editor ul {
+  display: grid;
+  gap: 0.42rem;
+  margin: 10% 0 0;
+  padding: 0;
+  list-style: none;
+  font: 500 clamp(0.38rem, 0.72vw, 0.55rem) var(--mono);
+}
+
+.texturo-editor li {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.texturo-editor li i {
+  width: 0.35rem;
+  height: 0.35rem;
+  border: 1px solid #708563;
+  border-radius: 50%;
+}
+
+.texturo-toolbar {
+  height: 12%;
+  justify-content: space-around;
+  border-top: 1px solid rgba(32, 33, 30, 0.12);
+  color: #5d6f52;
+  font: 600 clamp(0.42rem, 0.8vw, 0.62rem) var(--mono);
+}
+
+.texturo-toolbar em {
+  font-family: Georgia, serif;
+}
+
+.texturo-toolbar code,
+.texturo-toolbar em,
+.texturo-toolbar b,
+.texturo-toolbar i {
+  font-style: normal;
+}
+
 .ticker {
   width: calc(100% + 4rem);
   margin-left: -2rem;
@@ -856,6 +987,10 @@ h2 em {
   background: var(--orange);
 }
 
+.app-card.app-sage {
+  background: var(--sage);
+}
+
 .app-card-copy {
   padding: 2.15rem 2.15rem 0;
 }
@@ -894,6 +1029,10 @@ h2 em {
 
 .app-orange .app-icon {
   color: #ffc4a3;
+}
+
+.app-sage .app-icon {
+  color: #dce9ce;
 }
 
 .app-card h3 {
@@ -1489,6 +1628,10 @@ h2 em {
   background: var(--orange);
 }
 
+.app-showcase.app-sage {
+  background: var(--sage);
+}
+
 .app-showcase-copy {
   position: relative;
   z-index: 2;
@@ -1641,6 +1784,10 @@ h2 em {
 
 .app-hero.app-orange .app-hero-visual {
   background: var(--orange);
+}
+
+.app-hero.app-sage .app-hero-visual {
+  background: var(--sage);
 }
 
 .app-hero-visual .product-visual {

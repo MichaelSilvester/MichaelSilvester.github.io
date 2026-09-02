@@ -19,6 +19,7 @@ const required = [
   "dist/apps/primeplayer/index.html",
   "dist/apps/magicdesk/index.html",
   "dist/apps/picturium/index.html",
+  "dist/apps/texturo/index.html",
   "dist/about/index.html",
   "dist/sitemap.xml",
   "dist/rss.xml",
@@ -48,6 +49,9 @@ const requiredProductDocuments = [
   "picturium-privacy-policy",
   "picturium-terms-of-use",
   "picturium-technical-support",
+  "texturo-privacy-policy",
+  "texturo-terms-of-use",
+  "texturo-technical-support",
 ];
 for (const routeName of requiredProductDocuments) {
   if (!postDirs.some((entry) => entry.isDirectory() && entry.name === routeName)) {
@@ -159,7 +163,7 @@ for (let index = 0; index < sourceRecords.length; index += 1) {
 }
 
 const homepage = await readFile(join(root, "dist", "index.html"), "utf8");
-for (const name of ["PrimePlayer", "MagicDesk", "Picturium", "Michael Silvester"]) {
+for (const name of ["PrimePlayer", "MagicDesk", "Picturium", "Texturo", "Michael Silvester"]) {
   if (!homepage.includes(name)) throw new Error("Homepage is missing " + name);
 }
 

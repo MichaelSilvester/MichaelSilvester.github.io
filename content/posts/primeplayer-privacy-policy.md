@@ -18,7 +18,7 @@ excerptEn: How PrimePlayer handles local media, settings, permissions, network p
 
 ## 1. 概述
 
-当前版本的 PrimePlayer：
+PrimePlayer 的设计与数据处理方式如下：
 
 - 不要求注册账户或登录；
 - 不使用开发者运营的云服务器；
@@ -196,7 +196,7 @@ If you have any questions about this Privacy Policy, contact us at [MichaelSilve
 
 ## 1. Overview
 
-The current version of PrimePlayer:
+PrimePlayer is designed and handles data as follows:
 
 - Does not require account registration or sign-in;
 - Does not use developer-operated cloud servers;

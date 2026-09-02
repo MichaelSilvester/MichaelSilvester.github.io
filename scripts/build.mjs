@@ -382,6 +382,19 @@ function visual(app, compact = false) {
       "</div>"
     );
   }
+  if (app.slug === "texturo") {
+    // Texturo is an iPhone/iPad editor, so its preview uses a document workspace
+    // instead of the desktop chrome shared by the macOS products below.
+    return (
+      '<div class="product-visual texturo-visual' + compactClass + '" aria-hidden="true">' +
+        '<div class="texturo-device"><div class="texturo-status"><span>9:41</span><i></i><b>•••</b></div>' +
+        '<div class="texturo-nav"><span>‹</span><strong>Texturo</strong><b>•••</b></div>' +
+        '<div class="texturo-editor"><small># PRODUCT NOTES</small><h4>Write with focus.</h4><p>Markdown stays clear while preview and source remain one tap away.</p>' +
+        '<ul><li><i></i> Local documents</li><li><i></i> Nested folders</li><li><i></i> Protected writing</li></ul></div>' +
+        '<div class="texturo-toolbar"><span>B</span><em>I</em><code>&lt;/&gt;</code><b>☰</b><i>＋</i></div></div>' +
+      "</div>"
+    );
+  }
   // Any non-PrimePlayer app currently shares this generic macOS desktop-chrome
   // mockup; the menu-bar label reads from app.name so it never misdescribes a
   // future Mac app (like Picturium) as "MagicDesk".

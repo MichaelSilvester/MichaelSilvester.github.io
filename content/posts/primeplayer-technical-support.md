@@ -12,6 +12,8 @@ excerptEn: PrimePlayer FAQs, subscription assistance, and troubleshooting for im
 <!-- zh -->
 使用 PrimePlayer 时遇到问题？你可以在下面查看常见问题、订阅帮助和故障排查步骤，也可以联系我们获取进一步支持。
 
+**系统要求：iOS/iPadOS 18.0 或更高版本**
+
 ## 常见问题
 
 ### 如何导入视频？
@@ -116,6 +118,8 @@ PrimePlayer 支持 HTTP/HTTPS（包括 HLS/M3U8）、FTP/FTPS、RTP、RTSP/RTSPS
 
 <!-- en -->
 Having trouble using PrimePlayer? Find answers to common questions, subscription assistance, and troubleshooting steps below, or contact us for further support.
+
+**System Requirements: iOS/iPadOS 18.0 or later**
 
 ## Frequently Asked Questions
 

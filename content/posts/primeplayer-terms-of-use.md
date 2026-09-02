@@ -6,12 +6,10 @@ category: legal
 featured: false
 titleZh: PrimePlayer 用户协议
 titleEn: PrimePlayer Terms of Use
-excerptZh: PrimePlayer 1.0 版用户协议，说明软件许可、内容使用、付费服务、隐私、责任与争议解决等条款。
-excerptEn: Version 1.0 of the PrimePlayer Terms of Use, covering the software license, media use, paid services, privacy, liability, and dispute resolution.
+excerptZh: PrimePlayer 用户协议，说明软件许可、内容使用、付费服务、隐私、责任与争议解决等条款。
+excerptEn: The PrimePlayer Terms of Use, covering the software license, media use, paid services, privacy, liability, and dispute resolution.
 ---
 <!-- zh -->
-**版本：1.0**
-
 **最后更新：2026 年 8 月 5 日**
 
 **生效日期：2026 年 8 月 5 日**
@@ -108,7 +106,7 @@ HTTP、FTP 等协议可能不提供加密传输。使用未加密协议时，媒
 
 ## 7. 免费功能与 PrimePlayer Pro
 
-本 App 可能同时提供免费功能和付费的 PrimePlayer Pro 功能。会员权益以购买页面、App Store 产品信息以及当前 App 版本中的实际说明为准。
+本 App 可能同时提供免费功能和付费的 PrimePlayer Pro 功能。会员权益以购买页面、App Store 产品信息以及 App 内的实际说明为准。
 
 开发者可以依法调整免费和付费功能，但除法律、平台政策、安全问题或不可抗力要求变更外，不会任意剥夺你已购买且仍在有效服务期内的服务。
 
@@ -263,8 +261,6 @@ Apple 并非本协议所约定 App 功能的提供者。除 Apple 条款或适�
 联系邮箱：[MichaelSilvesterCN+PrimePlayer@gmail.com](mailto:MichaelSilvesterCN+PrimePlayer@gmail.com)
 
 <!-- en -->
-**Version: 1.0**
-
 **Last Updated: August 5, 2026**
 
 **Effective Date: August 5, 2026**
@@ -361,7 +357,7 @@ Network features may use mobile data or generate carrier charges. You are respon
 
 ## 7. Free Features and PrimePlayer Pro
 
-The App may provide both free features and paid PrimePlayer Pro features. Membership benefits are determined by the purchase screen, App Store product information, and the actual description in the current App version.
+The App may provide both free features and paid PrimePlayer Pro features. Membership benefits are determined by the purchase screen, App Store product information, and the actual description in the App.
 
 The Developer may lawfully adjust free and paid features but will not arbitrarily deprive you of services already purchased and still within their valid service period, except where changes are required by law, platform policy, security concerns, or force majeure.
 
