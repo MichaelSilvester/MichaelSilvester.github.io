@@ -172,6 +172,8 @@ for (const name of ["PrimePlayer", "MagicDesk", "Picturium", "Texturo", "Michael
 for (const product of [
   { slug: "primeplayer", name: "PrimePlayer", id: "6799107071" },
   { slug: "magicdesk", name: "MagicDesk", id: "6799659224" },
+  { slug: "picturium", name: "Picturium", id: "6800329040" },
+  { slug: "texturo", name: "Texturo", id: "6807040807" },
 ]) {
   const page = await readFile(join(root, "dist", "apps", product.slug, "index.html"), "utf8");
   const storeUrl = "https://apps.apple.com/app/id" + product.id;

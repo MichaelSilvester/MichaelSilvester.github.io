@@ -44,7 +44,7 @@ npm run check
 ## 发布前需要确认
 
 - `content/site.mjs`：确认个人简介、支持邮箱与 GitHub 链接。
-- `content/apps.mjs`：PrimePlayer、MagicDesk 与 Picturium 已配置 App Store 地址，Texturo 在公开商店地址确认前显示为即将推出；其中的版本号是 Apple 元数据不可用时的构建兜底值。
+- `content/apps.mjs`：PrimePlayer、MagicDesk、Picturium 与 Texturo 均已配置 App Store 地址；其中的版本号是 Apple 元数据不可用时的构建兜底值。
 - `content/posts/primeplayer-terms-of-use.md` 与 `content/posts/primeplayer-privacy-policy.md`：发布前确认生效日期，并按实际发布地区完成必要的法律审阅。
 - `public/og.png`：如需自定义社交平台分享封面，可替换此图片。
 

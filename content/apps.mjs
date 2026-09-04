@@ -114,7 +114,7 @@ export const apps = [
     monogram: "T",
     icon: "/assets/icons/texturo.png",
     platform: "iPhone · iPad",
-    status: { zh: "即将推出", en: "Coming soon" },
+    status: { zh: "持续开发中", en: "In active development" },
     kind: { zh: "Markdown 编辑器", en: "Markdown editor" },
     tagline: {
       zh: "写作、预览与整理 Markdown 文稿。",
@@ -131,7 +131,11 @@ export const apps = [
     accent: "sage",
     version: appStoreVersionFallback,
     system: "iOS / iPadOS 17+",
-    download: "#download-coming-soon",
+    appStore: {
+      id: "6807040807",
+      url: "https://apps.apple.com/app/id6807040807",
+      label: { zh: "前往 App Store", en: "View on the App Store" },
+    },
     features: [
       { zh: "沉浸式、实时预览、纯预览与源码模式", en: "Immersive, live preview, preview-only, and source modes" },
       { zh: "格式工具栏、语法高亮与文档大纲", en: "Formatting toolbar, syntax highlighting, and document outline" },
