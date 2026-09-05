@@ -126,8 +126,13 @@ for (const category of new Set(sourceRecords.map((post) => post.category))) {
 }
 for (const app of new Set(sourceRecords.map((post) => post.app).filter((value) => value !== "general"))) {
   const expectedLinks = sourceRecords.filter((post) => post.app === app).length;
-  const link = 'class="article-app" href="/journal/?filter=' + encodeURIComponent(app) + '"';
-  if (journal.split(link).length - 1 !== expectedLinks) {
+  const linkPattern = new RegExp(
+    '<a class="article-app platform-(?:ios|mac)" href="/journal/\\?filter=' +
+      encodeURIComponent(app).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") +
+      '"'
+  );
+  const actualLinks = (journal.match(new RegExp(linkPattern.source, "g")) || []).length;
+  if (actualLinks !== expectedLinks) {
     throw new Error("Journal cards have incorrect links for app " + app);
   }
 }
