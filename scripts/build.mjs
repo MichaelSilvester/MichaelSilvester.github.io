@@ -553,9 +553,10 @@ function postPage(post, allPosts) {
   const previous = position > 0 ? allPosts[position - 1] : null;
   const next = position < allPosts.length - 1 ? allPosts[position + 1] : null;
   const category = articleCategory(post);
+  const kickerShapeClass = app ? " platform-" + appPlatformType(app) : "";
   const content =
     '<article class="post"><header class="post-header section"><a class="back-link" href="/journal/">← ' + bi("所有文章", "All writing") + "</a>" +
-      '<div class="post-kicker"><a href="' + journalFilterUrl(post.category) + '">' + bi(category.zh, category.en) + "</a>" +
+      '<div class="post-kicker"><a class="post-kicker-category' + kickerShapeClass + '" href="' + journalFilterUrl(post.category) + '">' + bi(category.zh, category.en) + "</a>" +
         (app ? '<a class="platform-' + appPlatformType(app) + '" href="' + journalFilterUrl(app.slug) + '">' + appPlatformBadge(app) + "</a>" : "") +
       "</div>" +
       renderPostText(post.titleText, "h1", "post-title") +
