@@ -407,13 +407,29 @@ function visual(app, compact = false) {
   );
 }
 
+// An app's "view item" badge (article cards, post kicker) shows a small
+// glyph so iOS/iPadOS apps and macOS apps read as visually distinct at a
+// glance, without inventing a new color language on top of each app's own
+// accent color.
+function appPlatformType(app) {
+  return app.platform.indexOf("macOS") !== -1 ? "mac" : "ios";
+}
+
+function appPlatformBadge(app) {
+  const type = appPlatformType(app);
+  const icon = type === "mac"
+    ? '<svg class="platform-icon" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="9" rx="1.2"/><path d="M5.5 14h5M8 11.5V14"/></svg>'
+    : '<svg class="platform-icon" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="1.5" width="8" height="13" rx="1.6"/><path d="M6.5 12.3h3"/></svg>';
+  return icon + '<span>' + app.name + "</span>";
+}
+
 function articleCard(post, large = false) {
   const app = apps.find((item) => item.slug === post.app);
   const category = articleCategory(post);
   return (
     '<article class="article-card' + (large ? " article-card-large" : "") + '" data-category="' + post.category + '" data-app="' + post.app + '">' +
       '<div class="article-card-top"><a class="eyebrow article-category" href="' + journalFilterUrl(post.category) + '">' + bi(category.zh, category.en) + "</a>" +
-        (app ? '<a class="article-app" href="' + journalFilterUrl(app.slug) + '">' + app.name + "</a>" : "") +
+        (app ? '<a class="article-app platform-' + appPlatformType(app) + '" href="' + journalFilterUrl(app.slug) + '">' + appPlatformBadge(app) + "</a>" : "") +
       "</div>" +
       '<a class="article-card-link" href="' + postUrl(post) + '" aria-label="' + escapeHtml(post.titleText.zh) + '">' +
         renderPostText(post.titleText, "h3", "article-title") +
@@ -540,7 +556,7 @@ function postPage(post, allPosts) {
   const content =
     '<article class="post"><header class="post-header section"><a class="back-link" href="/journal/">← ' + bi("所有文章", "All writing") + "</a>" +
       '<div class="post-kicker"><a href="' + journalFilterUrl(post.category) + '">' + bi(category.zh, category.en) + "</a>" +
-        (app ? '<a href="' + journalFilterUrl(app.slug) + '">' + app.name + "</a>" : "") +
+        (app ? '<a class="platform-' + appPlatformType(app) + '" href="' + journalFilterUrl(app.slug) + '">' + appPlatformBadge(app) + "</a>" : "") +
       "</div>" +
       renderPostText(post.titleText, "h1", "post-title") +
       renderPostText(post.excerptText, "p", "post-deck") +

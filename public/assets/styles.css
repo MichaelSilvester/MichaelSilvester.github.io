@@ -900,6 +900,9 @@ h2 em {
 }
 
 .article-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
   padding: 0.38rem 0.68rem;
   border: 1px solid var(--line);
   border-radius: 99px;
@@ -910,6 +913,24 @@ h2 em {
 .article-app:hover {
   background: var(--ink);
   color: var(--paper);
+}
+
+/* iOS/iPadOS apps keep the phone glyph and full pill shape; macOS apps get a
+   squared badge with a monitor glyph, so the two platforms read apart at a
+   glance without adding a second color language. */
+.article-app.platform-mac {
+  border-radius: 0;
+}
+
+.platform-icon {
+  width: 0.85em;
+  height: 0.85em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .article-title {
@@ -1369,6 +1390,9 @@ h2 em {
 
 .post-kicker > span,
 .post-kicker > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
   padding: 0.45rem 0.75rem;
   border: 1px solid var(--line);
   border-radius: 99px;
@@ -1380,6 +1404,10 @@ h2 em {
   border-color: var(--ink);
   background: var(--ink);
   color: var(--paper);
+}
+
+.post-kicker > a.platform-mac {
+  border-radius: 0;
 }
 
 .post-title {
