@@ -350,7 +350,7 @@ h2 em {
   border: 1px solid var(--ink);
   border-radius: 99px;
   background: var(--paper);
-  font: 500 var(--font-meta) var(--mono);
+  font: 500 var(--font-ui) var(--mono);
   white-space: nowrap;
 }
 
