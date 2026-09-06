@@ -5,8 +5,9 @@ on:
     branches: ["main"]
   workflow_dispatch:
   schedule:
-        # GitHub cron uses UTC; this runs daily at 00:00 in Asia/Shanghai.
-    - cron: "0 16 * * *"
+    # GitHub cron uses UTC; this runs daily at 01:00 in Asia/Shanghai.
+    - cron: "0 17 * * *"
+
 permissions:
   contents: read
   pages: write
