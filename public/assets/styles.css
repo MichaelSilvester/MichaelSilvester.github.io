@@ -341,25 +341,25 @@ h2 em {
   z-index: 5;
   top: 0;
   left: 1rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.72rem 1rem;
+  gap: 0.55rem;
+  width: max-content;
+  max-width: calc(100% - 1rem);
+  padding: 0.72rem 1.1rem;
   border: 1px solid var(--ink);
   border-radius: 99px;
   background: var(--paper);
   font: 500 var(--font-meta) var(--mono);
-  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.stage-note > span {
-  display: grid;
-  place-items: center;
-  width: 25px;
-  height: 25px;
+.stage-note-dot {
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: var(--lime);
-  color: #111;
+  flex-shrink: 0;
 }
 
 .stage-card {

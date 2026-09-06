@@ -468,7 +468,7 @@ function homePage(posts) {
       // The stage only ever spotlights the first two apps in content/apps.mjs;
       // that is a deliberate, fixed two-card layout, not an exhaustive list.
       '<div class="hero-stage" aria-label="App previews">' +
-        '<div class="stage-note"><span>01</span>' + bi("正在构建", "Now building") + "</div>" +
+        '<div class="stage-note"><span class="stage-note-dot" aria-hidden="true"></span>' + bi("持续开发中", "Developing") + "</div>" +
         '<div class="stage-card stage-prime">' + visual(apps[0], true) + "</div>" +
         '<div class="stage-card stage-magic">' + visual(apps[1], true) + "</div>" +
       "</div>" +
