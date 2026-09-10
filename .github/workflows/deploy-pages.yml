@@ -5,8 +5,10 @@ on:
     branches: ["main"]
   workflow_dispatch:
   schedule:
-    # GitHub cron uses UTC; this runs daily at 01:00 in Asia/Shanghai.
-    - cron: "0 17 * * *"
+    # GitHub cron uses UTC. These two runs land at 06:05 and 18:05 in
+    # Asia/Shanghai (UTC+8), refreshing App Store versions twice a day.
+    - cron: "5 22 * * *"
+    - cron: "5 10 * * *"
 
 permissions:
   contents: read
