@@ -1481,6 +1481,122 @@ h2 em {
   font-weight: 600;
 }
 
+/* Like button. Same reveal rule as the view counter: [hidden] has to be
+   reasserted inside .post-byline, whose author rules would otherwise win, so
+   the control never flashes before the count arrives. */
+.post-byline .like-button[hidden] {
+  display: none;
+}
+
+.like-button {
+  position: relative;
+  margin: 1rem 0 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  /* Reserve the same width for short and compact counts to avoid layout shifts. */
+  width: 72px;
+  min-height: 76px;
+  padding: 0.65rem 0.25rem;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: 500 var(--font-ui) var(--display);
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+/* Override the byline's block spans without overriding language visibility. */
+.post-byline .like-button span {
+  display: inline;
+}
+
+.like-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  display: block;
+  overflow: visible;
+  transition: transform 180ms ease, fill 180ms ease;
+}
+
+/* Hover is pointer-only so touch devices do not retain a hover appearance. */
+@media (hover: hover) {
+  .like-button:hover:not(:disabled) {
+    color: var(--ink);
+    background: var(--paper-deep);
+  }
+}
+
+.like-button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.like-button:active:not(:disabled) .like-icon {
+  transform: scale(0.94);
+}
+
+.like-button:disabled {
+  cursor: default;
+}
+
+/* Use the theme's ink: black on paper, light ink on dark backgrounds. */
+.like-button.is-liked {
+  color: var(--ink);
+}
+
+.like-button.is-liked .like-icon {
+  fill: currentColor;
+}
+
+.like-button.just-liked .like-icon {
+  animation: like-pop 380ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes like-pop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .like-button,
+  .like-icon,
+  .like-button.just-liked .like-icon {
+    transition: none;
+    animation: none;
+  }
+
+  .like-button:active:not(:disabled) .like-icon {
+    transform: none;
+  }
+}
+
+.like-count {
+  color: var(--ink-soft);
+  font: 400 var(--font-meta)/1 var(--mono);
+  font-variant-numeric: tabular-nums;
+  width: 100%;
+  text-align: center;
+}
+
+.like-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
 .post-rule {
   height: 1px;
   margin: 0 4.25rem;

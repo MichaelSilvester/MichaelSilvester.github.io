@@ -545,6 +545,17 @@ function adjacentPostLink(target, direction) {
   );
 }
 
+// Rounded hand and cuff retain their detail at 32px. Only the hand fills
+// when liked; the cuff stays open so the silhouette remains easy to read.
+function likeIcon() {
+  return (
+    '<svg class="like-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true" focusable="false">' +
+      '<path d="M8 10.5c2-1.6 3.3-3.5 3.8-6.2a1.4 1.4 0 0 1 2.7-.1c.4 1.4.2 3-.3 4.8h4a2.5 2.5 0 0 1 2.4 3.1l-1.2 4.8a3 3 0 0 1-2.9 2.3h-5c-1.3 0-2.5-.4-3.5-1.1Z"/>' +
+      '<rect x="2.5" y="10" width="5.5" height="10" rx="1.6" fill="none"/>' +
+    "</svg>"
+  );
+}
+
 function postPage(post, allPosts) {
   const app = apps.find((item) => item.slug === post.app);
   const position = allPosts.indexOf(post);
@@ -567,7 +578,16 @@ function postPage(post, allPosts) {
         '<span class="view-counter" data-slug="' + escapeHtml(post.routeName) + '" hidden> · ' +
           bi('<b class="view-counter-count"></b> 次阅读', '<b class="view-counter-count"></b> views') +
         "</span>" +
-      '</span></div></div></aside><div class="post-body">' +
+      "</span>" +
+      // Like button: shares the single counter request with the view counter
+      // above, so both reveal together once the Worker answers. Hidden until
+      // then, and a failed request leaves no dead control in the byline.
+      '<button class="like-button" type="button" data-slug="' + escapeHtml(post.routeName) + '" aria-pressed="false" hidden>' +
+        likeIcon() +
+        '<span class="like-label">' + bi("赞", "Like") + "</span>" +
+        '<b class="like-count">0</b>' +
+      "</button>" +
+      '</div></div></aside><div class="post-body">' +
       bi(markdownToHtml(post.bodyZh), markdownToHtml(post.bodyEn), "div", "prose") + "</div>" +
     "</div></article>" +
     (app ? '<section class="section related-app"><div class="related-app-copy"><span class="eyebrow">' + bi("文中提到", "Mentioned in this story") + "</span><h2>" + app.name + "</h2>" +
