@@ -6,13 +6,13 @@ category: legal
 featured: false
 titleZh: Texturo 隐私政策
 titleEn: Texturo Privacy Policy
-excerptZh: 说明 Texturo 如何在 iPhone 和 iPad 本地处理你的 Markdown 文稿、文件夹保护与设置，App 不含网络权限，以及 App Store 购买与用户选择。
-excerptEn: How Texturo handles your Markdown documents, folder protection, and settings locally on iPhone and iPad. The App has no network entitlement; also covers App Store purchases and your choices.
+excerptZh: 说明 Texturo 如何处理本地文稿、文件夹保护、语音转文字、版本历史及 App Store 购买相关信息。
+excerptEn: How Texturo handles local documents, folder protection, Speech to Text, Version History, and App Store purchase information.
 ---
 <!-- zh -->
-**最后更新：2026 年 9 月 2 日**
+**最后更新：2026 年 9 月 13 日**
 
-**生效日期：2026 年 9 月 2 日**
+**生效日期：2026 年 9 月 13 日**
 
 Texturo（以下简称“本 App”）是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工具。本隐私政策说明本 App 如何处理与你有关的信息。
 
@@ -29,7 +29,7 @@ Texturo 的设计与数据处理方式如下：
 - 不会把你的文稿内容、文件夹结构或备注上传到开发者运营的服务器；
 - 不会向数据经纪商出售、出租或提供你的个人信息。
 
-你的文稿、文件夹、备注、浏览记录和设置完全存储在你的设备本地。你的购买由 Apple App Store 处理，开发者不运营收集你使用数据的服务器。
+你的文稿、文件夹、备注、浏览记录、版本历史和设置存储在设备本地。你主动使用语音转文字时，语音识别可能由 Apple 提供的服务处理；购买由 Apple App Store 处理。开发者不运营收集你使用数据的服务器。
 
 ## 2. 本 App 在本地处理的信息
 
@@ -42,15 +42,20 @@ Texturo 的设计与数据处理方式如下：
 - 文件夹名称与文件夹层级结构；
 - 你为文稿添加的备注；
 - 最近打开和编辑的文稿记录；
+- 文稿的版本历史和已锁定的历史更改；
 - 加入废纸篓的文稿与文件夹、删除时间，以及项目是否来自加密文件夹。
 
 这些信息存储在 App 沙盒内的本地文件系统中，不会上传到开发者运营的服务器。
 
 ### 2.2 设置与偏好
 
-本 App 会在你的设备本地保存外观（浅色/深色/跟随系统）、字体样式与字号、编辑器显示模式、保存方式（自动保存或手动保存）、文稿时间显示、排序与移到顶部行为、文稿删除方式、废纸篓加密、界面语言以及最近使用的代码块语言等偏好设置。
+本 App 会在你的设备本地保存外观（浅色/深色/跟随系统）、字体样式与字号、编辑器显示模式、保存方式（自动保存或手动保存）、文稿时间显示、排序与移到顶部行为、文稿删除方式、废纸篓加密、界面语言、语音识别语言以及最近使用的代码块语言等偏好设置。
 
-### 2.3 文件夹保护
+### 2.3 语音转文字
+
+仅当你主动开启语音转文字时，本 App 才会使用麦克风采集语音并请求系统语音识别，将识别结果插入文稿。Texturo 不会把语音保存为录音文件。支持设备端识别时，语音在设备上处理；否则，音频可能由 Apple 的语音识别服务处理。你写入文稿的识别结果会作为文稿内容保存在设备本地。
+
+### 2.4 文件夹保护
 
 启用密码保护时：
 
@@ -62,7 +67,7 @@ Texturo 的设计与数据处理方式如下：
 
 使用 Face ID 或 Touch ID 时，身份验证由 iOS 执行。本 App 只会收到成功、失败或取消等验证结果，不会访问、存储或上传你的面部或指纹数据。文件夹保护在 App 进入后台时会自动重新锁定，需要重新验证才能再次访问。开启废纸篓加密后，如果废纸篓包含来自加密文件夹的项目，浏览前同样需要通过系统生物识别验证。
 
-### 2.4 会员与购买信息
+### 2.5 会员与购买信息
 
 Texturo Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit 处理。
 
@@ -76,7 +81,7 @@ Texturo Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit 
 
 生物识别信息由 iOS 安全隔区和系统身份验证服务管理，本 App 无法访问底层面部信息。
 
-本 App 不请求系统相册、摄像头、麦克风、位置或本地网络权限。你可以随时在 iOS“设置”中查看或撤回 Face ID 权限；撤回后仍可使用密码验证访问受保护的文件夹。
+使用语音转文字时，本 App 会请求麦克风和语音识别权限；未授权时无法使用该功能。你可以随时在 iOS“设置”中查看或撤回这些权限。本 App 不请求系统相册、摄像头、位置或本地网络权限。撤回 Face ID 权限后，仍可使用密码验证访问受保护的文件夹。
 
 ## 4. 信息共享与披露
 
@@ -84,7 +89,7 @@ Texturo Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit 
 
 信息仅可能在以下情况下传输或披露：
 
-- **Apple 服务：** Apple 处理购买、订阅、恢复购买和 App Store 服务；
+- **Apple 服务：** Apple 处理购买、订阅、恢复购买和 App Store 服务；当设备端语音识别不可用时，Apple 也可能处理你主动提交识别的音频；
 - **你主动发起的分享：** 当你使用系统分享或导出到“文件”App 时，文稿文件会传递给你选择的目标 App 或位置；
 - **法律要求：** 我们可能遵守适用法律、法律程序、法院命令或有权公共机关提出的合法要求。
 
@@ -113,10 +118,11 @@ Texturo Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit 
 - 删除文稿备注或浏览记录；
 - 移除文件夹保护；
 - 在 iOS“设置”中撤回 Face ID 权限；
+- 在 iOS“设置”中撤回麦克风或语音识别权限；
 - 在 Apple 账户的订阅设置中管理或取消 Texturo Pro 订阅；
 - 联系我们，请求访问、更正、删除、限制处理或其他隐私相关协助。
 
-本 App 不提供账户系统，因此没有账户删除流程。由于所有信息存储在你的设备本地，我们通常无法远程访问或删除这些信息。
+本 App 不提供账户系统，因此没有账户删除流程。文稿、版本历史与设置等本地信息通常无法由我们远程访问或删除。
 
 ## 7. 安全
 
@@ -141,7 +147,7 @@ Texturo Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit 
 
 我们不运营收集 Texturo 用户数据的服务器，因此不会将你存储在本地的文稿或设置传输到其他国家或地区。
 
-当你使用 Apple 提供的服务（例如 App Store 购买）时，相关信息可能在 Apple 服务运营所在地处理，此类处理受 Apple 隐私政策约束。
+当你使用 Apple 提供的服务（例如 App Store 购买或语音识别）时，相关信息可能在 Apple 服务运营所在地处理，此类处理受 Apple 隐私政策约束。
 
 ## 10. 本政策的变更
 
@@ -156,9 +162,9 @@ Texturo Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit 
 联系邮箱：[MichaelSilvesterCN+Texturo@gmail.com](mailto:MichaelSilvesterCN+Texturo@gmail.com)
 
 <!-- en -->
-**Last Updated: September 2, 2026**
+**Last Updated: September 13, 2026**
 
-**Effective Date: September 2, 2026**
+**Effective Date: September 13, 2026**
 
 Texturo (the “App”) is a Markdown document editing and management tool for iPhone and iPad. This Privacy Policy explains how the App handles information relating to you.
 
@@ -175,7 +181,7 @@ Texturo is designed and handles data as follows:
 - Does not upload your document content, folder structure, or notes to developer-operated servers;
 - Does not sell, rent, or provide your personal information to data brokers.
 
-Your documents, folders, notes, browsing history, and settings are stored entirely on your device. Your purchases are processed by the Apple App Store, and the Developer does not operate servers that collect your usage data.
+Your documents, folders, notes, browsing history, version history, and settings are stored on your device. When you choose to use Speech to Text, speech recognition may be handled by an Apple service. Purchases are processed by the Apple App Store. The Developer does not operate servers that collect your usage data.
 
 ## 2. Information Processed by the App
 
@@ -188,15 +194,20 @@ To provide Markdown editing, browsing, and organizing features, the App may proc
 - Folder names and folder hierarchy;
 - Notes you add to documents;
 - A record of recently opened and edited documents;
+- Document version history and locked historical changes;
 - Documents and folders moved to Trash, their deletion time, and whether they came from an encrypted folder.
 
 This information is stored in the local file system within the App sandbox and is not uploaded to developer-operated servers.
 
 ### 2.2 Settings and Preferences
 
-The App stores appearance (light, dark, or system), font style and size, editor display mode, save mode (automatic or manual), document timestamp display, sorting and move-to-top behavior, document deletion behavior, Trash protection, interface language, and recently used code-block languages locally on your device.
+The App stores appearance (light, dark, or system), font style and size, editor display mode, save mode (automatic or manual), document timestamp display, sorting and move-to-top behavior, document deletion behavior, Trash protection, interface language, speech recognition language, and recently used code-block languages locally on your device.
 
-### 2.3 Folder Protection
+### 2.3 Speech to Text
+
+Only when you choose to start Speech to Text does the App use the microphone to capture speech and request system speech recognition, inserting the recognized words into your document. Texturo does not save speech as an audio recording. Speech is processed on your device when on-device recognition is supported; otherwise, audio may be processed by Apple’s speech recognition service. Recognized words added to a document are stored locally as document content.
+
+### 2.4 Folder Protection
 
 When you enable password protection:
 
@@ -208,7 +219,7 @@ Do not include identity numbers, contact details, or other sensitive personal in
 
 When you use Face ID or Touch ID, authentication is performed by iOS. The App receives only the authentication result, such as success, failure, or cancellation. The App does not access, store, or upload your facial or fingerprint data. Folder protection automatically re-locks when the App enters the background and requires re-authentication to access again. When Trash protection is enabled and Trash contains items from encrypted folders, system biometric authentication is also required before browsing it.
 
-### 2.4 Membership and Purchase Information
+### 2.5 Membership and Purchase Information
 
 Texturo Pro subscriptions, purchases, billing, and purchase restoration are processed by Apple through StoreKit.
 
@@ -222,7 +233,7 @@ The App requests permission to use Face ID only when you choose biometric authen
 
 Biometric information is managed by the iOS Secure Enclave and system authentication services. The App cannot access the underlying facial information.
 
-The App does not request access to your Photo Library, camera, microphone, location, or local network. You can review or withdraw Face ID permission at any time in iOS Settings; after withdrawal, you can still access protected folders using password authentication.
+When you use Speech to Text, the App requests microphone and speech recognition permissions; the feature is unavailable without them. You can review or withdraw these permissions at any time in iOS Settings. The App does not request access to your Photo Library, camera, location, or local network. After withdrawing Face ID permission, you can still access protected folders using password authentication.
 
 ## 4. Information Sharing and Disclosure
 
@@ -230,7 +241,7 @@ We do not share your information for advertising, marketing, or data-brokerage p
 
 Information may be transmitted or disclosed only in the following circumstances:
 
-- **Apple services:** Apple processes purchases, subscriptions, purchase restoration, and App Store services;
+- **Apple services:** Apple processes purchases, subscriptions, purchase restoration, and App Store services; Apple may also process audio you choose to submit for recognition when on-device speech recognition is unavailable;
 - **Sharing you initiate:** When you use system sharing or export to the Files app, the document file is delivered to the destination app or location you choose;
 - **Legal requirements:** We may comply with applicable laws, legal proceedings, court orders, or lawful requests from authorized public authorities.
 
@@ -259,10 +270,11 @@ You can manage information processed by the App by:
 - Deleting document notes or browsing history;
 - Removing folder protection;
 - Withdrawing Face ID permission in iOS Settings;
+- Withdrawing microphone or speech recognition permission in iOS Settings;
 - Managing or canceling a Texturo Pro subscription in your Apple Account subscription settings;
 - Contacting us to request access, correction, deletion, restriction, or other privacy-related assistance.
 
-The App does not provide an account system, so there is no account deletion process. Because all information is stored locally on your device, we generally cannot remotely access or delete that information.
+The App does not provide an account system, so there is no account deletion process. We generally cannot remotely access or delete locally stored information such as documents, version history, and settings.
 
 ## 7. Security
 
@@ -287,7 +299,7 @@ If a parent or guardian believes that a child has provided personal information 
 
 We do not operate servers that collect Texturo user data and therefore do not transfer your locally stored documents or settings across national borders.
 
-When you use services provided by Apple, such as App Store purchases, relevant information may be processed in the locations where Apple’s services operate. Such processing is governed by the Apple Privacy Policy.
+When you use services provided by Apple, such as App Store purchases or speech recognition, relevant information may be processed in the locations where Apple’s services operate. Such processing is governed by the Apple Privacy Policy.
 
 ## 10. Changes to This Policy
 
