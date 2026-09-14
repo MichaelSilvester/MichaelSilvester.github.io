@@ -1,20 +1,20 @@
 ---
 date: 2026-09-02 03:21:41
-app: texturo
+app: deepnote
 pin: -1
 category: legal
 featured: false
-titleZh: Texturo 用户协议
-titleEn: Texturo Terms of Use
-excerptZh: Texturo 用户协议，说明软件许可、用户内容、订阅与一次性购买、隐私、责任与争议解决等条款。
-excerptEn: The Texturo Terms of Use, covering the software license, user content, subscriptions and one-time purchases, privacy, liability, and dispute resolution.
+titleZh: DeepNote 用户协议
+titleEn: DeepNote Terms of Use
+excerptZh: DeepNote 用户协议，说明软件许可、用户内容、订阅与一次性购买、隐私、责任与争议解决等条款。
+excerptEn: The DeepNote Terms of Use, covering the software license, user content, subscriptions and one-time purchases, privacy, liability, and dispute resolution.
 ---
 <!-- zh -->
 **最后更新：2026 年 9 月 2 日**
 
 **生效日期：2026 年 9 月 2 日**
 
-欢迎使用 Texturo。
+欢迎使用 DeepNote。
 
 请在使用本 App 前仔细阅读本协议，尤其是有关自动续订、本地数据备份、风险提示、责任限制、服务变更和争议解决的条款。
 
@@ -22,13 +22,13 @@ excerptEn: The Texturo Terms of Use, covering the software license, user content
 
 ## 1. 适用范围
 
-本协议适用于 Texturo 主应用、Markdown 编辑与文稿库功能、会员功能、相关更新以及开发者提供的支持服务。
+本协议适用于 DeepNote 主应用、Markdown 编辑与文稿库功能、会员功能、相关更新以及开发者提供的支持服务。
 
 如果你通过 Apple App Store 获取本 App，你的软件许可还受 Apple 标准最终用户许可协议和适用的 Apple 媒体服务条款约束。本协议主要约定 App 功能、付费服务以及你与开发者之间的关系。
 
 ## 2. 服务说明
 
-Texturo 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工具。其功能可能包括：
+DeepNote 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工具。其功能可能包括：
 
 - 创建、编辑和管理 Markdown 文稿；
 - 使用格式工具栏插入标题、加粗、斜体、行内代码、代码块（支持语法高亮）、引用、无序/有序/任务列表、链接、图片、删除线、分隔线和表格；
@@ -43,7 +43,7 @@ Texturo 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工
 - 对包含加密文件夹项目的废纸篓启用生物识别保护；
 - 将文稿导出到“文件”App 或通过系统分享发送给其他 App；
 - 自定义外观、字体、字号、语言和保存方式；
-- 购买和使用 Texturo Pro 功能。
+- 购买和使用 DeepNote Pro 功能。
 
 可用功能可能因 App 版本、设备型号、操作系统、地区和 App Store 产品配置而异。
 
@@ -76,7 +76,7 @@ Texturo 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工
 
 ## 5. 本地数据、备份与访问保护
 
-Texturo 的文稿、文件夹、备注和设置完全存储在你的设备本地，本 App 不提供 iCloud 或其他云同步服务。
+DeepNote 的文稿、文件夹、备注和设置完全存储在你的设备本地，本 App 不提供 iCloud 或其他云同步服务。
 
 你有责任根据内容的重要程度，通过导出或系统分享等方式进行适当备份。设备损坏、存储空间不足、系统故障、用户误操作、App 被移除或操作系统清理都可能造成本地数据丢失。
 
@@ -86,11 +86,11 @@ Texturo 的文稿、文件夹、备注和设置完全存储在你的设备本地
 
 Face ID 和 Touch ID 验证由 iOS 执行。文件夹保护和废纸篓加密属于 App 内访问控制措施，不能替代设备密码、系统数据保护、可靠备份或专业加密，也无法保证在任何情况下都绝对安全。
 
-## 6. 免费功能与 Texturo Pro
+## 6. 免费功能与 DeepNote Pro
 
 本 App 的免费版本最多支持创建 1 个文件夹和 5 篇文稿。
 
-Texturo Pro 是本 App 提供的付费订阅或一次性购买服务，解锁的功能可能包括：
+DeepNote Pro 是本 App 提供的付费订阅或一次性购买服务，解锁的功能可能包括：
 
 - 创建不限数量的文件夹和嵌套文件夹；
 - 保存不限数量的 Markdown 文稿；
@@ -107,7 +107,7 @@ Texturo Pro 是本 App 提供的付费订阅或一次性购买服务，解锁的
 
 ### 7.1 产品类型
 
-Texturo Pro 可能提供：
+DeepNote Pro 可能提供：
 
 - 按月自动续订订阅；
 - 按年自动续订订阅；
@@ -153,7 +153,7 @@ Texturo Pro 可能提供：
 
 ## 8. 隐私与权限
 
-开发者依据 [Texturo 隐私政策](/journal/texturo-privacy-policy/) 处理与本 App 有关的信息。
+开发者依据 [DeepNote 隐私政策](/journal/deepnote-privacy-policy/) 处理与本 App 有关的信息。
 
 隐私政策说明：
 
@@ -171,7 +171,7 @@ Texturo Pro 可能提供：
 
 未经授权，你不得复制、修改、出售、出租、公开分发或以其他方式利用这些材料。
 
-“Texturo”及相关标识仅可在开发者明确授权的范围内使用。
+“DeepNote”及相关标识仅可在开发者明确授权的范围内使用。
 
 ## 10. 第三方服务与 Apple
 
@@ -247,14 +247,14 @@ Apple 并非本协议所约定 App 功能的提供者。除 Apple 条款或适�
 
 ## 18. 联系我们
 
-联系邮箱：[MichaelSilvesterCN+Texturo@gmail.com](mailto:MichaelSilvesterCN+Texturo@gmail.com)
+联系邮箱：[MichaelSilvesterCN+DeepNote@gmail.com](mailto:MichaelSilvesterCN+DeepNote@gmail.com)
 
 <!-- en -->
 **Last Updated: September 2, 2026**
 
 **Effective Date: September 2, 2026**
 
-Welcome to Texturo.
+Welcome to DeepNote.
 
 Please read these Terms carefully before using the App, particularly the provisions concerning auto-renewal, local data backup, risk notices, limitations of liability, service changes, and dispute resolution.
 
@@ -262,13 +262,13 @@ By downloading, installing, accessing, purchasing, or using the App, you confirm
 
 ## 1. Scope
 
-These Terms apply to the Texturo main application, its Markdown editing and document library features, membership features, related updates, and services provided by the Developer.
+These Terms apply to the DeepNote main application, its Markdown editing and document library features, membership features, related updates, and services provided by the Developer.
 
 If you obtain the App through the Apple App Store, your software license is also subject to the Apple Standard End User License Agreement and the applicable Apple Media Services Terms. These Terms primarily govern App functionality, paid services, and the relationship between you and the Developer.
 
 ## 2. Description of the Service
 
-Texturo is a Markdown document editing and management tool for iPhone and iPad. Its features may include:
+DeepNote is a Markdown document editing and management tool for iPhone and iPad. Its features may include:
 
 - Creating, editing, and managing Markdown documents;
 - Using the formatting toolbar to insert headings, bold, italic, inline code, code blocks with syntax highlighting, quotes, unordered/ordered/task lists, links, images, strikethrough, horizontal rules, and tables;
@@ -283,7 +283,7 @@ Texturo is a Markdown document editing and management tool for iPhone and iPad. 
 - Using biometric protection for Trash when it contains items from encrypted folders;
 - Exporting documents to the Files app or sharing them with other apps through the system share sheet;
 - Customizing appearance, font, font size, language, and save mode;
-- Purchasing and using Texturo Pro features.
+- Purchasing and using DeepNote Pro features.
 
 Available features may vary according to App version, device model, operating system, region, and App Store product configuration.
 
@@ -316,7 +316,7 @@ You are responsible under applicable law for disputes arising from User Content 
 
 ## 5. Local Data, Backups, and Access Protection
 
-Texturo documents, folders, notes, and settings are stored entirely on your device. The App does not provide iCloud or other cloud synchronization services.
+DeepNote documents, folders, notes, and settings are stored entirely on your device. The App does not provide iCloud or other cloud synchronization services.
 
 You are responsible for making appropriate backups, such as by exporting or using system sharing, based on the importance of your content. Device damage, insufficient storage, system failures, user error, App removal, or operating-system cleanup may result in the loss of local data.
 
@@ -326,11 +326,11 @@ Folder-protection passwords are stored in the iOS Keychain. If you forget a pass
 
 Face ID and Touch ID authentication are performed by iOS. Folder protection and protected Trash are in-app access-control measures. They are not substitutes for a device passcode, system data protection, reliable backups, or professional encryption, and they cannot guarantee absolute security in every circumstance.
 
-## 6. Free Features and Texturo Pro
+## 6. Free Features and DeepNote Pro
 
 The free version of the App supports creating up to 1 folder and 5 documents.
 
-Texturo Pro is a paid subscription or one-time purchase offered by the App. Features it may unlock include:
+DeepNote Pro is a paid subscription or one-time purchase offered by the App. Features it may unlock include:
 
 - Creating an unlimited number of folders and nested folders;
 - Saving an unlimited number of Markdown documents;
@@ -347,7 +347,7 @@ The Developer may lawfully adjust free and paid features but will not arbitraril
 
 ### 7.1 Product Types
 
-Texturo Pro may offer:
+DeepNote Pro may offer:
 
 - A monthly auto-renewable subscription;
 - A yearly auto-renewable subscription;
@@ -393,7 +393,7 @@ Refund eligibility and decisions are governed by Apple’s refund policies and t
 
 ## 8. Privacy and Permissions
 
-The Developer processes information relating to the App in accordance with the [Texturo Privacy Policy](/journal/texturo-privacy-policy/).
+The Developer processes information relating to the App in accordance with the [DeepNote Privacy Policy](/journal/deepnote-privacy-policy/).
 
 The Privacy Policy describes:
 
@@ -411,7 +411,7 @@ Except for User Content, the software code, interface design, icons, name, trade
 
 You may not copy, modify, sell, rent, publicly distribute, or otherwise exploit this material without authorization.
 
-“Texturo” and related identifiers may be used only as expressly authorized by the Developer.
+“DeepNote” and related identifiers may be used only as expressly authorized by the Developer.
 
 ## 10. Third-Party Services and Apple
 
@@ -487,4 +487,4 @@ You may also submit a complaint to a consumer association, market-regulation aut
 
 ## 18. Contact Us
 
-Contact Email: [MichaelSilvesterCN+Texturo@gmail.com](mailto:MichaelSilvesterCN+Texturo@gmail.com)
+Contact Email: [MichaelSilvesterCN+DeepNote@gmail.com](mailto:MichaelSilvesterCN+DeepNote@gmail.com)

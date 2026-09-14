@@ -1,15 +1,15 @@
 ---
 date: 2026-09-13
-app: texturo
+app: deepnote
 category: product
 featured: true
-titleZh: Texturo 新增语音转文字与版本历史
-titleEn: New in Texturo: Speech to Text and Version History
+titleZh: DeepNote 新增语音转文字与版本历史
+titleEn: New in DeepNote: Speech to Text and Version History
 excerptZh: 说出想法并选择识别语言；查看、比较并找回文稿修改。
 excerptEn: Speak your ideas with your choice of recognition language, and review, compare, or restore document changes.
 ---
 <!-- zh -->
-Texturo 新增了语音转文字和版本历史：想法可以直接说出来，写过的内容也能随时回头查看。无论是先把灵感记下，还是在反复修改后找回一句喜欢的话，写作都能更从容一些。
+DeepNote 新增了语音转文字和版本历史：想法可以直接说出来，写过的内容也能随时回头查看。无论是先把灵感记下，还是在反复修改后找回一句喜欢的话，写作都能更从容一些。
 
 ## 语音转文字
 
@@ -25,10 +25,10 @@ Texturo 新增了语音转文字和版本历史：想法可以直接说出来，
 
 自动保存会把密集修改归为一组，不会每打一个字就生成一条记录。在自动保存模式下，如果希望接下来的修改单独成组，可以使用“保存版本”。重要的历史记录可以“锁定”，避免被自动清理；如果手动删除记录，当前文稿不会受影响，但以后就无法再通过那条记录找回内容了。
 
-接下来我们还准备为 Texturo 做更炫酷的页面效果和交互，让阅读和编辑都更有意思。敬请期待。
+接下来我们还准备为 DeepNote 做更炫酷的页面效果和交互，让阅读和编辑都更有意思。敬请期待。
 
 <!-- en -->
-Texturo now includes Speech to Text and Version History: you can speak an idea straight into a document and revisit what you have written. Whether you are capturing a thought or looking for a line you liked better before an edit, writing can feel a little more relaxed.
+DeepNote now includes Speech to Text and Version History: you can speak an idea straight into a document and revisit what you have written. Whether you are capturing a thought or looking for a line you liked better before an edit, writing can feel a little more relaxed.
 
 ## Speech to Text
 
@@ -44,4 +44,4 @@ If you only want one passage back, select it and switch to “Full Text” to pr
 
 Automatic saving groups closely spaced edits rather than creating an entry for every keystroke. While automatic saving is on, use “Save Version” if you want your next edits in a separate group. You can “Lock” an important history entry to protect it from automatic cleanup. Manually deleting an entry leaves the current document untouched, but you will no longer be able to restore content from that entry.
 
-Next, we’re preparing more striking page effects and interactions for Texturo to make reading and editing even more engaging. Stay tuned.
+Next, we’re preparing more striking page effects and interactions for DeepNote to make reading and editing even more engaging. Stay tuned.

@@ -109,10 +109,11 @@ export const apps = [
     ],
   },
   {
-    slug: "texturo",
-    name: "Texturo",
-    monogram: "T",
-    icon: "/assets/icons/texturo.png",
+    // DeepNote uses the current brand for routes and assets; the build generates legacy URL redirects.
+    slug: "deepnote",
+    name: "DeepNote",
+    monogram: "D",
+    icon: "/assets/icons/deepnote.png",
     platform: "iPhone · iPad",
     status: { zh: "持续开发中", en: "In active development" },
     kind: { zh: "Markdown 编辑器", en: "Markdown editor" },
@@ -125,8 +126,8 @@ export const apps = [
       en: "A Markdown editor and document manager for iPhone and iPad, with immersive writing, live preview, source editing, a formatting toolbar, and document outlines, plus nested folders, sorting and move-to-top controls, private notes, Trash, and encrypted folders.",
     },
     story: {
-      zh: "Texturo 将 Markdown 写作与本地文稿库结合：可以在沉浸式、实时预览、纯预览和源码模式间切换，通过格式工具栏与文档大纲完成编辑；文稿可使用多级文件夹、自定义排序、修改置顶和私密备注整理。内容保存在设备本地，废纸篓支持恢复，加密文件夹与受保护的废纸篓可使用密码或系统生物识别验证。",
-      en: "Texturo combines Markdown writing with a local document library. Switch between immersive, live-preview, preview-only, and source modes, and edit with a formatting toolbar and document outline. Organize documents with nested folders, custom sorting, move-edited-to-top behavior, and private notes. Content stays on your device, Trash supports recovery, and encrypted folders and protected Trash can use passwords or system biometric authentication.",
+      zh: "DeepNote 将 Markdown 写作与本地文稿库结合：可以在沉浸式、实时预览、纯预览和源码模式间切换，通过格式工具栏与文档大纲完成编辑；文稿可使用多级文件夹、自定义排序、修改置顶和私密备注整理。内容保存在设备本地，废纸篓支持恢复，加密文件夹与受保护的废纸篓可使用密码或系统生物识别验证。",
+      en: "DeepNote combines Markdown writing with a local document library. Switch between immersive, live-preview, preview-only, and source modes, and edit with a formatting toolbar and document outline. Organize documents with nested folders, custom sorting, move-edited-to-top behavior, and private notes. Content stays on your device, Trash supports recovery, and encrypted folders and protected Trash can use passwords or system biometric authentication.",
     },
     accent: "sage",
     version: appStoreVersionFallback,

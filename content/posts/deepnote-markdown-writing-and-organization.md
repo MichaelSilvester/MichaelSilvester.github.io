@@ -1,17 +1,17 @@
 ---
 date: 2026-09-05 22:04:40
-app: texturo
+app: deepnote
 category: product
 featured: true
-titleZh: Texturo：为 iPhone 和 iPad 打造的 Markdown 文稿工具
-titleEn: Texturo: a Markdown writing tool for iPhone and iPad
-excerptZh: 四种显示模式、文件夹整理、加密保护与本地优先的数据处理，Texturo 把写作、校对和归档放进一个不依赖账户和云同步的轻量工具里。
-excerptEn: Four display modes, folder organization, encrypted protection, and local-first data handling — Texturo brings writing, proofreading, and archiving into one lightweight tool that needs no account or cloud sync.
+titleZh: DeepNote：为 iPhone 和 iPad 打造的 Markdown 文稿工具
+titleEn: DeepNote: a Markdown writing tool for iPhone and iPad
+excerptZh: 四种显示模式、文件夹整理、加密保护与本地优先的数据处理，DeepNote 把写作、校对和归档放进一个不依赖账户和云同步的轻量工具里。
+excerptEn: Four display modes, folder organization, encrypted protection, and local-first data handling — DeepNote brings writing, proofreading, and archiving into one lightweight tool that needs no account or cloud sync.
 ---
 <!-- zh -->
 ## 一个只做 Markdown 的工具
 
-Texturo 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工具。它不要求注册账户或登录，不使用开发者运营的云服务器，也不提供 iCloud 或其他云同步——你的文稿、文件夹结构和设置完全保存在设备本地。
+DeepNote 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工具。它不要求注册账户或登录，不使用开发者运营的云服务器，也不提供 iCloud 或其他云同步——你的文稿、文件夹结构和设置完全保存在设备本地。
 
 ## 四种显示模式，适配不同的写作习惯
 
@@ -25,7 +25,7 @@ Texturo 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工
 
 ## 加密文件夹，保护私密内容
 
-升级到 Texturo Pro 后，可以为文件夹设置密码，或在设备支持时启用 Face ID / Touch ID。App 进入后台时，加密文件夹会自动重新锁定，密码只存储在设备本地。
+升级到 DeepNote Pro 后，可以为文件夹设置密码，或在设备支持时启用 Face ID / Touch ID。App 进入后台时，加密文件夹会自动重新锁定，密码只存储在设备本地。
 
 ## 删除与恢复
 
@@ -33,14 +33,14 @@ Texturo 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工
 
 ## 导出与分享
 
-选中一篇或多篇文稿后，可以导出到系统“文件”App，也可以通过系统分享发送到其他 App 或设备，方便把内容带到 Texturo 之外继续使用。
+选中一篇或多篇文稿后，可以导出到系统“文件”App，也可以通过系统分享发送到其他 App 或设备，方便把内容带到 DeepNote 之外继续使用。
 
-Texturo 不含广告、第三方行为分析 SDK 或跟踪代码，也不会把文稿内容上传到开发者运营的服务器。让它成为你的一个安静、专注、值得信赖的写作工具。
+DeepNote 不含广告、第三方行为分析 SDK 或跟踪代码，也不会把文稿内容上传到开发者运营的服务器。让它成为你的一个安静、专注、值得信赖的写作工具。
 
 <!-- en -->
 ## A tool built for Markdown, and nothing else
 
-Texturo is a Markdown document editing and management tool for iPhone and iPad. It requires no account or sign-in, uses no developer-operated cloud servers, and offers no iCloud or other cloud sync — your documents, folder structure, and settings stay entirely on your device.
+DeepNote is a Markdown document editing and management tool for iPhone and iPad. It requires no account or sign-in, uses no developer-operated cloud servers, and offers no iCloud or other cloud sync — your documents, folder structure, and settings stay entirely on your device.
 
 ## Four display modes for different writing habits
 
@@ -54,7 +54,7 @@ Documents can be grouped into folders, arranged in a custom order, or sorted by 
 
 ## Encrypted folders for private content
 
-After upgrading to Texturo Pro, you can protect a folder with a password, or enable Face ID / Touch ID where the device supports it. Encrypted folders automatically re-lock when the App enters the background, and passwords are stored only on your device.
+After upgrading to DeepNote Pro, you can protect a folder with a password, or enable Face ID / Touch ID where the device supports it. Encrypted folders automatically re-lock when the App enters the background, and passwords are stored only on your device.
 
 ## Deletion and recovery
 
@@ -62,6 +62,6 @@ Deleted folders move to Trash first, where they wait for automatic cleanup or ma
 
 ## Export and share
 
-Select one or more documents to export them to the system Files app, or share them to another app or device through the system share sheet — an easy way to move content beyond Texturo.
+Select one or more documents to export them to the system Files app, or share them to another app or device through the system share sheet — an easy way to move content beyond DeepNote.
 
-Texturo has no ads, no third-party analytics SDKs, and no tracking code, and it never uploads your documents to a developer-operated server. I hope it can be a quiet, focused, and trustworthy writing tool.
+DeepNote has no ads, no third-party analytics SDKs, and no tracking code, and it never uploads your documents to a developer-operated server. I hope it can be a quiet, focused, and trustworthy writing tool.

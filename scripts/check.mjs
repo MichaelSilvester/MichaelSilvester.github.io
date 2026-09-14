@@ -1,5 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import { extname, join } from "node:path";
+import { runInNewContext } from "node:vm";
 import { versionFromLookupPayload } from "./app-store-metadata.mjs";
 
 const root = process.cwd();
@@ -19,7 +20,7 @@ const required = [
   "dist/apps/primeplayer/index.html",
   "dist/apps/magicdesk/index.html",
   "dist/apps/picturium/index.html",
-  "dist/apps/texturo/index.html",
+  "dist/apps/deepnote/index.html",
   "dist/about/index.html",
   "dist/sitemap.xml",
   "dist/rss.xml",
@@ -34,7 +35,7 @@ for (const file of required) {
 }
 
 const postDirs = await readdir(join(root, "dist", "journal"), { withFileTypes: true });
-const postPages = postDirs.filter((entry) => entry.isDirectory()).length;
+const postPages = postDirs.filter((entry) => entry.isDirectory() && !entry.name.startsWith("texturo-")).length;
 const sourcePosts = (await readdir(join(root, "content", "posts"))).filter((name) => name.endsWith(".md"));
 if (postPages !== sourcePosts.length) {
   throw new Error("Generated article count does not match content/posts");
@@ -49,9 +50,9 @@ const requiredProductDocuments = [
   "picturium-privacy-policy",
   "picturium-terms-of-use",
   "picturium-technical-support",
-  "texturo-privacy-policy",
-  "texturo-terms-of-use",
-  "texturo-technical-support",
+  "deepnote-privacy-policy",
+  "deepnote-terms-of-use",
+  "deepnote-technical-support",
 ];
 for (const routeName of requiredProductDocuments) {
   if (!postDirs.some((entry) => entry.isDirectory() && entry.name === routeName)) {
@@ -168,7 +169,7 @@ for (let index = 0; index < sourceRecords.length; index += 1) {
 }
 
 const homepage = await readFile(join(root, "dist", "index.html"), "utf8");
-for (const name of ["PrimePlayer", "MagicDesk", "Picturium", "Texturo", "Michael Silvester"]) {
+for (const name of ["PrimePlayer", "MagicDesk", "Picturium", "DeepNote", "Michael Silvester"]) {
   if (!homepage.includes(name)) throw new Error("Homepage is missing " + name);
 }
 
@@ -178,7 +179,7 @@ for (const product of [
   { slug: "primeplayer", name: "PrimePlayer", id: "6799107071" },
   { slug: "magicdesk", name: "MagicDesk", id: "6799659224" },
   { slug: "picturium", name: "Picturium", id: "6800329040" },
-  { slug: "texturo", name: "Texturo", id: "6807040807" },
+  { slug: "deepnote", name: "DeepNote", id: "6807040807" },
 ]) {
   const page = await readFile(join(root, "dist", "apps", product.slug, "index.html"), "utf8");
   const storeUrl = "https://apps.apple.com/app/id" + product.id;
@@ -247,3 +248,37 @@ for (const file of htmlFiles) {
 }
 
 console.log("Checked " + htmlFiles.length + " pages, feeds, bilingual structure, language-aware links, and " + postPages + " article pages.");
+
+// Verify legacy links retain language/anchors and renamed articles retain their counters.
+const renamedRoutes = ["apps/deepnote", ...sourceRecords
+  .filter((post) => post.app === "deepnote")
+  .map((post) => "journal/" + post.routeName)];
+for (const route of renamedRoutes) {
+  const legacy = route.replace("deepnote", "texturo");
+  const html = await readFile(join(root, "dist", legacy, "index.html"), "utf8");
+  const script = html.match(/<script>(location\.replace[\s\S]*?)<\/script>/);
+  if (!script) throw new Error("Missing legacy redirect: " + legacy);
+  for (const language of ["zh", "en"]) {
+    let destination;
+    runInNewContext(script[1], { location: {
+      search: "?lang=" + language, hash: "#details",
+      replace(value) { destination = value; },
+    } });
+    if (destination !== "/" + route + "/?lang=" + language + "#details") {
+      throw new Error("Legacy redirect loses language or anchor: " + legacy);
+    }
+  }
+  if (route.startsWith("journal/")) {
+    const page = await readFile(join(root, "dist", route, "index.html"), "utf8");
+    const counters = [...page.matchAll(/data-slug="([^"]+)"/g)].map((match) => match[1]);
+    if (counters.length !== 2 || counters.some((slug) => slug !== legacy.slice(8))) {
+      throw new Error("Renamed article loses existing statistics: " + route);
+    }
+  }
+}
+for (const feed of ["sitemap.xml", "rss.xml"]) {
+  if ((await readFile(join(root, "dist", feed), "utf8")).includes("texturo")) {
+    throw new Error("Old product URLs remain in " + feed);
+  }
+}
+console.log("Verified DeepNote legacy redirects, language parameters, feeds, and preserved statistics.");

@@ -131,7 +131,8 @@
 
   if (filterButtons.length) {
     const requestedFilter = new URLSearchParams(window.location.search).get("filter") || "all";
-    applyArticleFilter(requestedFilter, false);
+    // Older shared filter links should continue to select the renamed product.
+    applyArticleFilter(requestedFilter === "texturo" ? "deepnote" : requestedFilter, requestedFilter === "texturo");
   }
 
   // Page view counters and article likes: article pages show their own count,
