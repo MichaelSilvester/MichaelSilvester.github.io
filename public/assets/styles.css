@@ -2452,11 +2452,18 @@ h2 em {
     margin-top: 0;
   }
 
+  /* Side by side rather than stacked: the byline is only as tall as the like
+     button, so the row stays compact and the avatar keeps its place. */
   .post-byline-stats {
     flex: 0 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    gap: 0.35rem;
+  }
+
+  .post-byline .view-counter {
+    white-space: nowrap;
   }
 
   .post-byline .view-counter::before {
@@ -2464,7 +2471,10 @@ h2 em {
   }
 
   .post-byline .like-button {
-    margin-top: 0.45rem;
+    margin: 0;
+    width: 60px;
+    min-height: 64px;
+    gap: 0.4rem;
   }
 
   .about-portrait {
