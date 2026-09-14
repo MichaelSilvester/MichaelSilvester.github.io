@@ -1436,7 +1436,14 @@ h2 em {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.05rem;
+  gap: 0;
+}
+
+/* Spacing is on the text block rather than a flex gap: the stats column
+   (views + like) has to stay tight under the meta line in the sidebar layout,
+   while the avatar keeps its original distance from the name. */
+.post-byline-text {
+  margin-top: 1.05rem;
 }
 
 .avatar {
@@ -1471,9 +1478,17 @@ h2 em {
   line-height: 1.35;
 }
 
-.post-byline div:last-child > span {
+.post-byline-meta,
+.post-byline .view-counter {
   color: var(--ink-soft);
   font: 400 var(--font-meta)/1.65 var(--mono);
+}
+
+/* The separator in front of the view count is generated rather than typed into
+   the markup, so the counter can leave the meta line on narrow screens without
+   carrying a stray "·" into its own column. */
+.post-byline .view-counter::before {
+  content: " · ";
 }
 
 .view-counter-count {
@@ -2417,9 +2432,39 @@ h2 em {
     position: static;
   }
 
+  /* Horizontal byline: avatar | name + date | views above the like button.
+     Keeping the counters in a column of their own stops them from stretching
+     the name/date column, which used to leave the avatar floating opposite
+     empty space. */
   .post-byline {
     flex-direction: row;
     align-items: center;
+    gap: 1.05rem;
+  }
+
+  .post-byline .avatar {
+    flex: 0 0 auto;
+  }
+
+  .post-byline-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-top: 0;
+  }
+
+  .post-byline-stats {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .post-byline .view-counter::before {
+    content: none;
+  }
+
+  .post-byline .like-button {
+    margin-top: 0.45rem;
   }
 
   .about-portrait {

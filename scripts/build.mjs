@@ -573,21 +573,30 @@ function postPage(post, allPosts) {
       renderPostText(post.titleText, "h1", "post-title") +
       renderPostText(post.excerptText, "p", "post-deck") +
     '</header><div class="post-rule"></div><div class="post-layout section"><aside class="post-author"><div class="post-byline"><div class="avatar">MS</div>' +
-      '<div><strong>Michael Silvester</strong><span><time datetime="' + post.published.isoValue + '">' + post.published.display + "</time> · " +
-        bi(post.readingTime.zh, post.readingTime.en) +
-        '<span class="view-counter" data-slug="' + escapeHtml(post.routeName) + '" hidden> · ' +
+      '<div class="post-byline-text"><strong>Michael Silvester</strong>' +
+        '<span class="post-byline-meta"><time datetime="' + post.published.isoValue + '">' + post.published.display + "</time> · " +
+          bi(post.readingTime.zh, post.readingTime.en) +
+        "</span>" +
+      "</div>" +
+      // View count and like button live in their own column next to the byline
+      // text. On the sidebar layout it reads as one stacked block; once the
+      // layout turns horizontal the column moves to the right edge (count above,
+      // button below) so the name/date column stays short and level with the
+      // avatar instead of being stretched by the counters.
+      '<div class="post-byline-stats">' +
+        '<span class="view-counter" data-slug="' + escapeHtml(post.routeName) + '" hidden>' +
           bi('<b class="view-counter-count"></b> 次阅读', '<b class="view-counter-count"></b> views') +
         "</span>" +
-      "</span>" +
-      // Like button: shares the single counter request with the view counter
-      // above, so both reveal together once the Worker answers. Hidden until
-      // then, and a failed request leaves no dead control in the byline.
-      '<button class="like-button" type="button" data-slug="' + escapeHtml(post.routeName) + '" aria-pressed="false" hidden>' +
-        likeIcon() +
-        '<span class="like-label">' + bi("赞", "Like") + "</span>" +
-        '<b class="like-count">0</b>' +
-      "</button>" +
-      '</div></div></aside><div class="post-body">' +
+        // Like button: shares the single counter request with the view counter
+        // above, so both reveal together once the Worker answers. Hidden until
+        // then, and a failed request leaves no dead control in the byline.
+        '<button class="like-button" type="button" data-slug="' + escapeHtml(post.routeName) + '" aria-pressed="false" hidden>' +
+          likeIcon() +
+          '<span class="like-label">' + bi("赞", "Like") + "</span>" +
+          '<b class="like-count">0</b>' +
+        "</button>" +
+      "</div>" +
+      '</div></aside><div class="post-body">' +
       bi(markdownToHtml(post.bodyZh), markdownToHtml(post.bodyEn), "div", "prose") + "</div>" +
     "</div></article>" +
     (app ? '<section class="section related-app"><div class="related-app-copy"><span class="eyebrow">' + bi("文中提到", "Mentioned in this story") + "</span><h2>" + app.name + "</h2>" +
