@@ -226,8 +226,6 @@ function parsePost(source, filename) {
   return {
     ...meta,
     routeName,
-    // Preserve existing counters and local likes when the public article URL changes.
-    statisticsSlug: routeName.replace(/^deepnote-/, "texturo-"),
     titleText: resolvePostText(meta, "title", filename),
     excerptText: resolvePostText(meta, "excerpt", filename),
     published: parsePostDate(meta.date, filename),
@@ -384,16 +382,16 @@ function visual(app, compact = false) {
       "</div>"
     );
   }
-  if (app.slug === "deepnote") {
-    // DeepNote is an iPhone/iPad editor, so its preview uses a document workspace
+  if (app.slug === "diple") {
+    // Diple is an iPhone/iPad editor, so its preview uses a document workspace
     // instead of the desktop chrome shared by the macOS products below.
     return (
-      '<div class="product-visual deepnote-visual' + compactClass + '" aria-hidden="true">' +
-        '<div class="deepnote-device"><div class="deepnote-status"><span>9:41</span><i></i><b>•••</b></div>' +
-        '<div class="deepnote-nav"><span>‹</span><strong>DeepNote</strong><b>•••</b></div>' +
-        '<div class="deepnote-editor"><small># PRODUCT NOTES</small><h4>Write with focus.</h4><p>Markdown stays clear while preview and source remain one tap away.</p>' +
+      '<div class="product-visual diple-visual' + compactClass + '" aria-hidden="true">' +
+        '<div class="diple-device"><div class="diple-status"><span>9:41</span><i></i><b>•••</b></div>' +
+        '<div class="diple-nav"><span>‹</span><strong>Diple</strong><b>•••</b></div>' +
+        '<div class="diple-editor"><small># PRODUCT NOTES</small><h4>Write with focus.</h4><p>Markdown stays clear while preview and source remain one tap away.</p>' +
         '<ul><li><i></i> Local documents</li><li><i></i> Nested folders</li><li><i></i> Protected writing</li></ul></div>' +
-        '<div class="deepnote-toolbar"><span>B</span><em>I</em><code>&lt;/&gt;</code><b>☰</b><i>＋</i></div></div>' +
+        '<div class="diple-toolbar"><span>B</span><em>I</em><code>&lt;/&gt;</code><b>☰</b><i>＋</i></div></div>' +
       "</div>"
     );
   }
@@ -586,13 +584,13 @@ function postPage(post, allPosts) {
       // button below) so the name/date column stays short and level with the
       // avatar instead of being stretched by the counters.
       '<div class="post-byline-stats">' +
-        '<span class="view-counter" data-slug="' + escapeHtml(post.statisticsSlug) + '" hidden>' +
+        '<span class="view-counter" data-slug="' + escapeHtml(post.routeName) + '" hidden>' +
           bi('<b class="view-counter-count"></b> 次阅读', '<b class="view-counter-count"></b> views') +
         "</span>" +
         // Like button: shares the single counter request with the view counter
         // above, so both reveal together once the Worker answers. Hidden until
         // then, and a failed request leaves no dead control in the byline.
-        '<button class="like-button" type="button" data-slug="' + escapeHtml(post.statisticsSlug) + '" aria-pressed="false" hidden>' +
+        '<button class="like-button" type="button" data-slug="' + escapeHtml(post.routeName) + '" aria-pressed="false" hidden>' +
           likeIcon() +
           '<span class="like-label">' + bi("赞", "Like") + "</span>" +
           '<b class="like-count">0</b>' +
@@ -759,13 +757,6 @@ function notFoundPage() {
   });
 }
 
-// GitHub Pages serves static files: redirect legacy URLs while retaining language and anchors.
-function legacyRedirect(html, target) {
-  return html.replace("<head>", '<head><meta name="legacy-redirect" content="' + target + '">' +
-    '<script>location.replace(' + JSON.stringify(target) + '+location.search+location.hash);</script>' +
-    '<noscript><meta http-equiv="refresh" content="0;url=' + target + '"></noscript>');
-}
-
 async function writeRoute(route, html) {
   const destination = route === "/" ? join(output, "index.html") : join(output, route, "index.html");
   await mkdir(dirname(destination), { recursive: true });
@@ -835,12 +826,6 @@ async function main() {
   for (const post of posts) await writeRoute("journal/" + post.routeName, postPage(post, posts));
   await writeRoute("apps", appsPage());
   for (const app of apps) await writeRoute("apps/" + app.slug, appPage(app, posts));
-  for (const post of posts.filter((post) => post.app === "deepnote")) {
-    await writeRoute("journal/" + post.routeName.replace(/^deepnote-/, "texturo-"),
-      legacyRedirect(postPage(post, posts), postUrl(post)));
-  }
-  const deepNote = apps.find((app) => app.slug === "deepnote");
-  await writeRoute("apps/texturo", legacyRedirect(appPage(deepNote, posts), "/apps/deepnote/"));
   await writeRoute("about", aboutPage());
   await writeFile(join(output, "404.html"), notFoundPage());
   await buildFeeds(posts);

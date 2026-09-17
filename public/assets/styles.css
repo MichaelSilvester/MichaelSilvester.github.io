@@ -629,7 +629,7 @@ h2 em {
   background: #f2c75c;
 }
 
-.deepnote-visual {
+.diple-visual {
   display: grid;
   place-items: end center;
   padding: 5% 13% 0;
@@ -638,7 +638,7 @@ h2 em {
     linear-gradient(145deg, #dce8d2 0%, #718a62 100%);
 }
 
-.deepnote-device {
+.diple-device {
   width: min(76%, 360px);
   height: 94%;
   overflow: hidden;
@@ -650,75 +650,75 @@ h2 em {
   box-shadow: 0 24px 42px rgba(25, 32, 21, 0.35);
 }
 
-.deepnote-status,
-.deepnote-nav,
-.deepnote-toolbar {
+.diple-status,
+.diple-nav,
+.diple-toolbar {
   display: flex;
   align-items: center;
 }
 
-.deepnote-status {
+.diple-status {
   height: 9%;
   justify-content: space-between;
   padding: 0 8%;
   font: 600 0.43rem var(--display);
 }
 
-.deepnote-status i {
+.diple-status i {
   width: 27%;
   height: 8px;
   border-radius: 99px;
   background: #171815;
 }
 
-.deepnote-status b,
-.deepnote-nav b {
+.diple-status b,
+.diple-nav b {
   font-size: 0.45rem;
   letter-spacing: 0.06em;
 }
 
-.deepnote-nav {
+.diple-nav {
   height: 12%;
   justify-content: space-between;
   padding: 0 7%;
   border-bottom: 1px solid rgba(32, 33, 30, 0.12);
 }
 
-.deepnote-nav span {
+.diple-nav span {
   color: #617653;
   font-size: 1rem;
 }
 
-.deepnote-nav strong {
+.diple-nav strong {
   font-size: 0.55rem;
 }
 
-.deepnote-editor {
+.diple-editor {
   height: 67%;
   padding: 12% 11%;
 }
 
-.deepnote-editor small {
+.diple-editor small {
   color: #718465;
   font: 500 0.38rem var(--mono);
   letter-spacing: 0.08em;
 }
 
-.deepnote-editor h4 {
+.diple-editor h4 {
   margin: 7% 0 6%;
   font-size: clamp(0.85rem, 2.2vw, 1.35rem);
   line-height: 1;
   letter-spacing: -0.05em;
 }
 
-.deepnote-editor p {
+.diple-editor p {
   margin: 0;
   color: #65665f;
   font-size: clamp(0.38rem, 0.75vw, 0.58rem);
   line-height: 1.65;
 }
 
-.deepnote-editor ul {
+.diple-editor ul {
   display: grid;
   gap: 0.42rem;
   margin: 10% 0 0;
@@ -727,20 +727,20 @@ h2 em {
   font: 500 clamp(0.38rem, 0.72vw, 0.55rem) var(--mono);
 }
 
-.deepnote-editor li {
+.diple-editor li {
   display: flex;
   align-items: center;
   gap: 0.42rem;
 }
 
-.deepnote-editor li i {
+.diple-editor li i {
   width: 0.35rem;
   height: 0.35rem;
   border: 1px solid #708563;
   border-radius: 50%;
 }
 
-.deepnote-toolbar {
+.diple-toolbar {
   height: 12%;
   justify-content: space-around;
   border-top: 1px solid rgba(32, 33, 30, 0.12);
@@ -748,14 +748,14 @@ h2 em {
   font: 600 clamp(0.42rem, 0.8vw, 0.62rem) var(--mono);
 }
 
-.deepnote-toolbar em {
+.diple-toolbar em {
   font-family: Georgia, serif;
 }
 
-.deepnote-toolbar code,
-.deepnote-toolbar em,
-.deepnote-toolbar b,
-.deepnote-toolbar i {
+.diple-toolbar code,
+.diple-toolbar em,
+.diple-toolbar b,
+.diple-toolbar i {
   font-style: normal;
 }
 

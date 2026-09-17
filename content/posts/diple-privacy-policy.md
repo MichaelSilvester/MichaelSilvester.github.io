@@ -1,26 +1,26 @@
 ---
 date: 2026-09-02 03:20:41
-app: deepnote
+app: diple
 pin: -1
 category: legal
 featured: false
-titleZh: DeepNote 隐私政策
-titleEn: DeepNote Privacy Policy
-excerptZh: 说明 DeepNote 如何处理本地文稿、文件夹保护、语音转文字、版本历史及 App Store 购买相关信息。
-excerptEn: How DeepNote handles local documents, folder protection, Speech to Text, Version History, and App Store purchase information.
+titleZh: Diple 隐私政策
+titleEn: Diple Privacy Policy
+excerptZh: 说明 Diple 如何处理本地文稿、文件夹保护、语音转文字、版本历史及 App Store 购买相关信息。
+excerptEn: How Diple handles local documents, folder protection, Speech to Text, Version History, and App Store purchase information.
 ---
 <!-- zh -->
 **最后更新：2026 年 9 月 13 日**
 
 **生效日期：2026 年 9 月 13 日**
 
-DeepNote（以下简称“本 App”）是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工具。本隐私政策说明本 App 如何处理与你有关的信息。
+Diple（以下简称“本 App”）是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工具。本隐私政策说明本 App 如何处理与你有关的信息。
 
-如果你对本隐私政策有任何疑问，请发送邮件至 [MichaelSilvesterCN+DeepNote@gmail.com](mailto:MichaelSilvesterCN+DeepNote@gmail.com) 联系我们。
+如果你对本隐私政策有任何疑问，请发送邮件至 [MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com) 联系我们。
 
 ## 1. 概述
 
-DeepNote 的设计与数据处理方式如下：
+Diple 的设计与数据处理方式如下：
 
 - 不要求注册账户或登录；
 - 不使用开发者运营的云服务器，不提供 iCloud 或其他云同步；
@@ -53,7 +53,7 @@ DeepNote 的设计与数据处理方式如下：
 
 ### 2.3 语音转文字
 
-仅当你主动开启语音转文字时，本 App 才会使用麦克风采集语音并请求系统语音识别，将识别结果插入文稿。DeepNote 不会把语音保存为录音文件。支持设备端识别时，语音在设备上处理；否则，音频可能由 Apple 的语音识别服务处理。你写入文稿的识别结果会作为文稿内容保存在设备本地。
+仅当你主动开启语音转文字时，本 App 才会使用麦克风采集语音并请求系统语音识别，将识别结果插入文稿。Diple 不会把语音保存为录音文件。支持设备端识别时，语音在设备上处理；否则，音频可能由 Apple 的语音识别服务处理。你写入文稿的识别结果会作为文稿内容保存在设备本地。
 
 ### 2.4 文件夹保护
 
@@ -69,7 +69,7 @@ DeepNote 的设计与数据处理方式如下：
 
 ### 2.5 会员与购买信息
 
-DeepNote Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit 处理。
+Diple Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit 处理。
 
 本 App 只读取用于判断是否应解锁 Pro 功能所必需的产品标识符、购买结果和会员权益状态。
 
@@ -119,7 +119,7 @@ DeepNote Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit
 - 移除文件夹保护；
 - 在 iOS“设置”中撤回 Face ID 权限；
 - 在 iOS“设置”中撤回麦克风或语音识别权限；
-- 在 Apple 账户的订阅设置中管理或取消 DeepNote Pro 订阅；
+- 在 Apple 账户的订阅设置中管理或取消 Diple Pro 订阅；
 - 联系我们，请求访问、更正、删除、限制处理或其他隐私相关协助。
 
 本 App 不提供账户系统，因此没有账户删除流程。文稿、版本历史与设置等本地信息通常无法由我们远程访问或删除。
@@ -141,11 +141,11 @@ DeepNote Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit
 
 本 App 并非专门面向 14 周岁以下儿童设计，也不会有意要求儿童提供姓名、联系方式或身份信息。
 
-如果父母或监护人认为儿童通过本 App 向我们提供了个人信息，请发送邮件至 [MichaelSilvesterCN+DeepNote@gmail.com](mailto:MichaelSilvesterCN+DeepNote@gmail.com) 联系我们。我们会依据适用法律审查并处理该请求。
+如果父母或监护人认为儿童通过本 App 向我们提供了个人信息，请发送邮件至 [MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com) 联系我们。我们会依据适用法律审查并处理该请求。
 
 ## 9. 跨境数据处理
 
-我们不运营收集 DeepNote 用户数据的服务器，因此不会将你存储在本地的文稿或设置传输到其他国家或地区。
+我们不运营收集 Diple 用户数据的服务器，因此不会将你存储在本地的文稿或设置传输到其他国家或地区。
 
 当你使用 Apple 提供的服务（例如 App Store 购买或语音识别）时，相关信息可能在 Apple 服务运营所在地处理，此类处理受 Apple 隐私政策约束。
 
@@ -159,20 +159,20 @@ DeepNote Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit
 
 ## 11. 联系我们
 
-联系邮箱：[MichaelSilvesterCN+DeepNote@gmail.com](mailto:MichaelSilvesterCN+DeepNote@gmail.com)
+联系邮箱：[MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com)
 
 <!-- en -->
 **Last Updated: September 13, 2026**
 
 **Effective Date: September 13, 2026**
 
-DeepNote (the “App”) is a Markdown document editing and management tool for iPhone and iPad. This Privacy Policy explains how the App handles information relating to you.
+Diple (the “App”) is a Markdown document editing and management tool for iPhone and iPad. This Privacy Policy explains how the App handles information relating to you.
 
-If you have any questions about this Privacy Policy, contact us at [MichaelSilvesterCN+DeepNote@gmail.com](mailto:MichaelSilvesterCN+DeepNote@gmail.com).
+If you have any questions about this Privacy Policy, contact us at [MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com).
 
 ## 1. Overview
 
-DeepNote is designed and handles data as follows:
+Diple is designed and handles data as follows:
 
 - Does not require account registration or sign-in;
 - Does not use developer-operated cloud servers and does not provide iCloud or other cloud synchronization;
@@ -205,7 +205,7 @@ The App stores appearance (light, dark, or system), font style and size, editor 
 
 ### 2.3 Speech to Text
 
-Only when you choose to start Speech to Text does the App use the microphone to capture speech and request system speech recognition, inserting the recognized words into your document. DeepNote does not save speech as an audio recording. Speech is processed on your device when on-device recognition is supported; otherwise, audio may be processed by Apple’s speech recognition service. Recognized words added to a document are stored locally as document content.
+Only when you choose to start Speech to Text does the App use the microphone to capture speech and request system speech recognition, inserting the recognized words into your document. Diple does not save speech as an audio recording. Speech is processed on your device when on-device recognition is supported; otherwise, audio may be processed by Apple’s speech recognition service. Recognized words added to a document are stored locally as document content.
 
 ### 2.4 Folder Protection
 
@@ -221,7 +221,7 @@ When you use Face ID or Touch ID, authentication is performed by iOS. The App re
 
 ### 2.5 Membership and Purchase Information
 
-DeepNote Pro subscriptions, purchases, billing, and purchase restoration are processed by Apple through StoreKit.
+Diple Pro subscriptions, purchases, billing, and purchase restoration are processed by Apple through StoreKit.
 
 The App reads only the product identifier, purchase result, and membership entitlement status required to determine whether Pro features should be unlocked.
 
@@ -271,7 +271,7 @@ You can manage information processed by the App by:
 - Removing folder protection;
 - Withdrawing Face ID permission in iOS Settings;
 - Withdrawing microphone or speech recognition permission in iOS Settings;
-- Managing or canceling a DeepNote Pro subscription in your Apple Account subscription settings;
+- Managing or canceling a Diple Pro subscription in your Apple Account subscription settings;
 - Contacting us to request access, correction, deletion, restriction, or other privacy-related assistance.
 
 The App does not provide an account system, so there is no account deletion process. We generally cannot remotely access or delete locally stored information such as documents, version history, and settings.
@@ -293,11 +293,11 @@ No storage method can guarantee absolute security. Folder protection is an in-ap
 
 The App is not specifically designed for children under the age of 14 and does not intentionally request that children provide names, contact details, or identity information.
 
-If a parent or guardian believes that a child has provided personal information to us through the App, contact us at [MichaelSilvesterCN+DeepNote@gmail.com](mailto:MichaelSilvesterCN+DeepNote@gmail.com). We will review and address the request in accordance with applicable law.
+If a parent or guardian believes that a child has provided personal information to us through the App, contact us at [MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com). We will review and address the request in accordance with applicable law.
 
 ## 9. International Data Processing
 
-We do not operate servers that collect DeepNote user data and therefore do not transfer your locally stored documents or settings across national borders.
+We do not operate servers that collect Diple user data and therefore do not transfer your locally stored documents or settings across national borders.
 
 When you use services provided by Apple, such as App Store purchases or speech recognition, relevant information may be processed in the locations where Apple’s services operate. Such processing is governed by the Apple Privacy Policy.
 
@@ -311,4 +311,4 @@ The revised policy will include an updated “Last Updated” and “Effective D
 
 ## 11. Contact Us
 
-Contact Email: [MichaelSilvesterCN+DeepNote@gmail.com](mailto:MichaelSilvesterCN+DeepNote@gmail.com)
+Contact Email: [MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com)

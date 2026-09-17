@@ -1,16 +1,16 @@
 ---
 date: 2026-09-02 03:22:41
-app: deepnote
+app: diple
 pin: -1
 category: support
 featured: false
-titleZh: DeepNote 开发者技术支持
-titleEn: DeepNote Technical Support
-excerptZh: DeepNote 常见问题、购买帮助与故障排查，包括文稿创建、Markdown 语法、显示模式、加密文件夹、废纸篓与恢复购买。
-excerptEn: DeepNote FAQs, purchase assistance, and troubleshooting for creating documents, Markdown syntax, display modes, folder protection, Trash, and purchase restoration.
+titleZh: Diple 开发者技术支持
+titleEn: Diple Technical Support
+excerptZh: Diple 常见问题、购买帮助与故障排查，包括文稿创建、Markdown 语法、显示模式、加密文件夹、废纸篓与恢复购买。
+excerptEn: Diple FAQs, purchase assistance, and troubleshooting for creating documents, Markdown syntax, display modes, folder protection, Trash, and purchase restoration.
 ---
 <!-- zh -->
-使用 DeepNote 时遇到问题？你可以在下面查看常见问题、购买帮助和故障排查步骤，也可以联系我们获取进一步支持。
+使用 Diple 时遇到问题？你可以在下面查看常见问题、购买帮助和故障排查步骤，也可以联系我们获取进一步支持。
 
 **系统要求：iOS/iPadOS 17.0 或更高版本**
 
@@ -22,11 +22,11 @@ excerptEn: DeepNote FAQs, purchase assistance, and troubleshooting for creating 
 
 ### 支持哪些 Markdown 语法？
 
-DeepNote 支持标题、加粗、斜体、行内代码、代码块（支持多种编程语言的语法高亮）、引用、无序列表、有序列表、任务列表、链接、图片、删除线、分隔线和表格。你可以使用格式工具栏插入这些元素，也可以直接输入标准 Markdown 语法。
+Diple 支持标题、加粗、斜体、行内代码、代码块（支持多种编程语言的语法高亮）、引用、无序列表、有序列表、任务列表、链接、图片、删除线、分隔线和表格。你可以使用格式工具栏插入这些元素，也可以直接输入标准 Markdown 语法。
 
 ### 编辑器有哪些显示模式？
 
-DeepNote 提供沉浸式（所见即所得）、实时预览、纯预览和源码四种显示模式，可以在文稿编辑界面中切换，满足不同的写作和校对习惯。
+Diple 提供沉浸式（所见即所得）、实时预览、纯预览和源码四种显示模式，可以在文稿编辑界面中切换，满足不同的写作和校对习惯。
 
 ### 文稿会自动保存吗？
 
@@ -40,11 +40,11 @@ DeepNote 提供沉浸式（所见即所得）、实时预览、纯预览和源�
 
 ### 免费版可以创建多少文件夹和文稿？
 
-免费版最多支持 1 个文件夹和 5 篇文稿。升级到 DeepNote Pro 后，可以创建不限数量的文件夹和文稿。
+免费版最多支持 1 个文件夹和 5 篇文稿。升级到 Diple Pro 后，可以创建不限数量的文件夹和文稿。
 
 ### 如何加密文件夹？
 
-升级到 DeepNote Pro 后，在文件夹的操作菜单中选择“加密文件夹”，然后设置密码，或者在设备支持时启用 Face ID / Touch ID。App 进入后台后，加密文件夹会自动重新锁定。
+升级到 Diple Pro 后，在文件夹的操作菜单中选择“加密文件夹”，然后设置密码，或者在设备支持时启用 Face ID / Touch ID。App 进入后台后，加密文件夹会自动重新锁定。
 
 ### 忘记加密文件夹密码怎么办？
 
@@ -62,9 +62,9 @@ DeepNote 提供沉浸式（所见即所得）、实时预览、纯预览和源�
 
 ### 如何恢复购买？
 
-确认设备已登录购买 DeepNote Pro 时使用的同一 Apple 账户，然后：
+确认设备已登录购买 Diple Pro 时使用的同一 Apple 账户，然后：
 
-- 打开 DeepNote。
+- 打开 Diple。
 - 前往“设置”。
 - 打开会员页面。
 - 轻点“恢复购买”。
@@ -75,7 +75,7 @@ DeepNote 提供沉浸式（所见即所得）、实时预览、纯预览和源�
 
 请至少在当前订阅或免费试用期结束前 24 小时取消：
 
-“设置”>“Apple 账户”>“订阅”>“DeepNote”
+“设置”>“Apple 账户”>“订阅”>“Diple”
 
 你可以在这里管理或取消订阅。取消后，会员权益通常会持续到当前订阅周期结束。账单和退款申请由 Apple 处理。
 
@@ -83,11 +83,11 @@ DeepNote 提供沉浸式（所见即所得）、实时预览、纯预览和源�
 
 如果以上信息没有解决你的问题，请发送邮件至：
 
-[MichaelSilvesterCN+DeepNote@gmail.com](mailto:MichaelSilvesterCN+DeepNote@gmail.com)
+[MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com)
 
 为了帮助我们排查，请提供：
 
-- DeepNote 版本；
+- Diple 版本；
 - 设备型号；
 - iOS 或 iPadOS 版本；
 - 可以复现问题的操作步骤；
@@ -97,13 +97,13 @@ DeepNote 提供沉浸式（所见即所得）、实时预览、纯预览和源�
 
 ## 相关链接
 
-- [隐私政策](/journal/deepnote-privacy-policy/)
-- [用户协议](/journal/deepnote-terms-of-use/)
+- [隐私政策](/journal/diple-privacy-policy/)
+- [用户协议](/journal/diple-terms-of-use/)
 
-© 2026 DeepNote。保留所有权利。
+© 2026 Diple。保留所有权利。
 
 <!-- en -->
-Having trouble using DeepNote? Find answers to common questions, purchase assistance, and troubleshooting steps below, or contact us for further support.
+Having trouble using Diple? Find answers to common questions, purchase assistance, and troubleshooting steps below, or contact us for further support.
 
 **System Requirements: iOS/iPadOS 17.0 or later**
 
@@ -115,13 +115,13 @@ Tap the new-document button on the “Documents” tab to create a new Markdown 
 
 ### Which Markdown syntax is supported?
 
-DeepNote supports headings, bold, italic, inline code, code blocks with syntax highlighting for multiple programming languages, quotes, unordered lists, ordered lists, task lists, links, images, strikethrough, horizontal rules, and tables. You can insert these elements using the formatting toolbar or type standard Markdown syntax directly.
+Diple supports headings, bold, italic, inline code, code blocks with syntax highlighting for multiple programming languages, quotes, unordered lists, ordered lists, task lists, links, images, strikethrough, horizontal rules, and tables. You can insert these elements using the formatting toolbar or type standard Markdown syntax directly.
 
 ### What display modes does the editor offer?
 
-DeepNote offers four display modes — immersive (WYSIWYG), live preview, preview-only, and source — that you can switch between while editing to match different writing and proofreading habits.
+Diple offers four display modes — immersive (WYSIWYG), live preview, preview-only, and source — that you can switch between while editing to match different writing and proofreading habits.
 
-### Does DeepNote save documents automatically?
+### Does Diple save documents automatically?
 
 You can choose automatic saving or manual saving in “Settings.” With automatic saving, edits are continuously written to the local file. With manual saving, changes are written only when you tap the save button.
 
@@ -133,11 +133,11 @@ The document list can show creation time, modification time, or no timestamp. Th
 
 ### How many folders and documents can I create on the free version?
 
-The free version supports up to 1 folder and 5 documents. Upgrading to DeepNote Pro removes these limits, letting you create an unlimited number of folders and documents.
+The free version supports up to 1 folder and 5 documents. Upgrading to Diple Pro removes these limits, letting you create an unlimited number of folders and documents.
 
 ### How do I encrypt a folder?
 
-After upgrading to DeepNote Pro, choose “Encrypt Folder” from the folder action menu, then set a password or enable Face ID / Touch ID if your device supports it. Encrypted folders automatically re-lock when the App enters the background.
+After upgrading to Diple Pro, choose “Encrypt Folder” from the folder action menu, then set a password or enable Face ID / Touch ID if your device supports it. Encrypted folders automatically re-lock when the App enters the background.
 
 ### What if I forget my encrypted-folder password?
 
@@ -155,9 +155,9 @@ Select one or more documents in the document library, then choose Export to save
 
 ### How do I restore my purchases?
 
-Make sure your device is signed in with the same Apple Account used to purchase DeepNote Pro, then:
+Make sure your device is signed in with the same Apple Account used to purchase Diple Pro, then:
 
-- Open DeepNote.
+- Open Diple.
 - Go to “Settings.”
 - Open the membership screen.
 - Tap “Restore Purchases.”
@@ -168,7 +168,7 @@ Restoring purchases will not charge you again.
 
 Cancel at least 24 hours before the end of the current subscription or free-trial period:
 
-“Settings” > “Apple Account” > “Subscriptions” > “DeepNote”
+“Settings” > “Apple Account” > “Subscriptions” > “Diple”
 
 You can manage or cancel your subscription there. After cancellation, membership benefits generally remain available until the end of the current subscription period. Billing and refund requests are handled by Apple.
 
@@ -176,11 +176,11 @@ You can manage or cancel your subscription there. After cancellation, membership
 
 If the information above does not resolve your issue, contact us at:
 
-[MichaelSilvesterCN+DeepNote@gmail.com](mailto:MichaelSilvesterCN+DeepNote@gmail.com)
+[MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com)
 
 To help us investigate, please include:
 
-- DeepNote version
+- Diple version
 - Device model
 - iOS or iPadOS version
 - Steps that reproduce the issue
@@ -190,7 +190,7 @@ Do not email passwords or other sensitive information.
 
 ## Related Links
 
-- [Privacy Policy](/journal/deepnote-privacy-policy/)
-- [Terms of Use](/journal/deepnote-terms-of-use/)
+- [Privacy Policy](/journal/diple-privacy-policy/)
+- [Terms of Use](/journal/diple-terms-of-use/)
 
-© 2026 DeepNote. All rights reserved.
+© 2026 Diple. All rights reserved.
