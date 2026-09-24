@@ -135,9 +135,26 @@ const server = createServer(async (request, response) => {
 });
 
 server.listen(port, "127.0.0.1", () => {
-  console.log("Local: http://127.0.0.1:" + port);
+  const url = "http://127.0.0.1:" + server.address().port;
+  console.log("Local: " + url);
   console.log("Watching content/, public/, and the page generator for live changes.");
+  openBrowser(url);
 });
+
+function openBrowser(url) {
+  const command = process.platform === "darwin" ? "open"
+    : process.platform === "win32" ? "rundll32" : "xdg-open";
+  const args = process.platform === "win32" ? ["url.dll,FileProtocolHandler", url] : [url];
+
+  // Open only after listening, once per launch. Missing browser tools must not stop previewing.
+  const browser = spawn(command, args, { stdio: "ignore" });
+  const warn = () => console.warn("Unable to open the browser automatically. Visit " + url);
+  browser.once("error", warn);
+  browser.once("exit", (code) => {
+    if (code !== 0) warn();
+  });
+  browser.unref();
+}
 
 // Poll modification metadata instead of filesystem events. macOS can emit
 // events when build tools merely read files, which otherwise causes loops.
