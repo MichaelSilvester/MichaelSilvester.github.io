@@ -88,12 +88,11 @@ Face ID 和 Touch ID 验证由 iOS 执行。文件夹保护和废纸篓加密属
 
 ## 6. 免费功能与 Diple Pro
 
-本 App 的免费版本最多支持创建 1 个文件夹和 5 篇文稿。
+本 App 不限制文稿的创建数量。免费版本最多支持创建 2 个文件夹。
 
 Diple Pro 是本 App 提供的付费订阅或一次性购买服务，解锁的功能可能包括：
 
 - 创建不限数量的文件夹和嵌套文件夹；
-- 保存不限数量的 Markdown 文稿；
 - 使用密码、Face ID 或 Touch ID 保护文件夹；
 - 获得未来更新中的 Pro 功能。
 
@@ -328,12 +327,11 @@ Face ID and Touch ID authentication are performed by iOS. Folder protection and 
 
 ## 6. Free Features and Diple Pro
 
-The free version of the App supports creating up to 1 folder and 5 documents.
+The App does not limit the number of documents you can create. The free version supports creating up to 2 folders.
 
 Diple Pro is a paid subscription or one-time purchase offered by the App. Features it may unlock include:
 
 - Creating an unlimited number of folders and nested folders;
-- Saving an unlimited number of Markdown documents;
 - Protecting folders with a password, Face ID, or Touch ID;
 - Access to Pro features in future updates.
 

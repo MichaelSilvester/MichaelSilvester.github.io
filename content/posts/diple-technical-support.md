@@ -40,7 +40,7 @@ Diple 提供沉浸式（所见即所得）、实时预览、纯预览和源码�
 
 ### 免费版可以创建多少文件夹和文稿？
 
-免费版最多支持 1 个文件夹和 5 篇文稿。升级到 Diple Pro 后，可以创建不限数量的文件夹和文稿。
+文稿的创建数量没有限制。免费版最多可以创建 2 个文件夹；升级到 Diple Pro 后，可以创建不限数量的文件夹和嵌套文件夹。
 
 ### 如何加密文件夹？
 
@@ -133,7 +133,7 @@ The document list can show creation time, modification time, or no timestamp. Th
 
 ### How many folders and documents can I create on the free version?
 
-The free version supports up to 1 folder and 5 documents. Upgrading to Diple Pro removes these limits, letting you create an unlimited number of folders and documents.
+There is no limit on the number of documents you can create. The free version supports up to 2 folders; upgrading to Diple Pro lets you create unlimited folders and nested folders.
 
 ### How do I encrypt a folder?
 
