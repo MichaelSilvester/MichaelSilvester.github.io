@@ -5,11 +5,14 @@ import { extname, join, normalize, relative } from "node:path";
 
 const root = process.cwd();
 const port = Number(process.env.PORT || 4173);
+const liveReload = '<script>new EventSource("/__live-reload").addEventListener("reload",function(){location.reload()})</script>';
 const reloadClients = new Set();
 let buildRunning = false;
 let fingerprintRunning = false;
 let sourceFingerprint = "";
 let pollTimer;
+let finishStartup;
+const startupReady = new Promise((resolve) => { finishStartup = resolve; });
 
 const types = {
   ".css": "text/css; charset=utf-8",
@@ -90,10 +93,9 @@ async function checkForChanges() {
   }
 }
 
-await build();
-sourceFingerprint = await getSourceFingerprint();
-
 const server = createServer(async (request, response) => {
+  // Requests arriving during the initial build wait for the generated files.
+  await startupReady;
   try {
     const pathname = decodeURIComponent(new URL(request.url, "http://localhost").pathname);
 
@@ -103,7 +105,7 @@ const server = createServer(async (request, response) => {
         "cache-control": "no-cache",
         connection: "keep-alive",
       });
-      response.write("event: connected\ndata: ready\n\n");
+      response.write("retry: 1000\nevent: connected\ndata: ready\n\n");
       reloadClients.add(response);
       request.on("close", () => reloadClients.delete(response));
       return;
@@ -123,7 +125,6 @@ const server = createServer(async (request, response) => {
 
     let body = await readFile(target);
     if (extname(target) === ".html") {
-      const liveReload = '<script>new EventSource("/__live-reload").addEventListener("reload",function(){location.reload()})</script>';
       body = body.toString("utf8").replace("</body>", liveReload + "</body>");
     }
     response.writeHead(200, { "content-type": types[extname(target)] || "application/octet-stream" });
@@ -134,12 +135,32 @@ const server = createServer(async (request, response) => {
   }
 });
 
-server.listen(port, "127.0.0.1", () => {
-  const url = "http://127.0.0.1:" + server.address().port;
-  console.log("Local: " + url);
-  console.log("Watching content/, public/, and the page generator for live changes.");
-  openBrowser(url);
+// Bind before building: any occupied port is a successful, silent no-op.
+// The operating system decides this atomically, including simultaneous launches.
+const listening = await new Promise((resolve) => {
+  server.once("error", (error) => {
+    if (error.code !== "EADDRINUSE") {
+      console.error("Unable to start preview: " + error.message);
+      process.exitCode = 1;
+    }
+    resolve(false);
+  });
+  server.listen(port, "127.0.0.1", () => resolve(true));
 });
+if (!listening) process.exit(process.exitCode || 0);
+
+try {
+  await build();
+  sourceFingerprint = await getSourceFingerprint();
+} catch (error) {
+  console.error("Unable to start preview: " + error.message);
+  process.exit(1);
+}
+finishStartup();
+const url = "http://127.0.0.1:" + server.address().port;
+console.log("Local: " + url);
+console.log("Watching content/, public/, and the page generator for live changes.");
+openBrowser(url);
 
 function openBrowser(url) {
   const command = process.platform === "darwin" ? "open"
