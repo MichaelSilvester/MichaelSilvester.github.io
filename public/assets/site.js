@@ -33,7 +33,7 @@
   }
 
   function setLanguage(language, updateUrl) {
-    const next = normalizeLanguage(language) || "zh";
+    const next = normalizeLanguage(language) || "en";
     root.dataset.lang = next;
     root.lang = next === "en" ? "en" : "zh-CN";
     try {

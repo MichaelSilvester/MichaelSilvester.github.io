@@ -90,15 +90,15 @@ img {
   color: #111;
 }
 
-.lang-en {
+.lang-zh {
   display: none !important;
 }
 
-html[data-lang="en"] .lang-zh {
+html[data-lang="zh"] .lang-en {
   display: none !important;
 }
 
-html[data-lang="en"] .lang-en {
+html[data-lang="zh"] .lang-zh {
   display: revert !important;
 }
 

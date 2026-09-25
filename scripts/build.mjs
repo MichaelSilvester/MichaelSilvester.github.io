@@ -352,16 +352,16 @@ function pageDocument({
   // The site renders both languages into every static page (see bi()) and
   // toggles visibility client-side via [data-lang], including from a ?lang=
   // query param read before paint. There is no separate URL per language, so
-  // hreflang points both variants at the same path: the bare URL for the
-  // default (zh) render and ?lang=en for the English render. x-default also
-  // points at the bare URL since that's what an unspecified crawl request gets.
-  const enHref = canonical + (canonical.includes("?") ? "&lang=en" : "?lang=en");
-  const title = titleZh === "Michael Silvester" ? titleZh : titleZh + " — Michael Silvester";
-  const socialTitle = titleZh === titleEn ? titleZh : titleZh + " / " + titleEn;
+  // hreflang points both variants at the same path. English is now the
+  // default render, so the bare URL (and x-default) represent English, and
+  // the Chinese variant lives at ?lang=zh.
+  const zhHref = canonical + (canonical.includes("?") ? "&lang=zh" : "?lang=zh");
+  const title = titleEn === "Michael Silvester" ? titleEn : titleEn + " — Michael Silvester";
+  const socialTitle = titleZh === titleEn ? titleEn : titleEn + " / " + titleZh;
   // Read an explicit URL language before CSS paints; it must override a saved device preference.
   // Also sync <html lang> so it matches whichever language actually renders,
-  // instead of always claiming zh-CN even when the en copy is shown.
-  const bootScript = "try{const p=new URLSearchParams(location.search).get('lang');const l=p==='en'||p==='zh'?p:localStorage.getItem('ms-language');if(l){document.documentElement.dataset.lang=l;document.documentElement.lang=l==='en'?'en':'zh-CN';}const t=localStorage.getItem('ms-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}";
+  // instead of always claiming one language even when the other copy is shown.
+  const bootScript = "try{const p=new URLSearchParams(location.search).get('lang');const l=p==='en'||p==='zh'?p:localStorage.getItem('ms-language');if(l){document.documentElement.dataset.lang=l;document.documentElement.lang=l==='zh'?'zh-CN':'en';}const t=localStorage.getItem('ms-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}";
   const articleMeta = ogType === "article" && publishedTime
     ? '<meta property="article:published_time" content="' + publishedTime + '">' +
       '<meta property="article:author" content="' + escapeHtml(site.author) + '">'
@@ -371,24 +371,24 @@ function pageDocument({
     : "";
   return (
     "<!doctype html>" +
-    '<html lang="zh-CN" data-lang="zh">' +
+    '<html lang="en" data-lang="en">' +
     "<head>" +
       '<meta charset="utf-8">' +
       '<meta name="viewport" content="width=device-width, initial-scale=1">' +
       '<meta name="theme-color" content="#f3f0e8">' +
       "<title>" + escapeHtml(title) + "</title>" +
-      '<meta name="description" content="' + escapeHtml(descriptionZh) + '">' +
+      '<meta name="description" content="' + escapeHtml(descriptionEn) + '">' +
       '<link rel="canonical" href="' + canonical + '">' +
-      '<link rel="alternate" hreflang="zh-CN" href="' + canonical + '">' +
-      '<link rel="alternate" hreflang="en" href="' + enHref + '">' +
+      '<link rel="alternate" hreflang="en" href="' + canonical + '">' +
+      '<link rel="alternate" hreflang="zh-CN" href="' + zhHref + '">' +
       '<link rel="alternate" hreflang="x-default" href="' + canonical + '">' +
       '<meta property="og:type" content="' + ogType + '">' +
       '<meta property="og:title" content="' + escapeHtml(socialTitle) + '">' +
-      '<meta property="og:description" content="' + escapeHtml(descriptionZh) + '">' +
+      '<meta property="og:description" content="' + escapeHtml(descriptionEn) + '">' +
       '<meta property="og:url" content="' + canonical + '">' +
       '<meta property="og:image" content="' + site.url + '/og.png">' +
-      '<meta property="og:locale" content="zh_CN">' +
-      '<meta property="og:locale:alternate" content="en_US">' +
+      '<meta property="og:locale" content="en_US">' +
+      '<meta property="og:locale:alternate" content="zh_CN">' +
       articleMeta +
       '<meta name="twitter:card" content="summary_large_image">' +
       '<link rel="alternate" type="application/rss+xml" title="Michael Silvester RSS" href="/rss.xml">' +
@@ -664,12 +664,12 @@ function postPage(post, allPosts) {
     structuredData: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      headline: post.titleText.zh,
-      alternativeHeadline: post.titleText.en,
-      description: post.excerptText.zh,
+      headline: post.titleText.en,
+      alternativeHeadline: post.titleText.zh,
+      description: post.excerptText.en,
       datePublished: post.published.isoValue,
       dateModified: post.published.isoValue,
-      inLanguage: "zh-CN",
+      inLanguage: "en",
       image: site.url + "/og.png",
       url: postCanonical,
       mainEntityOfPage: { "@type": "WebPage", "@id": postCanonical },
