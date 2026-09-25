@@ -255,11 +255,19 @@ html[data-lang="zh"] .lang-zh {
   font-weight: 600;
 }
 
-h1 em,
 h2 em {
   color: var(--ink);
   font-family: var(--serif);
   font-weight: 600;
+}
+
+/* Keep both language variants of page titles in the same typeface throughout. */
+.hero-copy h1 em,
+.page-intro h1 em,
+.about-intro h1 em {
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: normal;
 }
 
 .hero-copy h1 em {
