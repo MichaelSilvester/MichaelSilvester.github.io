@@ -335,12 +335,40 @@ function footer(active) {
   );
 }
 
-function pageDocument({ titleZh, titleEn, descriptionZh, descriptionEn, path, active, content, bodyClass = "" }) {
+function pageDocument({
+  titleZh,
+  titleEn,
+  descriptionZh,
+  descriptionEn,
+  path,
+  active,
+  content,
+  bodyClass = "",
+  ogType = "website",
+  publishedTime,
+  structuredData,
+}) {
   const canonical = site.url + (path === "/" ? "" : path);
+  // The site renders both languages into every static page (see bi()) and
+  // toggles visibility client-side via [data-lang], including from a ?lang=
+  // query param read before paint. There is no separate URL per language, so
+  // hreflang points both variants at the same path: the bare URL for the
+  // default (zh) render and ?lang=en for the English render. x-default also
+  // points at the bare URL since that's what an unspecified crawl request gets.
+  const enHref = canonical + (canonical.includes("?") ? "&lang=en" : "?lang=en");
   const title = titleZh === "Michael Silvester" ? titleZh : titleZh + " — Michael Silvester";
   const socialTitle = titleZh === titleEn ? titleZh : titleZh + " / " + titleEn;
   // Read an explicit URL language before CSS paints; it must override a saved device preference.
-  const bootScript = "try{const p=new URLSearchParams(location.search).get('lang');const l=p==='en'||p==='zh'?p:localStorage.getItem('ms-language');if(l)document.documentElement.dataset.lang=l;const t=localStorage.getItem('ms-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}";
+  // Also sync <html lang> so it matches whichever language actually renders,
+  // instead of always claiming zh-CN even when the en copy is shown.
+  const bootScript = "try{const p=new URLSearchParams(location.search).get('lang');const l=p==='en'||p==='zh'?p:localStorage.getItem('ms-language');if(l){document.documentElement.dataset.lang=l;document.documentElement.lang=l==='en'?'en':'zh-CN';}const t=localStorage.getItem('ms-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}";
+  const articleMeta = ogType === "article" && publishedTime
+    ? '<meta property="article:published_time" content="' + publishedTime + '">' +
+      '<meta property="article:author" content="' + escapeHtml(site.author) + '">'
+    : "";
+  const jsonLd = structuredData
+    ? '<script type="application/ld+json">' + JSON.stringify(structuredData) + "</script>"
+    : "";
   return (
     "<!doctype html>" +
     '<html lang="zh-CN" data-lang="zh">' +
@@ -351,16 +379,23 @@ function pageDocument({ titleZh, titleEn, descriptionZh, descriptionEn, path, ac
       "<title>" + escapeHtml(title) + "</title>" +
       '<meta name="description" content="' + escapeHtml(descriptionZh) + '">' +
       '<link rel="canonical" href="' + canonical + '">' +
-      '<meta property="og:type" content="website">' +
+      '<link rel="alternate" hreflang="zh-CN" href="' + canonical + '">' +
+      '<link rel="alternate" hreflang="en" href="' + enHref + '">' +
+      '<link rel="alternate" hreflang="x-default" href="' + canonical + '">' +
+      '<meta property="og:type" content="' + ogType + '">' +
       '<meta property="og:title" content="' + escapeHtml(socialTitle) + '">' +
       '<meta property="og:description" content="' + escapeHtml(descriptionZh) + '">' +
       '<meta property="og:url" content="' + canonical + '">' +
       '<meta property="og:image" content="' + site.url + '/og.png">' +
+      '<meta property="og:locale" content="zh_CN">' +
+      '<meta property="og:locale:alternate" content="en_US">' +
+      articleMeta +
       '<meta name="twitter:card" content="summary_large_image">' +
       '<link rel="alternate" type="application/rss+xml" title="Michael Silvester RSS" href="/rss.xml">' +
       '<link rel="manifest" href="/site.webmanifest">' +
       '<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23151515%22/><text x=%2232%22 y=%2241%22 text-anchor=%22middle%22 font-size=%2226%22 fill=%22%23c8ff3d%22 font-family=%22Arial%22>MS</text></svg>">' +
       '<link rel="stylesheet" href="' + versionedAsset("/assets/styles.css") + '">' +
+      jsonLd +
       "<script>" + bootScript + "</script>" +
     "</head>" +
     '<body class="' + bodyClass + '">' +
@@ -497,6 +532,13 @@ function homePage(posts) {
     active: "home",
     content,
     bodyClass: "home-page",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Michael Silvester",
+      url: site.url,
+      inLanguage: ["zh-CN", "en"],
+    },
   });
 }
 
@@ -607,6 +649,7 @@ function postPage(post, allPosts) {
         (next ? adjacentPostLink(next, "next") : '<div class="post-nav-empty" aria-hidden="true"></div>') +
       "</nav></section>";
 
+  const postCanonical = site.url + postUrl(post);
   return pageDocument({
     titleZh: post.titleText.zh,
     titleEn: post.titleText.en,
@@ -616,6 +659,23 @@ function postPage(post, allPosts) {
     active: "journal",
     content,
     bodyClass: "post-page",
+    ogType: "article",
+    publishedTime: post.published.isoValue,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.titleText.zh,
+      alternativeHeadline: post.titleText.en,
+      description: post.excerptText.zh,
+      datePublished: post.published.isoValue,
+      dateModified: post.published.isoValue,
+      inLanguage: "zh-CN",
+      image: site.url + "/og.png",
+      url: postCanonical,
+      mainEntityOfPage: { "@type": "WebPage", "@id": postCanonical },
+      author: { "@type": "Person", name: site.author, url: site.url },
+      publisher: { "@type": "Person", name: site.author, url: site.url },
+    },
   });
 }
 
