@@ -225,6 +225,10 @@ for (const requiredLanguageBehavior of [
 
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
+  // Verification files for search-console-style tools (Google, Bing, ...)
+  // are copied straight through from public/ as a single plain-text line —
+  // they are not a generated page and carry none of our page scaffolding.
+  if (!html.trim().toLowerCase().startsWith("<!doctype html")) continue;
   const styleVersion = html.match(/\/assets\/styles\.css\?v=([a-f0-9]{12})/);
   const scriptVersion = html.match(/\/assets\/site\.js\?v=([a-f0-9]{12})/);
   if (!styleVersion || !scriptVersion || styleVersion[1] !== scriptVersion[1]) {
