@@ -41,8 +41,8 @@ function postUrl(post) {
   return "/journal/" + encodeURIComponent(post.routeName) + "/";
 }
 
-function journalFilterUrl(filter) {
-  return "/journal/?filter=" + encodeURIComponent(filter);
+function journalFilterUrl(kind, value) {
+  return "/journal/?" + kind + "=" + encodeURIComponent(value);
 }
 
 function escapeHtml(value = "") {
@@ -463,8 +463,8 @@ function articleCard(post, large = false) {
   const category = articleCategory(post);
   return (
     '<article class="article-card' + (large ? " article-card-large" : "") + '" data-category="' + post.category + '" data-app="' + post.app + '">' +
-      '<div class="article-card-top"><a class="eyebrow article-category" href="' + journalFilterUrl(post.category) + '">' + bi(category.zh, category.en) + "</a>" +
-        (app ? '<a class="article-app platform-' + appPlatformType(app) + '" href="' + journalFilterUrl(app.slug) + '">' + appPlatformBadge(app) + "</a>" : "") +
+      '<div class="article-card-top"><a class="eyebrow article-category" href="' + journalFilterUrl("category", post.category) + '">' + bi(category.zh, category.en) + "</a>" +
+        (app ? '<a class="article-app platform-' + appPlatformType(app) + '" href="' + journalFilterUrl("app", app.slug) + '">' + appPlatformBadge(app) + "</a>" : "") +
       "</div>" +
       '<a class="article-card-link" href="' + postUrl(post) + '" aria-label="' + escapeHtml(post.titleText.zh) + '">' +
         renderPostText(post.titleText, "h3", "article-title") +
@@ -547,20 +547,20 @@ function journalPage(posts) {
   const usedCategories = Array.from(new Set(posts.map((post) => post.category)))
     .map((key) => [key, articleCategories[key]?.zh, articleCategories[key]?.en])
     .filter((item) => item[1] && item[2]);
-  const filterButtons = (items, firstActive = false) => items.map((item, index) =>
-    '<button type="button" data-filter="' + item[0] + '"' + (firstActive && index === 0 ? ' class="active"' : "") + ">" + bi(item[1], item[2]) + "</button>"
+  const filterButtons = (items, firstActive = false, group = "") => items.map((item, index) =>
+    '<button type="button" data-filter="' + item[0] + '"' + (group ? ' data-filter-group="' + group + '"' : "") + (firstActive && index === 0 ? ' class="active"' : "") + ">" + bi(item[1], item[2]) + "</button>"
   ).join("");
-  const filterGroup = (labelZh, labelEn, items, panelId, firstActive = false) =>
+  const filterGroup = (labelZh, labelEn, items, panelId, firstActive = false, group = "") =>
     '<div class="filter-group"><span class="filter-label">' + bi(labelZh, labelEn) + "</span>" +
-      '<div class="filter-options" id="' + panelId + '">' + filterButtons(items, firstActive) + "</div></div>";
+      '<div class="filter-options" id="' + panelId + '">' + filterButtons(items, firstActive, group) + "</div></div>";
   const content =
     '<section class="page-intro section"><span class="eyebrow">JOURNAL / ' + bi("文章", "Writing") + "</span>" +
       bi("App 功能、<br><em>使用方式与更新记录</em>。", "App features,<br><em>usage guides, and updates.</em>", "h1") +
       bi("文章内容以 " + appNameList("zh") + " 当前项目中已经实现的功能为依据。", "Articles are based on features currently implemented in " + appNameList("en") + ".", "p") +
     "</section>" +
     '<section class="section journal-listing"><div class="filter-bar" role="group" aria-label="Article filters">' +
-      filterGroup("查看", "View", appFilters, "app-filter-options", true) +
-      filterGroup("文章分类", "Categories", usedCategories, "category-filter-options") +
+      filterGroup("查看", "View", appFilters, "app-filter-options", true, "app") +
+      filterGroup("文章分类", "Categories", usedCategories, "category-filter-options", false, "category") +
     '</div><div class="journal-grid">' + posts.map((post) => articleCard(post)).join("") + "</div>" +
       '<p class="empty-state" hidden>' + bi("这个分类里还没有文章。", "No articles in this category yet.") + "</p></section>";
 
@@ -609,8 +609,8 @@ function postPage(post, allPosts) {
   const kickerShapeClass = app ? " platform-" + appPlatformType(app) : "";
   const content =
     '<article class="post"><header class="post-header section"><a class="back-link" href="/journal/">← ' + bi("所有文章", "All writing") + "</a>" +
-      '<div class="post-kicker"><a class="post-kicker-category' + kickerShapeClass + '" href="' + journalFilterUrl(post.category) + '">' + bi(category.zh, category.en) + "</a>" +
-        (app ? '<a class="platform-' + appPlatformType(app) + '" href="' + journalFilterUrl(app.slug) + '">' + appPlatformBadge(app) + "</a>" : "") +
+      '<div class="post-kicker"><a class="post-kicker-category' + kickerShapeClass + '" href="' + journalFilterUrl("category", post.category) + '">' + bi(category.zh, category.en) + "</a>" +
+        (app ? '<a class="platform-' + appPlatformType(app) + '" href="' + journalFilterUrl("app", app.slug) + '">' + appPlatformBadge(app) + "</a>" : "") +
       "</div>" +
       renderPostText(post.titleText, "h1", "post-title") +
       renderPostText(post.excerptText, "p", "post-deck") +

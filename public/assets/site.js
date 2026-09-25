@@ -91,25 +91,48 @@
   });
 
   const filterButtons = document.querySelectorAll("[data-filter]");
+  const appButtons = Array.from(filterButtons).filter(function (button) {
+    return button.dataset.filterGroup !== "category";
+  });
+  const categoryButtons = Array.from(filterButtons).filter(function (button) {
+    return button.dataset.filterGroup === "category";
+  });
   const articleCards = document.querySelectorAll(".journal-grid .article-card");
   const emptyState = document.querySelector(".empty-state");
 
-  function applyArticleFilter(filter, updateUrl) {
-    const activeButton = Array.from(filterButtons).find(function (button) {
-      return button.dataset.filter === filter;
-    });
-    const selected = activeButton ? filter : "all";
-    let visibleCount = 0;
+  // The View (app) and Categories groups are independent filters that combine
+  // with AND, not one shared "selected" value: picking a category narrows
+  // within whichever app is already showing, and vice versa. Only the View
+  // group's "all" button clears both back to unfiltered.
+  let currentApp = "all";
+  let currentCategory = "all";
 
-    filterButtons.forEach(function (button) {
-      const active = button.dataset.filter === selected;
+  function applyFilters(app, category, updateUrl) {
+    const validApp = appButtons.some(function (button) { return button.dataset.filter === app; }) ? app : "all";
+    const validCategory = categoryButtons.some(function (button) { return button.dataset.filter === category; }) ? category : "all";
+
+    appButtons.forEach(function (button) {
+      // The "all" button represents "nothing is filtered anywhere" — it
+      // only lights up when both groups are clear, not just this one, even
+      // though it physically lives in the View group.
+      const isAllButton = button.dataset.filter === "all";
+      const active = isAllButton
+        ? validApp === "all" && validCategory === "all"
+        : button.dataset.filter === validApp;
       button.classList.toggle("active", active);
       button.setAttribute("aria-pressed", String(active));
     });
+    categoryButtons.forEach(function (button) {
+      const active = button.dataset.filter === validCategory;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+
+    let visibleCount = 0;
     articleCards.forEach(function (card) {
-      const visible = selected === "all" ||
-        card.dataset.category === selected ||
-        card.dataset.app === selected;
+      const appMatch = validApp === "all" || card.dataset.app === validApp;
+      const categoryMatch = validCategory === "all" || card.dataset.category === validCategory;
+      const visible = appMatch && categoryMatch;
       card.hidden = !visible;
       if (visible) visibleCount += 1;
     });
@@ -117,21 +140,53 @@
 
     if (updateUrl && window.history?.replaceState) {
       const url = new URL(window.location.href);
-      if (selected === "all") url.searchParams.delete("filter");
-      else url.searchParams.set("filter", selected);
+      url.searchParams.delete("filter"); // legacy single-filter param
+      if (validApp === "all") url.searchParams.delete("app"); else url.searchParams.set("app", validApp);
+      if (validCategory === "all") url.searchParams.delete("category"); else url.searchParams.set("category", validCategory);
       window.history.replaceState({}, "", url);
     }
+
+    currentApp = validApp;
+    currentCategory = validCategory;
   }
 
-  filterButtons.forEach(function (button) {
+  appButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      applyArticleFilter(button.dataset.filter, true);
+      if (button.dataset.filter === "all") {
+        // "all" is the shared reset: it clears the category selection too.
+        applyFilters("all", "all", true);
+        return;
+      }
+      // A second click on the already-selected app clears just the app,
+      // keeping whichever category was already selected — same as the
+      // Categories group. If nothing ends up selected in either group,
+      // this naturally lands back on "all" (validApp/validCategory both
+      // resolve to "all"), which is the correct default state.
+      const alreadyActive = button.classList.contains("active");
+      applyFilters(alreadyActive ? "all" : button.dataset.filter, currentCategory, true);
+    });
+  });
+
+  categoryButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      // No dedicated "all" button in this group, so a second click on the
+      // already-selected category clears just the category, keeping
+      // whichever app filter was already selected.
+      const alreadyActive = button.classList.contains("active");
+      applyFilters(currentApp, alreadyActive ? "all" : button.dataset.filter, true);
     });
   });
 
   if (filterButtons.length) {
-    const requestedFilter = new URLSearchParams(window.location.search).get("filter") || "all";
-    applyArticleFilter(requestedFilter, false);
+    const params = new URLSearchParams(window.location.search);
+    // A link generated before this filter split still points at either an
+    // app slug or a category slug via ?filter=; route it to whichever group
+    // it actually belongs to instead of dropping it.
+    const legacyFilter = params.get("filter");
+    const legacyIsCategory = legacyFilter && categoryButtons.some(function (button) { return button.dataset.filter === legacyFilter; });
+    const requestedApp = params.get("app") || (legacyFilter && !legacyIsCategory ? legacyFilter : "all");
+    const requestedCategory = params.get("category") || (legacyIsCategory ? legacyFilter : "all");
+    applyFilters(requestedApp, requestedCategory, false);
   }
 
   // Page view counters and article likes: article pages show their own count,

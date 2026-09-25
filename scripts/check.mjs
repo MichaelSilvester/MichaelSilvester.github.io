@@ -119,7 +119,7 @@ for (const category of new Set(sourceRecords.map((post) => post.category))) {
     throw new Error("Journal is missing a filter for category " + category);
   }
   const expectedLinks = sourceRecords.filter((post) => post.category === category).length;
-  const link = 'class="eyebrow article-category" href="/journal/?filter=' + encodeURIComponent(category) + '"';
+  const link = 'class="eyebrow article-category" href="/journal/?category=' + encodeURIComponent(category) + '"';
   if (journal.split(link).length - 1 !== expectedLinks) {
     throw new Error("Journal cards have incorrect links for category " + category);
   }
@@ -127,7 +127,7 @@ for (const category of new Set(sourceRecords.map((post) => post.category))) {
 for (const app of new Set(sourceRecords.map((post) => post.app).filter((value) => value !== "general"))) {
   const expectedLinks = sourceRecords.filter((post) => post.app === app).length;
   const linkPattern = new RegExp(
-    '<a class="article-app platform-(?:ios|mac)" href="/journal/\\?filter=' +
+    '<a class="article-app platform-(?:ios|mac)" href="/journal/\\?app=' +
       encodeURIComponent(app).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") +
       '"'
   );
@@ -150,10 +150,10 @@ for (let index = 0; index < sourceRecords.length; index += 1) {
   if (actual.join("\n") !== expected.join("\n")) {
     throw new Error(current.routeName + " has incorrect previous/next article links");
   }
-  if (!html.includes('/journal/?filter=' + encodeURIComponent(current.category))) {
+  if (!html.includes('/journal/?category=' + encodeURIComponent(current.category))) {
     throw new Error(current.routeName + " is missing its category link");
   }
-  if (current.app !== "general" && !html.includes('/journal/?filter=' + encodeURIComponent(current.app))) {
+  if (current.app !== "general" && !html.includes('/journal/?app=' + encodeURIComponent(current.app))) {
     throw new Error(current.routeName + " is missing its app filter link");
   }
   if (html.includes("data-copy-link") || html.includes("Share on X") || html.includes('class="post-aside"')) {
