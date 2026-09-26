@@ -6,15 +6,15 @@ category: legal
 featured: false
 titleZh: Diple 隐私政策
 titleEn: Diple Privacy Policy
-excerptZh: 说明 Diple 如何处理本地文稿、文件夹保护、语音转文字、版本历史及 App Store 购买相关信息。
-excerptEn: How Diple handles local documents, folder protection, Speech to Text, Version History, and App Store purchase information.
+excerptZh: 说明 Diple 如何处理本地文稿、合集、个性化素材、语音转文字、版本历史及 App Store 购买相关信息。
+excerptEn: How Diple handles local documents, Collections, personalization assets, Speech to Text, Version History, and App Store purchase information.
 ---
 <!-- zh -->
-**最后更新：2026 年 9 月 13 日**
+**最后更新：2026 年 9 月 26 日**
 
-**生效日期：2026 年 9 月 13 日**
+**生效日期：2026 年 9 月 26 日**
 
-Diple（以下简称“本 App”）是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工具。本隐私政策说明本 App 如何处理与你有关的信息。
+Diple（以下简称“本 App”）是一款适用于 iPhone 和 iPad 的 Markdown 与纯文本文稿编辑和管理工具。本隐私政策说明本 App 如何处理与你有关的信息。
 
 如果你对本隐私政策有任何疑问，请发送邮件至 [MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com) 联系我们。
 
@@ -26,10 +26,10 @@ Diple 的设计与数据处理方式如下：
 - 不使用开发者运营的云服务器，不提供 iCloud 或其他云同步；
 - 不包含广告、第三方行为分析 SDK 或跟踪代码；
 - 不使用广告标识符；
-- 不会把你的文稿内容、文件夹结构或备注上传到开发者运营的服务器；
+- 不会把你的文稿内容、文件夹与合集结构或备注上传到开发者运营的服务器；
 - 不会向数据经纪商出售、出租或提供你的个人信息。
 
-你的文稿、文件夹、备注、浏览记录、版本历史和设置存储在设备本地。你主动使用语音转文字时，语音识别可能由 Apple 提供的服务处理；购买由 Apple App Store 处理。开发者不运营收集你使用数据的服务器。
+你的文稿、文件夹、合集、封面与稿纸素材、备注、阅读记录、版本历史和设置存储在设备本地。你主动使用语音转文字时，语音识别可能由 Apple 提供的服务处理；购买由 Apple App Store 处理。开发者不运营收集你使用数据的服务器。
 
 ## 2. 本 App 在本地处理的信息
 
@@ -37,9 +37,11 @@ Diple 的设计与数据处理方式如下：
 
 为提供 Markdown 编辑、浏览和整理功能，本 App 可能在你的设备本地处理以下信息：
 
-- 你创建或编辑的 Markdown 文稿内容；
+- 你创建或编辑的 Markdown 与纯文本文稿内容，以及插入文稿的图片；
 - 文稿标题、文件名、创建和修改时间；
 - 文件夹名称与文件夹层级结构；
+- 合集名称、简介、章节、文稿引用、排序与编号方式、打开方式、封面和阅读位置；
+- 你主动选择的合集封面与自定义稿纸图片；
 - 你为文稿添加的备注；
 - 最近打开和编辑的文稿记录；
 - 文稿的版本历史和已锁定的历史更改；
@@ -49,7 +51,7 @@ Diple 的设计与数据处理方式如下：
 
 ### 2.2 设置与偏好
 
-本 App 会在你的设备本地保存外观（浅色/深色/跟随系统）、字体样式与字号、编辑器显示模式、保存方式（自动保存或手动保存）、文稿时间显示、排序与移到顶部行为、文稿删除方式、废纸篓加密、界面语言、语音识别语言以及最近使用的代码块语言等偏好设置。
+本 App 会在你的设备本地保存主题、稿纸与 App 图标、外观（浅色/深色/跟随系统）、字体样式与字号、编辑器显示模式、保存方式（自动保存或手动保存）、合集文件夹显示方式、文稿时间显示、排序与移到顶部行为、文稿删除方式、废纸篓加密、界面语言、语音识别语言以及最近使用的代码块语言等偏好设置。
 
 ### 2.3 语音转文字
 
@@ -81,7 +83,7 @@ Diple Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit �
 
 生物识别信息由 iOS 安全隔区和系统身份验证服务管理，本 App 无法访问底层面部信息。
 
-使用语音转文字时，本 App 会请求麦克风和语音识别权限；未授权时无法使用该功能。你可以随时在 iOS“设置”中查看或撤回这些权限。本 App 不请求系统相册、摄像头、位置或本地网络权限。撤回 Face ID 权限后，仍可使用密码验证访问受保护的文件夹。
+使用语音转文字时，本 App 会请求麦克风和语音识别权限；未授权时无法使用该功能。你可以随时在 iOS“设置”中查看或撤回这些权限。通过系统照片选择器或文件选择器插入图片、设置合集封面或制作稿纸时，本 App 只读取你主动选择的项目，不请求完整照片图库权限。本 App 不请求摄像头、位置或本地网络权限。撤回 Face ID 权限后，仍可使用密码验证访问受保护的文件夹。
 
 ## 4. 信息共享与披露
 
@@ -90,7 +92,7 @@ Diple Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit �
 信息仅可能在以下情况下传输或披露：
 
 - **Apple 服务：** Apple 处理购买、订阅、恢复购买和 App Store 服务；当设备端语音识别不可用时，Apple 也可能处理你主动提交识别的音频；
-- **你主动发起的分享：** 当你使用系统分享或导出到“文件”App 时，文稿文件会传递给你选择的目标 App 或位置；
+- **你主动发起的分享：** 当你使用系统分享，或将文稿、文件夹或合集导出到“文件”App 时，生成的文件会传递给你选择的目标 App 或位置；
 - **法律要求：** 我们可能遵守适用法律、法律程序、法院命令或有权公共机关提出的合法要求。
 
 本 App 不集成任何第三方软件开发工具包（SDK），不使用第三方分析或广告服务。
@@ -102,7 +104,7 @@ Diple Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit �
 - App 沙盒中的本地文件系统；
 - iOS 钥匙串。
 
-文稿、文件夹、备注、浏览记录和设置通常会保留到你删除相关内容或卸载本 App 为止。
+文稿、文件夹、合集、封面与稿纸素材、备注、阅读记录、版本历史和设置通常会保留到你删除相关内容或卸载本 App 为止。
 
 加入废纸篓的文稿和文件夹通常会保留约一个月，此后会被自动清除；你也可以随时手动清空废纸篓或提前恢复。若你将“删除文稿”设置为“直接删除”，相关文稿会立即永久删除，不会进入废纸篓。
 
@@ -112,7 +114,8 @@ Diple Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit �
 
 你可以通过以下方式管理本 App 处理的信息：
 
-- 在 App 中查看、编辑、移动或删除文稿和文件夹；
+- 在 App 中查看、编辑、移动或删除文稿、文件夹和合集；
+- 更换或移除合集封面与自定义稿纸；
 - 清空废纸篓或恢复其中的项目；
 - 选择将文稿加入废纸篓或直接永久删除；
 - 删除文稿备注或浏览记录；
@@ -162,11 +165,11 @@ Diple Pro 的订阅、购买、计费和恢复购买由 Apple 通过 StoreKit �
 联系邮箱：[MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com)
 
 <!-- en -->
-**Last Updated: September 13, 2026**
+**Last Updated: September 26, 2026**
 
-**Effective Date: September 13, 2026**
+**Effective Date: September 26, 2026**
 
-Diple (the “App”) is a Markdown document editing and management tool for iPhone and iPad. This Privacy Policy explains how the App handles information relating to you.
+Diple (the “App”) is a Markdown and plain-text document editing and management tool for iPhone and iPad. This Privacy Policy explains how the App handles information relating to you.
 
 If you have any questions about this Privacy Policy, contact us at [MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com).
 
@@ -178,10 +181,10 @@ Diple is designed and handles data as follows:
 - Does not use developer-operated cloud servers and does not provide iCloud or other cloud synchronization;
 - Does not include advertising, third-party behavioral analytics SDKs, or tracking code;
 - Does not use advertising identifiers;
-- Does not upload your document content, folder structure, or notes to developer-operated servers;
+- Does not upload your document content, folder and Collection structure, or notes to developer-operated servers;
 - Does not sell, rent, or provide your personal information to data brokers.
 
-Your documents, folders, notes, browsing history, version history, and settings are stored on your device. When you choose to use Speech to Text, speech recognition may be handled by an Apple service. Purchases are processed by the Apple App Store. The Developer does not operate servers that collect your usage data.
+Your documents, folders, Collections, cover and Writing Paper assets, notes, reading records, version history, and settings are stored on your device. When you choose to use Speech to Text, speech recognition may be handled by an Apple service. Purchases are processed by the Apple App Store. The Developer does not operate servers that collect your usage data.
 
 ## 2. Information Processed by the App
 
@@ -189,9 +192,11 @@ Your documents, folders, notes, browsing history, version history, and settings 
 
 To provide Markdown editing, browsing, and organizing features, the App may process the following information locally on your device:
 
-- The content of Markdown documents you create or edit;
+- The content of Markdown and plain-text documents you create or edit, and images inserted into documents;
 - Document titles, file names, and creation and modification times;
 - Folder names and folder hierarchy;
+- Collection names, summaries, chapters, document references, order and numbering, opening mode, covers, and reading position;
+- Collection covers and custom Writing Paper images you choose;
 - Notes you add to documents;
 - A record of recently opened and edited documents;
 - Document version history and locked historical changes;
@@ -201,7 +206,7 @@ This information is stored in the local file system within the App sandbox and i
 
 ### 2.2 Settings and Preferences
 
-The App stores appearance (light, dark, or system), font style and size, editor display mode, save mode (automatic or manual), document timestamp display, sorting and move-to-top behavior, document deletion behavior, Trash protection, interface language, speech recognition language, and recently used code-block languages locally on your device.
+The App stores themes, Writing Paper and app icon choices, appearance (light, dark, or system), font style and size, editor display mode, save mode (automatic or manual), Collection-folder visibility, document timestamp display, sorting and move-to-top behavior, document deletion behavior, Trash protection, interface language, speech recognition language, and recently used code-block languages locally on your device.
 
 ### 2.3 Speech to Text
 
@@ -233,7 +238,7 @@ The App requests permission to use Face ID only when you choose biometric authen
 
 Biometric information is managed by the iOS Secure Enclave and system authentication services. The App cannot access the underlying facial information.
 
-When you use Speech to Text, the App requests microphone and speech recognition permissions; the feature is unavailable without them. You can review or withdraw these permissions at any time in iOS Settings. The App does not request access to your Photo Library, camera, location, or local network. After withdrawing Face ID permission, you can still access protected folders using password authentication.
+When you use Speech to Text, the App requests microphone and speech recognition permissions; the feature is unavailable without them. You can review or withdraw these permissions at any time in iOS Settings. When you insert an image, choose a Collection cover, or create Writing Paper through the system photo or file picker, the App reads only the items you select and does not request full Photo Library access. The App does not request camera, location, or local-network permission. After withdrawing Face ID permission, you can still access protected folders using password authentication.
 
 ## 4. Information Sharing and Disclosure
 
@@ -242,7 +247,7 @@ We do not share your information for advertising, marketing, or data-brokerage p
 Information may be transmitted or disclosed only in the following circumstances:
 
 - **Apple services:** Apple processes purchases, subscriptions, purchase restoration, and App Store services; Apple may also process audio you choose to submit for recognition when on-device speech recognition is unavailable;
-- **Sharing you initiate:** When you use system sharing or export to the Files app, the document file is delivered to the destination app or location you choose;
+- **Sharing you initiate:** When you use system sharing or export a document, folder, or Collection to the Files app, the generated files are delivered to the destination app or location you choose;
 - **Legal requirements:** We may comply with applicable laws, legal proceedings, court orders, or lawful requests from authorized public authorities.
 
 The App does not integrate any third-party software development kit (SDK) and does not use third-party analytics or advertising services.
@@ -254,7 +259,7 @@ The App does not provide a developer-operated cloud account or cloud synchroniza
 - The local file system within the App sandbox;
 - The iOS Keychain.
 
-Documents, folders, notes, browsing history, and settings are generally retained until you delete the relevant content or uninstall the App.
+Documents, folders, Collections, cover and Writing Paper assets, notes, reading records, version history, and settings are generally retained until you delete the relevant content or uninstall the App.
 
 Documents and folders moved to Trash are generally retained for approximately one month before being automatically removed. You can also manually empty Trash or restore items earlier at any time. If you set “Delete Documents” to “Delete Immediately,” those documents are permanently deleted at once and do not enter Trash.
 
@@ -264,7 +269,8 @@ Keychain items and Apple purchase records are managed according to iOS and Apple
 
 You can manage information processed by the App by:
 
-- Viewing, editing, moving, or deleting documents and folders within the App;
+- Viewing, editing, moving, or deleting documents, folders, and Collections within the App;
+- Replacing or removing Collection covers and custom Writing Paper;
 - Emptying Trash or restoring items from it;
 - Choosing whether documents move to Trash or are permanently deleted immediately;
 - Deleting document notes or browsing history;

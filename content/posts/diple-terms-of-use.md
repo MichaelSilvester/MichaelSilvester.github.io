@@ -10,9 +10,9 @@ excerptZh: Diple 用户协议，说明软件许可、用户内容、订阅与一
 excerptEn: The Diple Terms of Use, covering the software license, user content, subscriptions and one-time purchases, privacy, liability, and dispute resolution.
 ---
 <!-- zh -->
-**最后更新：2026 年 9 月 2 日**
+**最后更新：2026 年 9 月 26 日**
 
-**生效日期：2026 年 9 月 2 日**
+**生效日期：2026 年 9 月 26 日**
 
 欢迎使用 Diple。
 
@@ -28,21 +28,23 @@ excerptEn: The Diple Terms of Use, covering the software license, user content, 
 
 ## 2. 服务说明
 
-Diple 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工具。其功能可能包括：
+Diple 是一款适用于 iPhone 和 iPad 的 Markdown 与纯文本文稿编辑和管理工具。其功能可能包括：
 
-- 创建、编辑和管理 Markdown 文稿；
+- 创建、编辑和管理 Markdown 与纯文本文稿；
 - 使用格式工具栏插入标题、加粗、斜体、行内代码、代码块（支持语法高亮）、引用、无序/有序/任务列表、链接、图片、删除线、分隔线和表格；
 - 在沉浸式、实时预览、纯预览和源码等多种显示模式之间切换；
 - 使用文档结构大纲快速跳转到各级标题；
+- 使用语音转文字输入内容，并通过版本历史查看、比较或找回修改；
 - 使用文件夹整理文稿，创建多级嵌套文件夹；
 - 按自定义顺序、名称、修改时间或创建时间整理文稿和文件夹，并将项目移到顶部；
 - 查看最近打开和编辑的文稿；
 - 为文稿添加私密备注；
+- 将文稿加入或引用到合集，设置封面、章节、编号和阅读顺序，并连续阅读合集内容；
 - 将文稿和文件夹加入废纸篓并在到期前恢复，或按设置直接永久删除文稿；
 - 使用密码、Face ID 或 Touch ID 保护文件夹；
 - 对包含加密文件夹项目的废纸篓启用生物识别保护；
-- 将文稿导出到“文件”App 或通过系统分享发送给其他 App；
-- 自定义外观、字体、字号、语言和保存方式；
+- 将文稿或合集导出为 Markdown、TXT、Word 或 PDF，或通过系统分享发送给其他 App；
+- 自定义主题、稿纸、App 图标、字体、字号、语言和保存方式；
 - 购买和使用 Diple Pro 功能。
 
 可用功能可能因 App 版本、设备型号、操作系统、地区和 App Store 产品配置而异。
@@ -61,7 +63,7 @@ Diple 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工�
 
 ## 4. 用户内容与可接受使用
 
-对于你在本 App 中创建、编辑或导入的 Markdown 文稿内容（以下简称“用户内容”），你保留依法享有的任何权利。使用本 App 不会将该内容的所有权转让给开发者。
+对于你在本 App 中创建、编辑或导入的 Markdown、纯文本文稿及相关图片等内容（以下简称“用户内容”），你保留依法享有的任何权利。使用本 App 不会将该内容的所有权转让给开发者。
 
 你有责任确保自己有权创建、存储、编辑、导出或分享相关内容。
 
@@ -76,7 +78,7 @@ Diple 是一款适用于 iPhone 和 iPad 的 Markdown 文稿编辑与管理工�
 
 ## 5. 本地数据、备份与访问保护
 
-Diple 的文稿、文件夹、备注和设置完全存储在你的设备本地，本 App 不提供 iCloud 或其他云同步服务。
+Diple 的文稿、文件夹、合集、封面、稿纸、备注、版本历史、阅读记录和设置完全存储在你的设备本地，本 App 不提供 iCloud 或其他云同步服务。
 
 你有责任根据内容的重要程度，通过导出或系统分享等方式进行适当备份。设备损坏、存储空间不足、系统故障、用户误操作、App 被移除或操作系统清理都可能造成本地数据丢失。
 
@@ -88,17 +90,21 @@ Face ID 和 Touch ID 验证由 iOS 执行。文件夹保护和废纸篓加密属
 
 ## 6. 免费功能与 Diple Pro
 
-本 App 不限制文稿的创建数量。免费版本最多支持创建 2 个文件夹。
+本 App 的免费版本最多支持创建 2 个文件夹。
 
 Diple Pro 是本 App 提供的付费订阅或一次性购买服务，解锁的功能可能包括：
 
 - 创建不限数量的文件夹和嵌套文件夹；
+- 使用整册合集导出、隐藏合集文件夹等合集进阶功能；
+- 无限使用 PDF、Word 等专业导出，并进行批量或整文件夹导出；
+- 使用更多主题、稿纸和 App 图标；
+- 保留更多历史版本并锁定重要记录；
 - 使用密码、Face ID 或 Touch ID 保护文件夹；
 - 获得未来更新中的 Pro 功能。
 
 会员权益以购买页面、App Store 产品信息以及 App 内的实际说明为准。
 
-如果你的会员资格取消或到期，此前已经超出免费版限额的文件夹和文稿仍会保留，你可以继续查看、编辑、导出或删除，但在恢复会员之前可能无法新建更多文件夹或文稿，也无法新增或修改文件夹保护。你此前已经设置的文件夹保护在会员到期后仍可正常解锁或移除，不会导致内容被锁定而无法访问。
+如果你的会员资格取消或到期，此前创建的内容仍会保留，你可以继续查看、编辑或删除，但在恢复会员之前可能无法新建更多文件夹，也无法继续使用仅限 Pro 的合集、导出、个性化和访问保护功能。你此前已经设置的文件夹保护仍可正常解锁或移除，不会导致内容被锁定而无法访问。
 
 开发者可以依法调整免费和付费功能，但除法律、平台政策、安全问题或不可抗力要求变更外，不会任意剥夺你已购买且仍在有效服务期内的服务。
 
@@ -249,9 +255,9 @@ Apple 并非本协议所约定 App 功能的提供者。除 Apple 条款或适�
 联系邮箱：[MichaelSilvesterCN+Diple@gmail.com](mailto:MichaelSilvesterCN+Diple@gmail.com)
 
 <!-- en -->
-**Last Updated: September 2, 2026**
+**Last Updated: September 26, 2026**
 
-**Effective Date: September 2, 2026**
+**Effective Date: September 26, 2026**
 
 Welcome to Diple.
 
@@ -267,21 +273,23 @@ If you obtain the App through the Apple App Store, your software license is also
 
 ## 2. Description of the Service
 
-Diple is a Markdown document editing and management tool for iPhone and iPad. Its features may include:
+Diple is a Markdown and plain-text document editing and management tool for iPhone and iPad. Its features may include:
 
-- Creating, editing, and managing Markdown documents;
+- Creating, editing, and managing Markdown and plain-text documents;
 - Using the formatting toolbar to insert headings, bold, italic, inline code, code blocks with syntax highlighting, quotes, unordered/ordered/task lists, links, images, strikethrough, horizontal rules, and tables;
 - Switching between immersive, live preview, preview-only, and source display modes;
 - Using a document outline to jump quickly to headings;
+- Using Speech to Text for input and Version History to review, compare, or restore edits;
 - Organizing documents with folders, including nested folders;
 - Organizing documents and folders by custom order, name, modification time, or creation time, and moving items to the top;
 - Viewing recently opened and edited documents;
 - Adding private notes to documents;
+- Adding or referencing documents in Collections, setting covers, chapters, numbering, and reading order, and reading continuously across a Collection;
 - Moving documents and folders to Trash and restoring them before they expire, or permanently deleting documents according to your settings;
 - Protecting folders with a password, Face ID, or Touch ID;
 - Using biometric protection for Trash when it contains items from encrypted folders;
-- Exporting documents to the Files app or sharing them with other apps through the system share sheet;
-- Customizing appearance, font, font size, language, and save mode;
+- Exporting documents or Collections as Markdown, TXT, Word, or PDF, or sharing them with other apps through the system share sheet;
+- Customizing themes, Writing Paper, app icons, font, font size, language, and save mode;
 - Purchasing and using Diple Pro features.
 
 Available features may vary according to App version, device model, operating system, region, and App Store product configuration.
@@ -300,7 +308,7 @@ Except where expressly permitted by applicable law, you may not:
 
 ## 4. User Content and Acceptable Use
 
-You retain any rights you lawfully hold in the Markdown documents you create, edit, or import in the App (“User Content”). Using the App does not transfer ownership of that content to the Developer.
+You retain any rights you lawfully hold in Markdown documents, plain-text documents, related images, and other content you create, edit, or import in the App (“User Content”). Using the App does not transfer ownership of that content to the Developer.
 
 You are responsible for ensuring that you have the right to create, store, edit, export, or share relevant content.
 
@@ -315,7 +323,7 @@ You are responsible under applicable law for disputes arising from User Content 
 
 ## 5. Local Data, Backups, and Access Protection
 
-Diple documents, folders, notes, and settings are stored entirely on your device. The App does not provide iCloud or other cloud synchronization services.
+Diple documents, folders, Collections, covers, Writing Paper, notes, version history, reading records, and settings are stored entirely on your device. The App does not provide iCloud or other cloud synchronization services.
 
 You are responsible for making appropriate backups, such as by exporting or using system sharing, based on the importance of your content. Device damage, insufficient storage, system failures, user error, App removal, or operating-system cleanup may result in the loss of local data.
 
@@ -327,17 +335,21 @@ Face ID and Touch ID authentication are performed by iOS. Folder protection and 
 
 ## 6. Free Features and Diple Pro
 
-The App does not limit the number of documents you can create. The free version supports creating up to 2 folders.
+The free version of the App supports creating up to 2 folders.
 
 Diple Pro is a paid subscription or one-time purchase offered by the App. Features it may unlock include:
 
 - Creating an unlimited number of folders and nested folders;
+- Using advanced Collection features such as whole-Collection export and hiding Collection folders;
+- Unlimited professional PDF and Word export, including batch and whole-folder export;
+- Using additional themes, Writing Paper, and app icons;
+- Keeping more Version History and locking important entries;
 - Protecting folders with a password, Face ID, or Touch ID;
 - Access to Pro features in future updates.
 
 Membership benefits are determined by the purchase screen, App Store product information, and the actual description in the App.
 
-If your membership is canceled or expires, folders and documents that already exceed the free-version limits remain available and you can continue to view, edit, export, or delete them, but you may be unable to create additional folders or documents, or add or modify folder protection, until membership is restored. Folder protection you previously set up can still be unlocked or removed after membership expires; it will not lock you out of your content.
+If your membership is canceled or expires, content you already created remains available and you can continue to view, edit, or delete it, but you may be unable to create additional folders or continue using Collection, export, personalization, and access-protection features that require Pro until membership is restored. Folder protection you previously set up can still be unlocked or removed; it will not lock you out of your content.
 
 The Developer may lawfully adjust free and paid features but will not arbitrarily deprive you of services already purchased and still within their valid service period, except where changes are required by law, platform policy, security concerns, or force majeure.
 

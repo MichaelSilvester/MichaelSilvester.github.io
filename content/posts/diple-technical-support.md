@@ -6,8 +6,8 @@ category: support
 featured: false
 titleZh: Diple 开发者技术支持
 titleEn: Diple Technical Support
-excerptZh: Diple 常见问题、购买帮助与故障排查，包括文稿创建、Markdown 语法、显示模式、加密文件夹、废纸篓与恢复购买。
-excerptEn: Diple FAQs, purchase assistance, and troubleshooting for creating documents, Markdown syntax, display modes, folder protection, Trash, and purchase restoration.
+excerptZh: Diple 常见问题、购买帮助与故障排查，包括文稿、合集、导出、访问保护、废纸篓与恢复购买。
+excerptEn: Diple FAQs, purchase assistance, and troubleshooting for documents, Collections, export, access protection, Trash, and purchase restoration.
 ---
 <!-- zh -->
 使用 Diple 时遇到问题？你可以在下面查看常见问题、购买帮助和故障排查步骤，也可以联系我们获取进一步支持。
@@ -18,7 +18,7 @@ excerptEn: Diple FAQs, purchase assistance, and troubleshooting for creating doc
 
 ### 如何创建新文稿？
 
-在“文稿”标签页中，轻点新建按钮即可创建一篇新的 Markdown 文稿。你也可以先创建文件夹，再在文件夹内创建文稿，方便按主题整理。
+在“文稿”标签页中，轻点新建按钮，可以选择创建 Markdown 或纯文本文稿。你也可以先创建文件夹，再在文件夹内创建文稿，方便按主题整理。
 
 ### 支持哪些 Markdown 语法？
 
@@ -38,9 +38,21 @@ Diple 提供沉浸式（所见即所得）、实时预览、纯预览和源码�
 
 文稿列表还可以显示创建时间、修改时间或不显示时间，这一选项同样位于“文件操作”设置中。
 
-### 免费版可以创建多少文件夹和文稿？
+### 免费版可以创建多少个文件夹？
 
-文稿的创建数量没有限制。免费版最多可以创建 2 个文件夹；升级到 Diple Pro 后，可以创建不限数量的文件夹和嵌套文件夹。
+免费版最多可以创建 2 个文件夹。升级到 Diple Pro 后，可以创建不限数量的文件夹和嵌套文件夹。
+
+### 如何创建和整理合集？
+
+在“合集”标签页中新建合集，可以设置名称、简介、文稿类型、章节编号和封面。进入合集后，可以创建章节、调整文稿顺序，并通过目录和连续阅读浏览整册内容。阅读位置会保存在设备本地，方便下次继续。
+
+### 把文稿添加到合集时，“加入”和“引用”有什么区别？
+
+“加入”会把文稿归档到该合集的文件夹中；“引用”会让文稿保留在原文件夹，只在合集中建立关联。引用的仍是同一篇文稿，因此从文稿库或合集编辑时，另一处也会看到最新内容。
+
+### 如何导出合集或隐藏合集文件夹？
+
+Diple Pro 可以把整册合集导出为一个文档，也可以在“设置”>“文件操作”中隐藏文稿页里的合集文件夹。隐藏后，合集中的文稿仍可从“合集”标签页查看和编辑。
 
 ### 如何加密文件夹？
 
@@ -58,7 +70,7 @@ Diple 提供沉浸式（所见即所得）、实时预览、纯预览和源码�
 
 ### 如何导出或分享文稿？
 
-在文稿库中选中一篇或多篇文稿，选择导出可以保存到“文件”App，选择分享可以通过系统分享发送到其他 App 或设备。
+在文稿库中选中一篇文稿，可以导出为 Markdown、TXT、Word 或 PDF；选择分享则会通过系统分享发送到其他 App 或设备。批量导出、整文件夹导出和整册合集导出属于 Diple Pro 功能。
 
 ### 如何恢复购买？
 
@@ -111,7 +123,7 @@ Having trouble using Diple? Find answers to common questions, purchase assistanc
 
 ### How do I create a new document?
 
-Tap the new-document button on the “Documents” tab to create a new Markdown document. You can also create a folder first and then add documents inside it to keep things organized by topic.
+Tap the new-document button on the “Documents” tab and choose a Markdown or plain-text document. You can also create a folder first and then add documents inside it to keep things organized by topic.
 
 ### Which Markdown syntax is supported?
 
@@ -131,9 +143,21 @@ Documents and folders support a custom order, or you can sort them by name, modi
 
 The document list can show creation time, modification time, or no timestamp. This option is also available under “File Operations.”
 
-### How many folders and documents can I create on the free version?
+### How many folders can I create on the free version?
 
-There is no limit on the number of documents you can create. The free version supports up to 2 folders; upgrading to Diple Pro lets you create unlimited folders and nested folders.
+The free version supports up to 2 folders. Upgrading to Diple Pro lets you create unlimited folders and nested folders.
+
+### How do I create and organize a Collection?
+
+Create a Collection from the “Collections” tab and choose its name, summary, document type, chapter numbering, and cover. Inside a Collection, you can create chapters, arrange documents, and read the whole work using its table of contents and continuous reading. Your reading position is saved locally so you can continue later.
+
+### What is the difference between “Add” and “Reference” in a Collection?
+
+“Add” files the document inside that Collection’s folder. “Reference” keeps the document in its original folder and creates a link from the Collection. A referenced document remains the same document, so edits made from the library or the Collection appear in both places.
+
+### How do I export a Collection or hide Collection folders?
+
+Diple Pro can export a whole Collection as one document. It can also hide Collection folders from the Documents tab through “Settings” > “File Operations.” When hidden, documents in a Collection remain available for viewing and editing from the “Collections” tab.
 
 ### How do I encrypt a folder?
 
@@ -151,7 +175,7 @@ Items in Trash are generally retained for approximately one month before being a
 
 ### How do I export or share a document?
 
-Select one or more documents in the document library, then choose Export to save them to the Files app, or choose Share to send them to another app or device through the system share sheet.
+Select a document in the library to export it as Markdown, TXT, Word, or PDF. Choose Share to send it to another app or device through the system share sheet. Batch export, whole-folder export, and whole-Collection export are Diple Pro features.
 
 ### How do I restore my purchases?
 

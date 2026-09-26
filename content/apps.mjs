@@ -117,16 +117,16 @@ export const apps = [
     status: { zh: "持续开发中", en: "In active development" },
     kind: { zh: "Markdown 编辑器", en: "Markdown editor" },
     tagline: {
-      zh: "写作、预览与整理 Markdown 文稿。",
-      en: "Write, preview, and organize Markdown documents.",
+      zh: "写作、整理，并把文稿编成自己的作品。",
+      en: "Write, organize, and bring documents together as your own work.",
     },
     description: {
-      zh: "面向 iPhone 和 iPad 的 Markdown 编辑与文稿管理工具，提供沉浸式写作、实时预览、源码编辑、格式工具栏和文档大纲，并支持多级文件夹、排序置顶、私密备注、废纸篓与文件夹加密。",
-      en: "A Markdown editor and document manager for iPhone and iPad, with immersive writing, live preview, source editing, a formatting toolbar, and document outlines, plus nested folders, sorting and move-to-top controls, private notes, Trash, and encrypted folders.",
+      zh: "面向 iPhone 和 iPad 的 Markdown 与纯文本写作工具，支持语音转文字、版本历史、合集连续阅读、主题与稿纸，以及 Markdown、TXT、Word 和 PDF 导出。",
+      en: "A Markdown and plain-text writing tool for iPhone and iPad, with Speech to Text, Version History, continuous reading in Collections, themes and Writing Paper, plus Markdown, TXT, Word, and PDF export.",
     },
     story: {
-      zh: "Diple 将 Markdown 写作与本地文稿库结合：可以在沉浸式、实时预览、纯预览和源码模式间切换，通过格式工具栏与文档大纲完成编辑；文稿可使用多级文件夹、自定义排序、修改置顶和私密备注整理。内容保存在设备本地，废纸篓支持恢复，加密文件夹与受保护的废纸篓可使用密码或系统生物识别验证。",
-      en: "Diple combines Markdown writing with a local document library. Switch between immersive, live-preview, preview-only, and source modes, and edit with a formatting toolbar and document outline. Organize documents with nested folders, custom sorting, move-edited-to-top behavior, and private notes. Content stays on your device, Trash supports recovery, and encrypted folders and protected Trash can use passwords or system biometric authentication.",
+      zh: "Diple 将 Markdown 与纯文本写作、本地文稿库和合集阅读放在一起。你可以在四种显示模式间切换，用语音记录灵感，通过版本历史找回修改；再把相关文稿加入或引用到合集，设置封面、章节、编号与阅读顺序。主题、稿纸和 App 图标让写作空间更合心意，内容仍保存在设备本地，并可导出为 Markdown、TXT、Word 或 PDF。",
+      en: "Diple brings Markdown and plain-text writing, a local document library, and Collection reading together. Switch among four display modes, capture ideas with Speech to Text, and revisit edits with Version History. Add or reference related documents in Collections with covers, chapters, numbering, and a reading order. Themes, Writing Paper, and app icons personalize the space, while content stays on your device and can be exported as Markdown, TXT, Word, or PDF.",
     },
     accent: "sage",
     version: appStoreVersionFallback,
@@ -138,9 +138,9 @@ export const apps = [
     },
     features: [
       { zh: "沉浸式、实时预览、纯预览与源码模式", en: "Immersive, live preview, preview-only, and source modes" },
-      { zh: "格式工具栏、语法高亮与文档大纲", en: "Formatting toolbar, syntax highlighting, and document outline" },
-      { zh: "多级文件夹、自定义排序与修改置顶", en: "Nested folders, custom sorting, and move edited documents to top" },
-      { zh: "本地存储、废纸篓与加密文件夹", en: "Local storage, Trash, and encrypted folders" },
+      { zh: "语音转文字、版本历史与图片插入", en: "Speech to Text, Version History, and image insertion" },
+      { zh: "合集、章节编排与连续阅读", en: "Collections, chapter organization, and continuous reading" },
+      { zh: "主题、稿纸与多格式导出", en: "Themes, Writing Paper, and multi-format export" },
     ],
   },
 ];
