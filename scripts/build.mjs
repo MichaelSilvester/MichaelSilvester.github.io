@@ -492,6 +492,10 @@ function appCard(app) {
 
 function homePage(posts) {
   const featured = posts.filter((post) => post.featured).slice(0, 2);
+  // Repeat complete app cycles so either side stays filled even on ultrawide screens.
+  const tickerApps = Array.from({ length: 16 }, () => apps.map((app) =>
+    '<span>' + app.name.toUpperCase() + '</span><i>✦</i>'
+  ).join('')).join('');
   const content =
     '<section class="hero section">' +
       '<div class="hero-copy"><span class="eyebrow">' + bi("设计 · 开发 · 记录", "Design · Build · Notes") + "</span>" +
@@ -508,8 +512,11 @@ function homePage(posts) {
         '<div class="stage-card stage-magic">' + visual(apps[1], true) + "</div>" +
       "</div>" +
     "</section>" +
-    '<section class="ticker" aria-hidden="true"><div>' + apps.map((app) => app.name.toUpperCase()).join(" <i>✦</i> ") + " <i>✦</i> " +
-      bi("APP 功能与开发记录", "APP FEATURES & DEVELOPMENT") + " <i>✦</i> " + apps.map((app) => app.name.toUpperCase()).join(" <i>✦</i> ") + "</div></section>" +
+    '<section class="ticker" aria-hidden="true"><div class="ticker-row">' +
+      '<div class="ticker-side ticker-side-left"><div class="ticker-track">' + tickerApps + '</div></div>' +
+      '<div class="ticker-label">' + bi("APP 功能与开发记录", "APP FEATURES & DEVELOPMENT") + '</div>' +
+      '<div class="ticker-side"><div class="ticker-track"><i>✦</i>' + tickerApps + '</div></div>' +
+    '</div></section>' +
     '<section class="section latest-section"><div class="section-heading"><div><span class="section-number">01</span>' +
       bi("最近文章", "Latest writing", "h2") + "</div><a class=\"text-link\" href=\"/journal/\">" + bi(ui.allWriting.zh, ui.allWriting.en) + " <span>↗</span></a></div>" +
       '<div class="article-grid">' + featured.map((post) => articleCard(post, true)).join("") + "</div></section>" +

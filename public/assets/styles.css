@@ -773,6 +773,7 @@ h2 em {
 }
 
 .ticker {
+  /* Overscan the rotated strip; page-shell clips it to the content width. */
   width: calc(100% + 4rem);
   margin-left: -2rem;
   padding: 0.95rem 0;
@@ -783,13 +784,33 @@ h2 em {
   white-space: nowrap;
 }
 
-.ticker > div {
-  min-width: max-content;
-  display: flex;
+.ticker-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 1.5rem;
   font: 500 var(--font-meta) var(--mono);
   letter-spacing: 0.1em;
+}
+
+.ticker-label {
+  text-align: center;
+}
+
+.ticker-side {
+  display: flex;
+  overflow: hidden;
+}
+
+.ticker-side-left {
+  justify-content: flex-end;
+}
+
+.ticker-track {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .ticker i {
