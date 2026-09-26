@@ -772,7 +772,6 @@ function aboutPage() {
       '<div class="about-portrait" aria-hidden="true"><span>MS</span><i></i><b>MICHAEL<br>SILVESTER</b></div>' +
       '<div class="about-intro">' + bi("你好，我是<br><em>Michael。</em>", "Hello, I’m<br><em>Michael.</em>", "h1") +
         bi(site.bio.zh, site.bio.en, "p", "about-lead") +
-        '<div class="about-location"><span>●</span>' + bi(site.location.zh, site.location.en) + "</div>" +
       "</div></section>" +
     '<section class="section about-story"><div><span class="section-number">01</span>' + bi("我在做什么", "What I do", "h2") + "</div><div class=\"about-prose\">" +
       bi(site.bio.zh + " " + appKindSummary("zh") + "。", site.bio.en + " " + appKindSummary("en") + ".", "p") +
@@ -845,7 +844,7 @@ async function buildFeeds(posts) {
   await writeFile(join(output, "sitemap.xml"), sitemap);
 
   const rss = '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Michael Silvester</title><link>' +
-    site.url + '</link><description>Product, design, and independent development.</description>' +
+    site.url + '</link><description>Product, design, and app development.</description>' +
     posts.map((post) => "<item><title>" + escapeHtml(post.titleText.zh) + "</title><link>" + site.url + postUrl(post) +
       "</link><guid>" + site.url + postUrl(post) + "</guid><pubDate>" + new Date(post.published.isoValue).toUTCString() +
       "</pubDate><description>" + escapeHtml(post.excerptText.zh) + "</description></item>").join("") + "</channel></rss>";
