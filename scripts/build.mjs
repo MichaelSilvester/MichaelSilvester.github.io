@@ -327,7 +327,7 @@ function footer(active) {
   return (
     '<footer class="site-footer">' +
       '<div><div class="footer-name">Michael Silvester</div>' +
-        bi(appNameList("zh") + " 开发者。", "Developer of " + appNameList("en") + ".", "p") +
+        bi("专注 Apple 生态，分享 App 功能、使用指南与开发动态。", "Focused on the Apple ecosystem, sharing app features, usage guides, and development updates.", "p") +
       "</div>" +
       '<div class="footer-links">' + footerLinks + "</div>" +
       '<p class="copyright">© ' + year + " Michael Silvester</p>" +
@@ -499,10 +499,10 @@ function homePage(posts) {
   const content =
     '<section class="hero section">' +
       '<div class="hero-copy"><span class="eyebrow">' + bi("设计 · 开发 · 记录", "Design · Build · Notes") + "</span>" +
-        bi("记录 App 功能、<br>使用方式与<br><em>开发进展。</em>", "App features,<br>usage guides, and<br><em>development notes.</em>", "h1") +
-        bi(site.bio.zh, site.bio.en, "p", "hero-intro") +
+        bi("专注 Apple 生态，<br>探索 App 的<br><em>功能与体验。</em>", "Apple ecosystem,<br><em>app features<br class=\"br-narrow\"> &amp; experience.</em>", "h1") +
+        bi("这里发布由本站开发者设计开发的 macOS 与 iOS App，提供功能介绍、使用指南、版本更新与开发日志。", "This site publishes macOS and iOS apps designed and built by its developer, with feature overviews, usage guides, release updates, and development notes.", "p", "hero-intro") +
         '<div class="hero-actions"><a class="button button-dark" href="/journal/">' + bi("开始阅读", "Start reading") + ' <span>↗</span></a>' +
-          '<a class="button button-ghost" href="/apps/">' + bi("看看我的 App", "Explore my apps") + "</a></div>" +
+          '<a class="button button-ghost" href="/apps/">' + bi("探索 App", "Explore apps") + "</a></div>" +
       "</div>" +
       // The stage only ever spotlights the first two apps in content/apps.mjs;
       // that is a deliberate, fixed two-card layout, not an exhaustive list.
@@ -521,7 +521,7 @@ function homePage(posts) {
       bi("最近文章", "Latest writing", "h2") + "</div><a class=\"text-link\" href=\"/journal/\">" + bi(ui.allWriting.zh, ui.allWriting.en) + " <span>↗</span></a></div>" +
       '<div class="article-grid">' + featured.map((post) => articleCard(post, true)).join("") + "</div></section>" +
     '<section class="section apps-section"><div class="section-heading"><div><span class="section-number">02</span>' +
-      bi("我的 App", "My apps", "h2") + "</div><a class=\"text-link\" href=\"/apps/\">" + bi(ui.allApps.zh, ui.allApps.en) + " <span>↗</span></a></div>" +
+      bi("App 一览", "App overview", "h2") + "</div><a class=\"text-link\" href=\"/apps/\">" + bi(ui.allApps.zh, ui.allApps.en) + " <span>↗</span></a></div>" +
       '<div class="app-grid">' + apps.map(appCard).join("") + "</div></section>" +
     '<section class="section manifesto"><span class="manifesto-mark">✦</span>' +
       bi("为 iPhone、iPad 与 Mac<br>打造的 App。", "Apps built for<br>iPhone, iPad, and Mac.", "h2") +
@@ -562,8 +562,8 @@ function journalPage(posts) {
       '<div class="filter-options" id="' + panelId + '">' + filterButtons(items, firstActive, group) + "</div></div>";
   const content =
     '<section class="page-intro section"><span class="eyebrow">JOURNAL / ' + bi("文章", "Writing") + "</span>" +
-      bi("App 功能、<br><em>使用方式与更新记录</em>。", "App features,<br><em>usage guides, and updates.</em>", "h1") +
-      bi("文章内容以 " + appNameList("zh") + " 当前项目中已经实现的功能为依据。", "Articles are based on features currently implemented in " + appNameList("en") + ".", "p") +
+      bi("功能介绍、使用指南与<br><em>开发日志。</em>", "Feature overviews, usage guides,<br><em>and development logs.</em>", "h1") +
+      bi("了解 PrimePlayer、MagicDesk、Picturium 与 Diple 的功能与用法，查看版本更新，阅读设计与开发过程中的记录。", "Learn about the features and usage of PrimePlayer, MagicDesk, Picturium, and Diple, check release updates, and read notes from the design and development process.", "p") +
     "</section>" +
     '<section class="section journal-listing"><div class="filter-bar" role="group" aria-label="Article filters">' +
       filterGroup("查看", "View", appFilters, "app-filter-options", true, "app") +
@@ -689,8 +689,8 @@ function postPage(post, allPosts) {
 function appsPage() {
   const content =
     '<section class="page-intro apps-intro section"><span class="eyebrow">APPS / ' + bi("作品", "Software") + "</span>" +
-      bi("iPhone、iPad 与 Mac 上的<br><em>全部 App。</em>", "All my apps for<br><em>iPhone, iPad, and Mac.</em>", "h1") +
-      bi(appKindSummary("zh") + "。", appKindSummary("en") + ".", "p") +
+      bi("为 iPhone、iPad 与 Mac<br><em>打造的 App。</em>", "Apps built for<br><em>iPhone, iPad, and Mac.</em>", "h1") +
+      bi("从视频播放、动态壁纸到图片处理与文字写作，探索适合你的 App，了解功能详情与使用方式。", "From video playback and live wallpapers to image editing and writing, explore the app that fits you and learn about its features and usage.", "p") +
     '</section><section class="section app-showcase-list">' + apps.map((app, index) =>
       '<article class="app-showcase app-' + app.accent + '"><div class="app-showcase-copy"><div class="app-index">0' + (index + 1) + "</div>" +
         '<div class="app-title-row"><span class="app-icon">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h2>" + app.name + "</h2></div></div>" +
@@ -777,22 +777,23 @@ function aboutPage() {
   const content =
     '<section class="about-hero section"><span class="eyebrow about-page-label">ABOUT / ' + bi("关于", "About") + "</span>" +
       '<div class="about-portrait" aria-hidden="true"><span>MS</span><i></i><b>MICHAEL<br>SILVESTER</b></div>' +
-      '<div class="about-intro">' + bi("你好，我是<br><em>Michael。</em>", "Hello, I’m<br><em>Michael.</em>", "h1") +
-        bi(site.bio.zh, site.bio.en, "p", "about-lead") +
+      '<div class="about-intro">' + bi("关于本站", "About This Site", "h1") +
+        bi("专注 Apple 生态，汇集 macOS 与 iOS App 的产品信息、使用指南与开发动态。", "Focused on the Apple ecosystem, bringing together product information, usage guides, and development updates for macOS and iOS apps.", "p", "about-lead") +
       "</div></section>" +
-    '<section class="section about-story"><div><span class="section-number">01</span>' + bi("我在做什么", "What I do", "h2") + "</div><div class=\"about-prose\">" +
-      bi(site.bio.zh + " " + appKindSummary("zh") + "。", site.bio.en + " " + appKindSummary("en") + ".", "p") +
-      bi("这个博客集中展示这些 App 的信息，并发布功能说明、使用方式与开发记录。", "This blog presents these apps and publishes feature descriptions, usage guides, and development notes.", "p") +
+    '<section class="section about-story"><div><span class="section-number">01</span>' + bi("本站 App", "The apps on this site", "h2") + "</div><div class=\"about-prose\">" +
+      bi("本站展示由本站开发者设计开发的 App，涵盖视频播放、动态壁纸、图片处理与 Markdown 写作。", "This site presents apps designed and built by its developer, spanning video playback, live wallpapers, image editing, and Markdown writing.", "p") +
+      bi("PrimePlayer 为 iPhone 与 iPad 提供视频播放与媒体管理；MagicDesk 将图片、GIF、视频与网页带到 Mac 桌面；Picturium 提供 macOS 图片浏览、编辑与动图合成；Diple 支持在 iPhone 与 iPad 上进行 Markdown 与纯文本写作。", "PrimePlayer brings video playback and media management to iPhone and iPad; MagicDesk brings images, GIFs, videos, and web pages to the Mac desktop; Picturium offers image browsing, editing, and animated-image creation on macOS; Diple supports Markdown and plain-text writing on iPhone and iPad.", "p") +
+      bi("你可以在这里了解各款 App 的功能与使用方式，查看版本更新，以及设计和开发过程中的记录。", "Here you can learn about each app's features and usage, check release updates, and read notes from the design and development process.", "p") +
     "</div></section>" +
     '<section class="values"><div class="section"><div class="section-heading"><div><span class="section-number">02</span>' + bi("站点内容", "What you will find", "h2") +
-      '</div></div><div class="value-grid"><div><span>01</span>' + bi("App 信息", "App details", "h3") + bi("查看 " + appNameList("zh") + " 的平台、系统要求和功能清单。", "View platforms, system requirements, and feature lists for " + appNameList("en") + ".", "p") +
-      '</div><div><span>02</span>' + bi("功能文章", "Feature guides", "h3") + bi("根据 App 中已经实现的功能整理使用说明。", "Read guides based on features already implemented in each app.", "p") +
-      '</div><div><span>03</span>' + bi("开发记录", "Development notes", "h3") + bi("后续用于发布版本变化和新增功能。", "A place for future release changes and newly added features.", "p") +
+      '</div></div><div class="value-grid"><div><span>01</span>' + bi("App 信息", "App details", "h3") + bi("查看各款 App 的功能、适用平台与系统要求。", "View each app's features, supported platforms, and system requirements.", "p") +
+      '</div><div><span>02</span>' + bi("使用指南", "Usage guides", "h3") + bi("了解功能用法、操作步骤与常见问题。", "Learn how features work, step-by-step instructions, and common questions.", "p") +
+      '</div><div><span>03</span>' + bi("更新与开发日志", "Updates & development log", "h3") + bi("查看版本变化、新增功能与开发记录。", "See version changes, new features, and development notes.", "p") +
       "</div></div></div></section>" +
     '<section class="section contact-section"><span class="eyebrow">CONTACT</span>' +
-      bi("有想法，或者只是想打个招呼？", "Have an idea, or just want to say hello?", "h2") +
-      bi("你可以通过电子邮件联系我。", "You can reach me by email.", "p") +
-      '<div><a class="button button-dark" href="mailto:' + site.email + '">' + bi("发送邮件", "Send email") + "</a></div></section>";
+      bi("使用中遇到问题，或有功能建议？", "Running into an issue, or have a feature suggestion?", "h2") +
+      bi("欢迎通过电子邮件反馈问题、提出建议或交流使用体验。", "Feel free to reach out by email to report issues, share suggestions, or talk about your experience using the apps.", "p") +
+      '<div><a class="button button-dark" href="mailto:' + site.email + '">' + bi("联系开发者", "Contact developer") + "</a></div></section>";
 
   return pageDocument({
     titleZh: "关于",
