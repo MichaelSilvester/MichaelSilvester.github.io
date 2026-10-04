@@ -417,6 +417,17 @@ function visual(app, compact = false) {
       "</div>"
     );
   }
+  if (app.slug === "arcula") {
+    // 用抽象相册展示本地保险箱，不把它渲染成默认的 macOS 桌面。
+    return (
+      '<div class="product-visual arcula-visual' + compactClass + '" aria-hidden="true">' +
+        '<div class="arcula-vault"><div class="arcula-vault-heading"><strong>Arcula</strong><span>● ● ●</span></div>' +
+        '<div class="arcula-photo-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>' +
+        '<div class="arcula-seal"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg>' +
+        bi("本地加密", "Encrypted on device") + '</div></div>' +
+      '</div>'
+    );
+  }
   if (app.slug === "diple") {
     // Diple is an iPhone/iPad editor, so its preview uses a document workspace
     // instead of the desktop chrome shared by the macOS products below.
@@ -430,9 +441,7 @@ function visual(app, compact = false) {
       "</div>"
     );
   }
-  // Any non-PrimePlayer app currently shares this generic macOS desktop-chrome
-  // mockup; the menu-bar label reads from app.name so it never misdescribes a
-  // future Mac app (like Picturium) as "MagicDesk".
+  // Remaining Mac apps share desktop chrome with their own product name.
   return (
     '<div class="product-visual magicdesk-visual' + compactClass + '" aria-hidden="true">' +
       '<div class="desktop-menu"><b>●</b><span>' + app.name + '</span><span>File</span><span>Edit</span><i>09:41</i></div>' +

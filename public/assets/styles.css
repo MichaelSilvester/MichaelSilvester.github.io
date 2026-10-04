@@ -2843,3 +2843,29 @@ h2 em {
     transition: none !important;
   }
 }
+
+/* Arcula 的抽象相册在产品卡片和详情页共用，尺寸跟随容器缩放。 */
+.arcula-visual {
+  display: grid;
+  place-items: center;
+  padding: 7%;
+  background: radial-gradient(circle at 80% 10%, #9fcee5, transparent 55%), linear-gradient(140deg, #233b67, #6c97ba);
+}
+.arcula-vault {
+  width: 76%;
+  padding: 7%;
+  border: 1px solid #ffffff60;
+  border-radius: 22px;
+  background: #eef5fc;
+  color: #263f64;
+  box-shadow: 0 20px 40px #152b4c50;
+}
+.arcula-vault-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12%; }
+.arcula-vault-heading strong { font-size: clamp(16px, 2vw, 26px); }
+.arcula-vault-heading > span { font-size: 8px; letter-spacing: 2px; }
+.arcula-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7%; }
+.arcula-photo-grid i { aspect-ratio: 1; border-radius: 9px; background: linear-gradient(145deg, #b9d5d4 45%, #638d85 46%, #305d61); }
+.arcula-photo-grid i:nth-child(2n) { background: linear-gradient(35deg, #7599c1 40%, #d1e1ed 41%, #accbe8); }
+.arcula-photo-grid i:nth-child(3n) { background: linear-gradient(160deg, #f0dcc3 40%, #ceac93 41%, #9a7e80); }
+.arcula-seal { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14%; font-size: clamp(10px, 1.2vw, 14px); }
+.arcula-seal svg { width: 22px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; }

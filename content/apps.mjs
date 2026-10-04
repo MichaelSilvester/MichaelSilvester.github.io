@@ -143,4 +143,36 @@ export const apps = [
       { zh: "主题、稿纸与多格式导出", en: "Themes, Writing Paper, and multi-format export" },
     ],
   },
+  {
+    slug: "arcula",
+    name: "Arcula",
+    monogram: "A",
+    icon: "/assets/icons/arcula.png",
+    platform: "iPhone · iPad",
+    status: { zh: "持续开发中", en: "In active development" },
+    kind: { zh: "私密相册", en: "Private photo vault" },
+    tagline: {
+      zh: "把私密照片与视频，加密留在自己手中。",
+      en: "Keep private photos and videos encrypted, in your hands.",
+    },
+    description: {
+      zh: "面向 iPhone 和 iPad 的私密相册，在本机加密保存照片、视频、实况照片和 GIF，支持文件夹整理、浏览器传输，以及启动验证、伪装密码、私密相机与加密备份。",
+      en: "A private photo vault for iPhone and iPad. Encrypt photos, videos, Live Photos, and GIFs on your device, organize them in folders, and transfer them through a browser, with features including Unlock Method, Decoy Passcode, Private Camera, and Encrypted Backup.",
+    },
+    story: {
+      zh: "从系统相册、“文件”或同一 Wi-Fi 下的浏览器导入内容，在本机加密保存并按文件夹整理。Arcula 提供启动验证、加密文件夹、伪装密码、入侵记录和私密相机，也支持导出到其他设备与加密备份。媒体库不参与 iCloud 同步或设备备份；卸载前或换机前，请导出并妥善保存需要的内容或备份文件。",
+      en: "Import from Photos, Files, or a browser on the same Wi-Fi network, then encrypt and organize media locally. Arcula supports app unlocking, encrypted folders, Decoy Passcode, Intruder Log, and Private Camera, plus Export to Other Devices and Encrypted Backup. The library is excluded from iCloud sync and device backups; export and safely store the content or backup files you need before deleting the app or changing devices.",
+    },
+    accent: "blue",
+    version: appStoreVersionFallback,
+    system: "iOS / iPadOS 18+",
+    // 尚未提供商店 ID；保留本站占位入口，避免生成无效的商店链接。
+    download: "#download-coming-soon",
+    features: [
+      { zh: "照片、视频、实况照片与 GIF 本地加密", en: "Local encryption for photos, videos, Live Photos, and GIFs" },
+      { zh: "文件夹整理与浏览器导入", en: "Folder organization and Browser Import" },
+      { zh: "伪装密码、入侵记录与私密相机", en: "Decoy Passcode, Intruder Log, and Private Camera" },
+      { zh: "导出到其他设备与加密备份", en: "Export to Other Devices and Encrypted Backup" },
+    ],
+  },
 ];

@@ -20,6 +20,7 @@ const required = [
   "dist/apps/magicdesk/index.html",
   "dist/apps/picturium/index.html",
   "dist/apps/diple/index.html",
+  "dist/apps/arcula/index.html",
   "dist/about/index.html",
   "dist/sitemap.xml",
   "dist/rss.xml",
@@ -52,6 +53,9 @@ const requiredProductDocuments = [
   "diple-privacy-policy",
   "diple-terms-of-use",
   "diple-technical-support",
+  "arcula-privacy-policy",
+  "arcula-terms-of-use",
+  "arcula-technical-support",
 ];
 for (const routeName of requiredProductDocuments) {
   if (!postDirs.some((entry) => entry.isDirectory() && entry.name === routeName)) {
@@ -168,7 +172,7 @@ for (let index = 0; index < sourceRecords.length; index += 1) {
 }
 
 const homepage = await readFile(join(root, "dist", "index.html"), "utf8");
-for (const name of ["PrimePlayer", "MagicDesk", "Picturium", "Diple", "Michael Silvester"]) {
+for (const name of ["PrimePlayer", "MagicDesk", "Picturium", "Diple", "Arcula", "Michael Silvester"]) {
   if (!homepage.includes(name)) throw new Error("Homepage is missing " + name);
 }
 
