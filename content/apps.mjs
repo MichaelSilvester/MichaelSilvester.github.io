@@ -178,7 +178,7 @@ export const apps = [
   {
     slug: "sudopalace",
     name: "SudoPalace",
-    nameZh: "数独闯关 SudoPalace",
+    detailNameZh: "数独闯关 SudoPalace",
     monogram: "S",
     icon: "/assets/icons/sudopalace.png",
     platform: "iPhone · iPad",

@@ -4,13 +4,13 @@ app: sudopalace
 pin: -1
 category: support
 featured: false
-titleZh: 数独闯关 SudoPalace 技术支持
+titleZh: SudoPalace 技术支持
 titleEn: SudoPalace Technical Support
 excerptZh: 关卡解锁、三星挑战、提示与笔记、会员购买及本地存档的常见问题。
 excerptEn: Help with level unlocks, three-star goals, Hint and Notes, membership purchases, and local saved games.
 ---
 <!-- zh -->
-数独闯关 SudoPalace 适用于运行 iOS / iPadOS 17.0 及以上系统的 iPhone 和 iPad，支持英文和简体中文。如需帮助，请联系 [MichaelSilvesterCN+SudoPalace@gmail.com](mailto:MichaelSilvesterCN+SudoPalace@gmail.com)。
+SudoPalace 适用于运行 iOS / iPadOS 17.0 及以上系统的 iPhone 和 iPad，支持英文和简体中文。如需帮助，请联系 [MichaelSilvesterCN+SudoPalace@gmail.com](mailto:MichaelSilvesterCN+SudoPalace@gmail.com)。
 
 ## 关卡与星级
 
@@ -89,7 +89,7 @@ Pro 提供周度、月度、年度订阅和终身一次性购买，可免除全�
 
 在“设置”>“系统”中调整“语言”和“深色模式”。语言可选跟随系统、简体中文或 English，切换后游戏界面立即生效；部分系统界面可能需下次启动后更新。
 
-反馈问题时，请注明 数独闯关 SudoPalace，并提供 App 版本、设备型号、系统版本、操作步骤及错误信息。游戏问题可补充难度、关卡号、是否每日挑战及截图。购买问题请说明会员或货币商品名称与购买时间，遮挡截图中无关的个人信息，不要发送账户密码或完整付款资料。
+反馈问题时，请注明 SudoPalace，并提供 App 版本、设备型号、系统版本、操作步骤及错误信息。游戏问题可补充难度、关卡号、是否每日挑战及截图。购买问题请说明会员或货币商品名称与购买时间，遮挡截图中无关的个人信息，不要发送账户密码或完整付款资料。
 
 - [隐私政策](/journal/sudopalace-privacy-policy/)
 - [用户协议](/journal/sudopalace-terms-of-use/)

@@ -1077,6 +1077,34 @@ h2 em {
   gap: 1rem;
 }
 
+.app-title-row > div {
+  min-width: 0;
+}
+
+/* 名称保持品牌大小写；腰封由构建时单独转为大写。 */
+.app-name-short,
+.app-name-localized {
+  text-transform: none;
+}
+
+/* 中英文组合名称需要给图标留出空间；仅调整本地化名称，不影响英文标题。 */
+html[data-lang="zh"] .app-hero h1 .app-name-localized.lang-zh {
+  display: block !important;
+  font-size: clamp(2rem, 3.5vw, 3.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
+/* 英文名称与图标并排时，也要保证窄屏可完整阅读。 */
+:is(.app-card h3, .app-showcase h2) .app-name-short,
+.app-hero h1 .app-name-localized.lang-en {
+  font-size: clamp(2rem, 3.5vw, 3.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
 .app-icon {
   width: 51px;
   height: 51px;
@@ -2791,6 +2819,10 @@ h2 em {
 
   .app-showcase h2 {
     font-size: 3.3rem;
+  }
+
+  .app-showcase h2 .app-name-short {
+    font-size: clamp(1.4rem, 7vw, 2rem);
   }
 
   .app-showcase-visual {

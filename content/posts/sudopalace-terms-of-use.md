@@ -4,21 +4,21 @@ app: sudopalace
 pin: -1
 category: legal
 featured: false
-titleZh: 数独闯关 SudoPalace 用户协议
+titleZh: SudoPalace 用户协议
 titleEn: SudoPalace Terms of Use
-excerptZh: 数独闯关 SudoPalace 的游戏规则、Pro 会员、金币与钻石购买，以及本地数据的使用责任。
+excerptZh: SudoPalace 的游戏规则、Pro 会员、金币与钻石购买，以及本地数据的使用责任。
 excerptEn: Game rules, Pro membership, coin and diamond purchases, and responsibilities for local data.
 ---
 <!-- zh -->
 **最后更新及生效日期：2026 年 10 月 6 日**
 
-本协议适用于你使用 Michael Silvester（下称“开发者”）提供的 数独闯关 SudoPalace。请在使用前阅读；如不同意，请停止使用。未成年人应在监护人指导和同意下使用及购买。
+本协议适用于你使用 Michael Silvester（下称“开发者”）提供的 SudoPalace。请在使用前阅读；如不同意，请停止使用。未成年人应在监护人指导和同意下使用及购买。
 
 ## 1. 服务与许可
 
-数独闯关 SudoPalace 提供经典九宫格数独、五大难度的 500 个关卡、每日挑战、技巧教程和游戏统计，适用于 iPhone 和 iPad。可用功能以当前版本、设备能力及购买页面为准。
+SudoPalace 提供经典九宫格数独、五大难度的 500 个关卡、每日挑战、技巧教程和游戏统计，适用于 iPhone 和 iPad。可用功能以当前版本、设备能力及购买页面为准。
 
-通过 App Store 获取的 App，其软件许可适用 [Apple 标准最终用户许可协议](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/)，除非另有有效的自定义许可。本页补充说明 数独闯关 SudoPalace 的游戏与购买规则，不限制适用法律赋予你的权利。
+通过 App Store 获取的 App，其软件许可适用 [Apple 标准最终用户许可协议](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/)，除非另有有效的自定义许可。本页补充说明 SudoPalace 的游戏与购买规则，不限制适用法律赋予你的权利。
 
 ## 2. 游戏与使用规则
 

@@ -1,6 +1,6 @@
 # Michael Silvester — Blog & Apps
 
-一个零依赖的双语静态博客，用于文章分享，以及 PrimePlayer、MagicDesk、Picturium、Diple、Arcula 与数独闯关 SudoPalace 的产品介绍与开发记录。
+一个零依赖的双语静态博客，用于文章分享，以及 PrimePlayer、MagicDesk、Picturium、Diple、Arcula 与 SudoPalace 的产品介绍与开发记录。
 
 ## 本地预览
 
@@ -44,7 +44,7 @@ npm run check
 ## 发布前需要确认
 
 - `content/site.mjs`：确认个人简介、支持邮箱与 GitHub 链接。
-- `content/apps.mjs`：PrimePlayer、MagicDesk、Picturium 与 Diple 均已配置 App Store 地址；Arcula 与数独闯关 SudoPalace 暂使用“下载即将开放”入口，获得商店地址后再配置 `appStore`；其中的版本号是 Apple 元数据不可用时的构建兜底值。
+- `content/apps.mjs`：PrimePlayer、MagicDesk、Picturium 与 Diple 均已配置 App Store 地址；Arcula 与 SudoPalace 暂使用“下载即将开放”入口，获得商店地址后再配置 `appStore`；其中的版本号是 Apple 元数据不可用时的构建兜底值。
 - `content/posts/primeplayer-terms-of-use.md` 与 `content/posts/primeplayer-privacy-policy.md`：发布前确认生效日期，并按实际发布地区完成必要的法律审阅。
 - `public/og.png`：如需自定义社交平台分享封面，可替换此图片。
 

@@ -248,14 +248,15 @@ function bi(zh, en, tag = "span", className = "") {
   );
 }
 
-// 中文显示名称单独配置；未配置时沿用 name，英文名称与路由标识保持独立。
-function appName(app, lang) {
-  return lang === "zh" ? app.nameZh || app.name : app.name;
+// 中文完整名称仅用于 App 详情页标题；卡片、封条和文章统一使用通用名称。
+function appName(app, lang, detail = false) {
+  return detail && lang === "zh" ? app.detailNameZh || app.name : app.name;
 }
 
-function renderAppName(app) {
-  if (!app.nameZh) return escapeHtml(app.name);
-  return bi(escapeHtml(appName(app, "zh")), escapeHtml(appName(app, "en")));
+function renderAppName(app, detail = false) {
+  if (!app.detailNameZh) return escapeHtml(app.name);
+  if (!detail) return '<span class="app-name-short">' + escapeHtml(app.name) + '</span>';
+  return bi(escapeHtml(appName(app, "zh", true)), escapeHtml(appName(app, "en", true)), "span", "app-name-localized");
 }
 
 // Copy that lists every app by name reads from content/apps.mjs through these
@@ -528,7 +529,7 @@ function homePage(posts) {
   const featured = posts.filter((post) => post.featured).slice(0, 2);
   // Repeat complete app cycles so either side stays filled even on ultrawide screens.
   const tickerApps = Array.from({ length: 16 }, () => apps.map((app) =>
-    '<span>' + (app.nameZh ? bi(escapeHtml(appName(app, "zh").toUpperCase()), escapeHtml(appName(app, "en").toUpperCase())) : escapeHtml(app.name.toUpperCase())) + '</span><i>✦</i>'
+    '<span>' + escapeHtml(app.name.toUpperCase()) + '</span><i>✦</i>'
   ).join('')).join('');
   const content =
     '<section class="hero section">' +
@@ -780,7 +781,7 @@ function appPage(app, posts) {
   const appPosts = posts.filter((post) => post.app === app.slug);
   const content =
     '<section class="app-hero section app-' + app.accent + '"><div class="app-hero-copy"><a class="back-link" href="/apps/">← ' + bi("所有 App", "All apps") + "</a>" +
-      '<div class="app-title-row"><span class="app-icon app-icon-large">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h1>" + renderAppName(app) + "</h1></div></div>" +
+      '<div class="app-title-row"><span class="app-icon app-icon-large">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h1>" + renderAppName(app, true) + "</h1></div></div>" +
       bi(app.tagline.zh, app.tagline.en, "p", "app-hero-tagline") + bi(app.description.zh, app.description.en, "p", "app-hero-description") +
       '<div class="app-hero-actions"' + (app.appStore ? "" : ' id="download-coming-soon"') + ">" + appDownloadAction(app) + '<span class="status-dot">' + bi(app.status.zh, app.status.en) + "</span></div>" +
     '</div><div class="app-hero-visual">' + visual(app) + "</div></section>" +
@@ -797,7 +798,7 @@ function appPage(app, posts) {
     "</div></section>";
 
   return pageDocument({
-    titleZh: appName(app, "zh") + " — " + app.kind.zh,
+    titleZh: appName(app, "zh", true) + " — " + app.kind.zh,
     titleEn: app.name + " — " + app.kind.en,
     descriptionZh: app.description.zh,
     descriptionEn: app.description.en,
