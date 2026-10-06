@@ -11,6 +11,7 @@
   --blue: #789bff;
   --orange: #ff8b5c;
   --sage: #a7bd91;
+  --lavender: #c6b5f3;
   --white: #fffdf7;
   --display: "Manrope", "Noto Sans SC", sans-serif;
   --serif: "Playfair Display", Georgia, serif;
@@ -1061,6 +1062,10 @@ h2 em {
   background: var(--sage);
 }
 
+.app-card.app-lavender {
+  background: var(--lavender);
+}
+
 .app-card-copy {
   padding: 2.15rem 2.15rem 0;
 }
@@ -1103,6 +1108,10 @@ h2 em {
 
 .app-sage .app-icon {
   color: #dce9ce;
+}
+
+.app-lavender .app-icon {
+  color: #d9cafa;
 }
 
 .app-card h3 {
@@ -1839,6 +1848,10 @@ h2 em {
   background: var(--sage);
 }
 
+.app-showcase.app-lavender {
+  background: var(--lavender);
+}
+
 .app-showcase-copy {
   position: relative;
   z-index: 2;
@@ -1995,6 +2008,10 @@ h2 em {
 
 .app-hero.app-sage .app-hero-visual {
   background: var(--sage);
+}
+
+.app-hero.app-lavender .app-hero-visual {
+  background: var(--lavender);
 }
 
 .app-hero-visual .product-visual {
@@ -2869,3 +2886,98 @@ h2 em {
 .arcula-photo-grid i:nth-child(3n) { background: linear-gradient(160deg, #f0dcc3 40%, #ceac93 41%, #9a7e80); }
 .arcula-seal { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14%; font-size: clamp(10px, 1.2vw, 14px); }
 .arcula-seal svg { width: 22px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; }
+
+/* 数独展示同时用于卡片、文章关联区和详情页；按容器宽度缩放棋盘。 */
+.sudopalace-visual {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 7%;
+  padding: 6%;
+  background: radial-gradient(circle at 100% 0, #8985e1, transparent 60%), linear-gradient(140deg, #29266b, #5650b3);
+}
+
+.sudopalace-game {
+  min-width: 0;
+  padding: 6%;
+  border: 1px solid #ffffff60;
+  border-radius: 16px;
+  background: #f6f6fd;
+  color: #29266b;
+  box-shadow: 0 18px 38px #18144050;
+}
+
+.sudopalace-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8%;
+  font-size: clamp(10px, 1.2vw, 18px);
+}
+
+.sudopalace-heading > span {
+  color: #b5770a;
+  font-size: 0.6em;
+  white-space: nowrap;
+}
+
+.sudopalace-board {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  aspect-ratio: 1;
+  border: 2px solid #484569;
+  background: #fff;
+}
+
+.sudopalace-board > span {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border-right: 1px solid #d4d3e2;
+  border-bottom: 1px solid #d4d3e2;
+  font: 600 clamp(8px, 1.3vw, 20px) var(--display);
+  color: #353348;
+}
+
+/* 每九格换行；仅第 3、6 行及列使用宫格粗线，外框避免重复描边。 */
+.sudopalace-board > span:nth-child(9n + 3),
+.sudopalace-board > span:nth-child(9n + 6) {
+  border-right: 2px solid #484569;
+}
+
+.sudopalace-board > span:nth-child(n + 19):nth-child(-n + 27),
+.sudopalace-board > span:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 2px solid #484569;
+}
+
+.sudopalace-board > span:nth-child(9n) { border-right: 0; }
+.sudopalace-board > span:nth-child(n + 73) { border-bottom: 0; }
+.sudopalace-board > span:nth-child(n + 28):nth-child(-n + 36) { background: #f0effb; }
+.sudopalace-board > span:nth-child(32) { background: #d8d4fa; }
+
+.sudopalace-overview {
+  display: grid;
+  gap: 1.3rem;
+  min-width: 0;
+  font-size: clamp(9px, 1.1vw, 16px);
+}
+
+.sudopalace-level-count > strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font: 600 clamp(28px, 5vw, 70px)/1 var(--display);
+  letter-spacing: -0.06em;
+}
+
+.sudopalace-challenge {
+  display: grid;
+  gap: 0.5rem;
+  padding: 14%;
+  border: 1px solid #ffffff40;
+  border-radius: 12px;
+  background: #ffffff12;
+}
+
+.sudopalace-challenge > span { color: #ffd681; font-size: 1.8em; }
+.sudopalace-notes { color: #e2dfff; }

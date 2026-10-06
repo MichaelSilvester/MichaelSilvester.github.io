@@ -441,6 +441,21 @@ function visual(app, compact = false) {
       "</div>"
     );
   }
+  if (app.slug === "sudopalace") {
+    // 使用随 App 打包的简单关卡展示棋盘；0 表示空格，宫格边界由 CSS 加粗。
+    const puzzle = "250360198300090020001245307002870030708936000000001870065010283007053906039682705";
+    const cells = Array.from(puzzle, (digit) => '<span>' + (digit === "0" ? "" : digit) + '</span>').join("");
+    return (
+      '<div class="product-visual sudopalace-visual' + compactClass + '" aria-hidden="true">' +
+        '<div class="sudopalace-game"><div class="sudopalace-heading"><strong>SudoPalace</strong><span>★ ★ ★</span></div>' +
+        '<div class="sudopalace-board">' + cells + '</div></div>' +
+        '<div class="sudopalace-overview"><div class="sudopalace-level-count"><strong>500</strong>' +
+          bi("五大难度", "Five difficulties", "span") + '</div>' +
+          '<div class="sudopalace-challenge"><span>▦</span>' + bi("每日挑战", "Daily Challenge", "strong") + '</div>' +
+          '<div class="sudopalace-notes">' + bi("无广告数独", "Ad-free Sudoku", "span") + '</div></div>' +
+      '</div>'
+    );
+  }
   // Remaining Mac apps share desktop chrome with their own product name.
   return (
     '<div class="product-visual magicdesk-visual' + compactClass + '" aria-hidden="true">' +
@@ -572,7 +587,7 @@ function journalPage(posts) {
   const content =
     '<section class="page-intro section"><span class="eyebrow">JOURNAL / ' + bi("文章", "Writing") + "</span>" +
       bi("功能介绍、使用指南与<br><em>开发日志。</em>", "Feature overviews, usage guides,<br><em>and development logs.</em>", "h1") +
-      bi("了解 PrimePlayer、MagicDesk、Picturium 与 Diple 的功能与用法，查看版本更新，阅读设计与开发过程中的记录。", "Learn about the features and usage of PrimePlayer, MagicDesk, Picturium, and Diple, check release updates, and read notes from the design and development process.", "p") +
+      bi("了解 " + appNameList("zh") + " 的功能与用法，查看版本更新，阅读设计与开发过程中的记录。", "Learn about the features and usage of " + appNameList("en") + ", check release updates, and read notes from the design and development process.", "p") +
     "</section>" +
     '<section class="section journal-listing"><div class="filter-bar" role="group" aria-label="Article filters">' +
       filterGroup("查看", "View", appFilters, "app-filter-options", true, "app") +
@@ -790,8 +805,8 @@ function aboutPage() {
         bi("专注 Apple 生态，汇集 macOS 与 iOS App 的产品信息、使用指南与开发动态。", "Focused on the Apple ecosystem, bringing together product information, usage guides, and development updates for macOS and iOS apps.", "p", "about-lead") +
       "</div></section>" +
     '<section class="section about-story"><div><span class="section-number">01</span>' + bi("本站 App", "The apps on this site", "h2") + "</div><div class=\"about-prose\">" +
-      bi("本站展示由本站开发者设计开发的 App，涵盖视频播放、动态壁纸、图片处理与 Markdown 写作。", "This site presents apps designed and built by its developer, spanning video playback, live wallpapers, image editing, and Markdown writing.", "p") +
-      bi("PrimePlayer 为 iPhone 与 iPad 提供视频播放与媒体管理；MagicDesk 将图片、GIF、视频与网页带到 Mac 桌面；Picturium 提供 macOS 图片浏览、编辑与动图合成；Diple 支持在 iPhone 与 iPad 上进行 Markdown 与纯文本写作。", "PrimePlayer brings video playback and media management to iPhone and iPad; MagicDesk brings images, GIFs, videos, and web pages to the Mac desktop; Picturium offers image browsing, editing, and animated-image creation on macOS; Diple supports Markdown and plain-text writing on iPhone and iPad.", "p") +
+      bi("本站展示由本站开发者设计开发的 App，涵盖视频播放、动态壁纸、图片处理、Markdown 写作、私密相册与数独游戏。", "This site presents apps designed and built by its developer, spanning video playback, live wallpapers, image editing, Markdown writing, private photo storage, and Sudoku.", "p") +
+      bi(appKindSummary("zh") + "。", appKindSummary("en") + ".", "p") +
       bi("你可以在这里了解各款 App 的功能与使用方式，查看版本更新，以及设计和开发过程中的记录。", "Here you can learn about each app's features and usage, check release updates, and read notes from the design and development process.", "p") +
     "</div></section>" +
     '<section class="values"><div class="section"><div class="section-heading"><div><span class="section-number">02</span>' + bi("站点内容", "What you will find", "h2") +

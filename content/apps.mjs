@@ -175,4 +175,36 @@ export const apps = [
       { zh: "导出到其他设备与加密备份", en: "Export to Other Devices and Encrypted Backup" },
     ],
   },
+  {
+    slug: "sudopalace",
+    name: "SudoPalace",
+    monogram: "S",
+    icon: "/assets/icons/sudopalace.png",
+    platform: "iPhone · iPad",
+    status: { zh: "持续开发中", en: "In active development" },
+    kind: { zh: "数独游戏", en: "Sudoku game" },
+    tagline: {
+      zh: "每天一道挑战，从入门到大师。",
+      en: "A daily challenge, from Easy to Master.",
+    },
+    description: {
+      zh: "面向 iPhone 和 iPad 的无广告数独游戏，提供五大难度的 500 个关卡、每日挑战和 8 节免费技巧教程，支持笔记、提示、游戏统计与离线解题。",
+      en: "An ad-free Sudoku game for iPhone and iPad with 500 levels across five difficulties, Daily Challenge, and eight free Technique Tutorials, plus Notes, Hint, statistics, and offline play.",
+    },
+    story: {
+      zh: "在简单、中等、困难、专家和大师五大难度中按顺序闯关，挑战零错误、无提示或填格、在目标时间内完成的三星成绩。每日挑战与统计记录解题表现，免费技巧教程通过分步演示和互动练习帮助学习。各难度前 10 关免费，后续可用钻石逐关解锁或通过 SudoPalace Pro 免除解锁费用；道具仍按规则消耗金币或钻石。游戏进度与货币保存在本机，不在设备间同步。",
+      en: "Progress in order through Easy, Medium, Hard, Expert, and Master. Aim for three stars by finishing with no mistakes, no Hint or Fill Cell use, and within the target time. Track your performance with Daily Challenge and statistics, and learn through free lessons with demonstrations and interactive practice. The first 10 levels in each difficulty are free; unlock later levels with diamonds or remove unlock costs with SudoPalace Pro. Tools still consume coins or diamonds. Progress and currency remain on your device and do not sync across devices.",
+    },
+    accent: "lavender",
+    version: appStoreVersionFallback,
+    system: "iOS / iPadOS 17+",
+    // 尚未提供商店 ID；使用站内占位入口，获得有效地址后再配置 appStore。
+    download: "#download-coming-soon",
+    features: [
+      { zh: "500 个关卡与五大难度", en: "500 levels across five difficulties" },
+      { zh: "每日挑战与三星目标", en: "Daily Challenge and three-star goals" },
+      { zh: "8 节免费技巧教程", en: "Eight free Technique Tutorials" },
+      { zh: "无广告、离线解题与自动保存", en: "Ad-free play, offline puzzles, and autosave" },
+    ],
+  },
 ];
