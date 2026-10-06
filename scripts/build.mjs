@@ -248,11 +248,21 @@ function bi(zh, en, tag = "span", className = "") {
   );
 }
 
+// 中文显示名称单独配置；未配置时沿用 name，英文名称与路由标识保持独立。
+function appName(app, lang) {
+  return lang === "zh" ? app.nameZh || app.name : app.name;
+}
+
+function renderAppName(app) {
+  if (!app.nameZh) return escapeHtml(app.name);
+  return bi(escapeHtml(appName(app, "zh")), escapeHtml(appName(app, "en")));
+}
+
 // Copy that lists every app by name reads from content/apps.mjs through these
 // helpers instead of naming apps directly, so the lineup can grow without a
 // hunt through this file for stale mentions of only the first two apps.
 function appNameList(lang) {
-  const names = apps.map((app) => app.name);
+  const names = apps.map((app) => appName(app, lang));
   if (names.length === 1) return names[0];
   if (lang === "zh") return names.slice(0, -1).join("、") + " 与 " + names[names.length - 1];
   if (names.length === 2) return names.join(" and ");
@@ -266,7 +276,7 @@ function appNameList(lang) {
 function appKindSummary(lang) {
   if (lang === "zh") {
     return apps
-      .map((app) => app.name + " 是 " + app.platform.split(" · ").join(" 与 ") + " " + app.kind.zh)
+      .map((app) => appName(app, "zh") + " 是 " + app.platform.split(" · ").join(" 与 ") + " " + app.kind.zh)
       .join("；");
   }
   return apps
@@ -447,7 +457,7 @@ function visual(app, compact = false) {
     const cells = Array.from(puzzle, (digit) => '<span>' + (digit === "0" ? "" : digit) + '</span>').join("");
     return (
       '<div class="product-visual sudopalace-visual' + compactClass + '" aria-hidden="true">' +
-        '<div class="sudopalace-game"><div class="sudopalace-heading"><strong>SudoPalace</strong><span>★ ★ ★</span></div>' +
+        '<div class="sudopalace-game"><div class="sudopalace-heading"><strong>' + renderAppName(app) + '</strong><span>★ ★ ★</span></div>' +
         '<div class="sudopalace-board">' + cells + '</div></div>' +
         '<div class="sudopalace-overview"><div class="sudopalace-level-count"><strong>500</strong>' +
           bi("五大难度", "Five difficulties", "span") + '</div>' +
@@ -479,7 +489,7 @@ function appPlatformBadge(app) {
   const icon = type === "mac"
     ? '<svg class="platform-icon" viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2.5" width="13" height="9" rx="1.2"/><path d="M5.5 14h5M8 11.5V14"/></svg>'
     : '<svg class="platform-icon" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="1.5" width="8" height="13" rx="1.6"/><path d="M6.5 12.3h3"/></svg>';
-  return icon + '<span>' + app.name + "</span>";
+  return icon + '<span>' + renderAppName(app) + "</span>";
 }
 
 function articleCard(post, large = false) {
@@ -505,7 +515,7 @@ function appCard(app) {
     '<article class="app-card app-' + app.accent + '">' +
       '<div class="app-card-copy"><div class="app-card-head"><span class="app-icon">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + '</span><span class="eyebrow">' +
         bi(app.kind.zh, app.kind.en) + "</span></div>" +
-        '<h3>' + app.name + "</h3>" +
+        '<h3>' + renderAppName(app) + "</h3>" +
         bi(app.tagline.zh, app.tagline.en, "p", "app-tagline") +
         bi(app.description.zh, app.description.en, "p", "app-description") +
         '<a class="text-link" href="/apps/' + app.slug + '/">' + bi(ui.exploreApp.zh, ui.exploreApp.en) + " <span>↗</span></a>" +
@@ -518,7 +528,7 @@ function homePage(posts) {
   const featured = posts.filter((post) => post.featured).slice(0, 2);
   // Repeat complete app cycles so either side stays filled even on ultrawide screens.
   const tickerApps = Array.from({ length: 16 }, () => apps.map((app) =>
-    '<span>' + app.name.toUpperCase() + '</span><i>✦</i>'
+    '<span>' + (app.nameZh ? bi(escapeHtml(appName(app, "zh").toUpperCase()), escapeHtml(appName(app, "en").toUpperCase())) : escapeHtml(app.name.toUpperCase())) + '</span><i>✦</i>'
   ).join('')).join('');
   const content =
     '<section class="hero section">' +
@@ -574,7 +584,7 @@ function homePage(posts) {
 }
 
 function journalPage(posts) {
-  const appFilters = [["all", "全部", "All"], ...apps.map((app) => [app.slug, app.name, app.name])];
+  const appFilters = [["all", "全部", "All"], ...apps.map((app) => [app.slug, appName(app, "zh"), appName(app, "en")])];
   const usedCategories = Array.from(new Set(posts.map((post) => post.category)))
     .map((key) => [key, articleCategories[key]?.zh, articleCategories[key]?.en])
     .filter((item) => item[1] && item[2]);
@@ -672,7 +682,7 @@ function postPage(post, allPosts) {
       '</div></aside><div class="post-body">' +
       bi(markdownToHtml(post.bodyZh), markdownToHtml(post.bodyEn), "div", "prose") + "</div>" +
     "</div></article>" +
-    (app ? '<section class="section related-app"><div class="related-app-copy"><span class="eyebrow">' + bi("文中提到", "Mentioned in this story") + "</span><h2>" + app.name + "</h2>" +
+    (app ? '<section class="section related-app"><div class="related-app-copy"><span class="eyebrow">' + bi("文中提到", "Mentioned in this story") + "</span><h2>" + renderAppName(app) + "</h2>" +
       bi(app.description.zh, app.description.en, "p") + '<a class="button button-dark" href="/apps/' + app.slug + '/">' + bi("查看 App 信息", "View app details") + " ↗</a></div>" + visual(app, true) + "</section>" : "") +
     '<section class="section more-writing"><div class="section-heading"><div><span class="section-number">→</span>' + bi("继续阅读", "Keep reading", "h2") +
       '</div></div><nav class="post-navigation" aria-label="上一篇和下一篇 / Previous and next articles">' +
@@ -717,7 +727,7 @@ function appsPage() {
       bi("从视频播放、动态壁纸到图片处理与文字写作，探索适合你的 App，了解功能详情与使用方式。", "From video playback and live wallpapers to image editing and writing, explore the app that fits you and learn about its features and usage.", "p") +
     '</section><section class="section app-showcase-list">' + apps.map((app, index) =>
       '<article class="app-showcase app-' + app.accent + '"><div class="app-showcase-copy"><div class="app-index">0' + (index + 1) + "</div>" +
-        '<div class="app-title-row"><span class="app-icon">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h2>" + app.name + "</h2></div></div>" +
+        '<div class="app-title-row"><span class="app-icon">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h2>" + renderAppName(app) + "</h2></div></div>" +
         bi(app.tagline.zh, app.tagline.en, "p", "app-tagline") + bi(app.description.zh, app.description.en, "p", "app-description") +
         '<ul class="feature-pills">' + app.features.map((feature) => "<li>" + bi(feature.zh, feature.en) + "</li>").join("") + "</ul>" +
         '<a class="button button-dark" href="/apps/' + app.slug + '/">' + bi("进入 App 页面", "Open app page") + " <span>↗</span></a></div>" +
@@ -748,15 +758,16 @@ function appStoreUrlForLocale(url, locale) {
 function appDownloadAction(app) {
   if (app.appStore) {
     // App Store 地址必须来自内容配置；新窗口属性可避免外部页面控制本站标签页。
-    const ariaLabel = app.name + " App Store";
+    const ariaLabelZh = escapeHtml(appName(app, "zh") + " App Store");
+    const ariaLabelEn = escapeHtml(appName(app, "en") + " App Store");
     const zhUrl = appStoreUrlForLocale(app.appStore.url, "zh");
     const enUrl = appStoreUrlForLocale(app.appStore.url, "en");
     return (
       '<span class="lang-copy lang-zh"><a class="button button-dark" href="' + zhUrl +
-        '" target="_blank" rel="noopener noreferrer" aria-label="' + ariaLabel + '">' +
+        '" target="_blank" rel="noopener noreferrer" aria-label="' + ariaLabelZh + '">' +
         app.appStore.label.zh + " ↗</a></span>" +
       '<span class="lang-copy lang-en"><a class="button button-dark" href="' + enUrl +
-        '" target="_blank" rel="noopener noreferrer" aria-label="' + ariaLabel + '">' +
+        '" target="_blank" rel="noopener noreferrer" aria-label="' + ariaLabelEn + '">' +
         app.appStore.label.en + " ↗</a></span>"
     );
   }
@@ -769,7 +780,7 @@ function appPage(app, posts) {
   const appPosts = posts.filter((post) => post.app === app.slug);
   const content =
     '<section class="app-hero section app-' + app.accent + '"><div class="app-hero-copy"><a class="back-link" href="/apps/">← ' + bi("所有 App", "All apps") + "</a>" +
-      '<div class="app-title-row"><span class="app-icon app-icon-large">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h1>" + app.name + "</h1></div></div>" +
+      '<div class="app-title-row"><span class="app-icon app-icon-large">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h1>" + renderAppName(app) + "</h1></div></div>" +
       bi(app.tagline.zh, app.tagline.en, "p", "app-hero-tagline") + bi(app.description.zh, app.description.en, "p", "app-hero-description") +
       '<div class="app-hero-actions"' + (app.appStore ? "" : ' id="download-coming-soon"') + ">" + appDownloadAction(app) + '<span class="status-dot">' + bi(app.status.zh, app.status.en) + "</span></div>" +
     '</div><div class="app-hero-visual">' + visual(app) + "</div></section>" +
@@ -786,7 +797,7 @@ function appPage(app, posts) {
     "</div></section>";
 
   return pageDocument({
-    titleZh: app.name + " — " + app.kind.zh,
+    titleZh: appName(app, "zh") + " — " + app.kind.zh,
     titleEn: app.name + " — " + app.kind.en,
     descriptionZh: app.description.zh,
     descriptionEn: app.description.en,

@@ -4,7 +4,7 @@ app: sudopalace
 pin: -1
 category: legal
 featured: false
-titleZh: SudoPalace 隐私政策
+titleZh: 数独闯关 SudoPalace 隐私政策
 titleEn: SudoPalace Privacy Policy
 excerptZh: 了解游戏进度、金币与钻石、购买权益及支持邮件中的信息如何处理。
 excerptEn: How game progress, coins and diamonds, purchase entitlements, and support emails are handled.
@@ -12,11 +12,11 @@ excerptEn: How game progress, coins and diamonds, purchase entitlements, and sup
 <!-- zh -->
 **最后更新及生效日期：2026 年 10 月 6 日**
 
-本政策说明 Michael Silvester（下称“我们”）提供的 SudoPalace 如何处理信息。隐私问题请联系 [MichaelSilvesterCN+SudoPalace@gmail.com](mailto:MichaelSilvesterCN+SudoPalace@gmail.com)。
+本政策说明 Michael Silvester（下称“我们”）提供的 数独闯关 SudoPalace 如何处理信息。隐私问题请联系 [MichaelSilvesterCN+SudoPalace@gmail.com](mailto:MichaelSilvesterCN+SudoPalace@gmail.com)。
 
 ## 1. 概述
 
-SudoPalace 是适用于 iPhone 和 iPad 的数独游戏，提供关卡、每日挑战与技巧教程。游戏不要求注册开发者账户，解题与存档在设备本地完成，不集成广告、用户跟踪或行为分析服务，也不出售个人信息。
+数独闯关 SudoPalace 是适用于 iPhone 和 iPad 的数独游戏，提供关卡、每日挑战与技巧教程。游戏不要求注册开发者账户，解题与存档在设备本地完成，不集成广告、用户跟踪或行为分析服务，也不出售个人信息。
 
 我们不运营保存玩家进度的服务器。购买和恢复购买通过 Apple 的 App Store 服务完成；主动发送支持邮件时，我们会收到你在邮件中提供的信息。
 
@@ -49,7 +49,7 @@ Apple 处理付款、账户及相关交易信息。App 接收提供商品和验�
 
 **删除 App 会移除其本地数据。恢复购买无法恢复游戏进度、已完成交易发放的金币与钻石或本地关卡解锁记录。** 我们没有这些数据的云端副本，无法远程找回。
 
-设备备份与迁移由 Apple 系统及你的设置管理，不能视为 SudoPalace 提供的云同步或可保证的数据恢复。Apple 的购买记录和订阅由 Apple 管理；删除 App 不会自动取消订阅。
+设备备份与迁移由 Apple 系统及你的设置管理，不能视为 数独闯关 SudoPalace 提供的云同步或可保证的数据恢复。Apple 的购买记录和订阅由 Apple 管理；删除 App 不会自动取消订阅。
 
 ## 6. 支持邮件与信息共享
 
@@ -61,7 +61,7 @@ Apple、邮件服务提供者及你主动访问的网站可能在你所在地区
 
 ## 7. 你的选择与安全
 
-你可以在 App 中调整设置，在 Apple 账户中管理订阅，并通过删除 App 移除本地数据。SudoPalace 没有开发者账户，因此没有账户注销流程。对于你通过邮件提供的信息，可联系我们请求访问、更正、删除或适用法律赋予的其他权利。
+你可以在 App 中调整设置，在 Apple 账户中管理订阅，并通过删除 App 移除本地数据。数独闯关 SudoPalace 没有开发者账户，因此没有账户注销流程。对于你通过邮件提供的信息，可联系我们请求访问、更正、删除或适用法律赋予的其他权利。
 
 App 使用系统存储和数据保护机制降低未授权访问风险，但不能保证绝对安全。请保护设备及 Apple 账户，并在处理存档问题前避免删除 App。
 
