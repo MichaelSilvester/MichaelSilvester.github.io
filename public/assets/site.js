@@ -4,6 +4,23 @@
   const themeButton = document.querySelector(".theme-toggle");
   const menuButton = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".site-nav");
+  const postAppTemplate = document.querySelector("template[data-post-app]");
+  const defaultPostBackLink = document.querySelector(".post-header .back-link")?.cloneNode(true);
+  const defaultPostNavigation = document.querySelector(".post-navigation")?.cloneNode(true);
+
+  function syncPostNavigation() {
+    if (!postAppTemplate || !defaultPostBackLink || !defaultPostNavigation) return;
+    // Only accept the current article's App. A missing or unrelated source
+    // uses global navigation; never infer entry context from shared storage.
+    const fromApp = new URL(window.location.href).searchParams.get("fromApp");
+    const content = fromApp === postAppTemplate.dataset.postApp ? postAppTemplate.content : null;
+    document.querySelector(".post-header .back-link").replaceWith(
+      (content?.querySelector(".back-link") || defaultPostBackLink).cloneNode(true)
+    );
+    document.querySelector(".post-navigation").replaceWith(
+      (content?.querySelector(".post-navigation") || defaultPostNavigation).cloneNode(true)
+    );
+  }
 
   function normalizeLanguage(language) {
     return language === "en" || language === "zh" ? language : null;
@@ -66,9 +83,12 @@
   });
 
   // An explicit link language wins over the saved preference prepared by the inline boot script.
+  // Select navigation first so language synchronization includes the new links.
+  syncPostNavigation();
   setLanguage(languageFromUrl() || root.dataset.lang, false);
 
   window.addEventListener("popstate", function () {
+    syncPostNavigation();
     setLanguage(languageFromUrl() || root.dataset.lang, false);
   });
 

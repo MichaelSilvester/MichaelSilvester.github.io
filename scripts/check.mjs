@@ -143,12 +143,21 @@ for (const app of new Set(sourceRecords.map((post) => post.app).filter((value) =
   if (actualLinks !== expectedLinks) {
     throw new Error("Journal cards have incorrect links for app " + app);
   }
+  const appPage = await readFile(join(root, "dist", "apps", app, "index.html"), "utf8");
+  const appOrder = Array.from(appPage.matchAll(/class="article-card-link" href="([^"]+)"/g))
+    .map((match) => match[1]);
+  const expectedAppOrder = sourceRecords.filter((post) => post.app === app)
+    .map((post) => "/journal/" + encodeURIComponent(post.routeName) + "/?fromApp=" + encodeURIComponent(app));
+  if (appOrder.join("\n") !== expectedAppOrder.join("\n")) {
+    throw new Error(app + " homepage has incorrect article order or entry context");
+  }
 }
 
 for (let index = 0; index < sourceRecords.length; index += 1) {
   const current = sourceRecords[index];
   const html = await readFile(join(root, "dist", "journal", current.routeName, "index.html"), "utf8");
-  const actual = Array.from(html.matchAll(/class="post-nav-link[^"]*" href="\/journal\/([^/]+)\//g))
+  const defaultHtml = html.replace(/<template\b[^>]*>[\s\S]*?<\/template>/g, "");
+  const actual = Array.from(defaultHtml.matchAll(/class="post-nav-link[^"]*" href="\/journal\/([^/]+)\//g))
     .map((match) => decodeURIComponent(match[1]));
   // sourceRecords is newest-first. Detail navigation intentionally labels the
   // newer neighbor as previous and the older neighbor as next.
@@ -157,6 +166,28 @@ for (let index = 0; index < sourceRecords.length; index += 1) {
   if (index < sourceRecords.length - 1) expected.push(sourceRecords[index + 1].routeName);
   if (actual.join("\n") !== expected.join("\n")) {
     throw new Error(current.routeName + " has incorrect previous/next article links");
+  }
+  if (!defaultHtml.includes('class="back-link" href="/journal/"')) {
+    throw new Error(current.routeName + " is missing its default journal return link");
+  }
+  if (current.app !== "general") {
+    const template = html.match(/<template data-post-app="([^"]+)">([\s\S]*?)<\/template>/);
+    if (!template || template[1] !== current.app) {
+      throw new Error(current.routeName + " is missing its App navigation template");
+    }
+    const appPosts = sourceRecords.filter((post) => post.app === current.app);
+    const appIndex = appPosts.indexOf(current);
+    for (const [direction, neighbor] of [["previous", appPosts[appIndex - 1]], ["next", appPosts[appIndex + 1]]]) {
+      const link = template[2].match(new RegExp('class="post-nav-link post-nav-' + direction + '" href="([^"]+)"'));
+      const expectedLink = neighbor ? "/journal/" + encodeURIComponent(neighbor.routeName) + "/?fromApp=" + encodeURIComponent(current.app) : null;
+      if ((link ? link[1] : null) !== expectedLink) {
+        throw new Error(current.routeName + " has incorrect App-scoped " + direction + " navigation");
+      }
+    }
+    if (!template[2].includes('class="back-link" href="/apps/' + current.app + '/"') ||
+        !template[2].includes("App 主页") || !template[2].includes("App home")) {
+      throw new Error(current.routeName + " is missing its bilingual App return link");
+    }
   }
   if (!html.includes('/journal/?category=' + encodeURIComponent(current.category))) {
     throw new Error(current.routeName + " is missing its category link");

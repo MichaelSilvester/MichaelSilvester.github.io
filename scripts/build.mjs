@@ -37,8 +37,14 @@ function articleCategory(post) {
   return category;
 }
 
-function postUrl(post) {
-  return "/journal/" + encodeURIComponent(post.routeName) + "/";
+function postUrl(post, sourceApp = "") {
+  return "/journal/" + encodeURIComponent(post.routeName) + "/" +
+    (sourceApp ? "?fromApp=" + encodeURIComponent(sourceApp) : "");
+}
+
+// Filtering preserves the shared pin/date order used on each App homepage.
+function postsForApp(posts, slug) {
+  return posts.filter((post) => post.app === slug);
 }
 
 function journalFilterUrl(kind, value) {
@@ -493,7 +499,7 @@ function appPlatformBadge(app) {
   return icon + '<span>' + renderAppName(app) + "</span>";
 }
 
-function articleCard(post, large = false) {
+function articleCard(post, large = false, sourceApp = "") {
   const app = apps.find((item) => item.slug === post.app);
   const category = articleCategory(post);
   return (
@@ -501,7 +507,7 @@ function articleCard(post, large = false) {
       '<div class="article-card-top"><a class="eyebrow article-category" href="' + journalFilterUrl("category", post.category) + '">' + bi(category.zh, category.en) + "</a>" +
         (app ? '<a class="article-app platform-' + appPlatformType(app) + '" href="' + journalFilterUrl("app", app.slug) + '">' + appPlatformBadge(app) + "</a>" : "") +
       "</div>" +
-      '<a class="article-card-link" href="' + postUrl(post) + '" aria-label="' + escapeHtml(post.titleText.zh) + '">' +
+      '<a class="article-card-link" href="' + postUrl(post, sourceApp) + '" aria-label="' + escapeHtml(post.titleText.zh) + '">' +
         renderPostText(post.titleText, "h3", "article-title") +
         renderPostText(post.excerptText, "p", "article-excerpt") +
         '<div class="article-meta"><time datetime="' + post.published.isoValue + '">' + post.published.display + "</time>" +
@@ -618,15 +624,27 @@ function journalPage(posts) {
   });
 }
 
-function adjacentPostLink(target, direction) {
+function adjacentPostLink(target, direction, sourceApp = "") {
   const previous = direction === "previous";
   return (
-    '<a class="post-nav-link post-nav-' + direction + '" href="' + postUrl(target) + '">' +
+    '<a class="post-nav-link post-nav-' + direction + '" href="' + postUrl(target, sourceApp) + '">' +
       '<span class="post-nav-label">' + bi(previous ? "上一篇" : "下一篇", previous ? "Previous article" : "Next article") + "</span>" +
       renderPostText(target.titleText, "h3", "post-nav-title") +
       '<span class="post-nav-arrow" aria-hidden="true">' + (previous ? "←" : "→") + "</span>" +
     "</a>"
   );
+}
+
+function postNavigation(post, posts, sourceApp = "") {
+  const position = posts.indexOf(post);
+  // Use the displayed list order, including pinned articles. Keep the source
+  // on each hop so refreshing or opening a neighbor in a new tab retains it.
+  const previous = position > 0 ? posts[position - 1] : null;
+  const next = position >= 0 && position < posts.length - 1 ? posts[position + 1] : null;
+  return '<nav class="post-navigation" aria-label="上一篇和下一篇 / Previous and next articles">' +
+    (previous ? adjacentPostLink(previous, "previous", sourceApp) : '<div class="post-nav-empty" aria-hidden="true"></div>') +
+    (next ? adjacentPostLink(next, "next", sourceApp) : '<div class="post-nav-empty" aria-hidden="true"></div>') +
+    '</nav>';
 }
 
 // Rounded hand and cuff retain their detail at 32px. Only the hand fills
@@ -642,11 +660,6 @@ function likeIcon() {
 
 function postPage(post, allPosts) {
   const app = apps.find((item) => item.slug === post.app);
-  const position = allPosts.indexOf(post);
-  // allPosts is newest-first. The site convention intentionally assigns the
-  // newer neighbor to "上一篇" and the older neighbor to "下一篇".
-  const previous = position > 0 ? allPosts[position - 1] : null;
-  const next = position < allPosts.length - 1 ? allPosts[position + 1] : null;
   const category = articleCategory(post);
   const kickerShapeClass = app ? " platform-" + appPlatformType(app) : "";
   const content =
@@ -686,10 +699,12 @@ function postPage(post, allPosts) {
     (app ? '<section class="section related-app"><div class="related-app-copy"><span class="eyebrow">' + bi("文中提到", "Mentioned in this story") + "</span><h2>" + renderAppName(app) + "</h2>" +
       bi(app.description.zh, app.description.en, "p") + '<a class="button button-dark" href="/apps/' + app.slug + '/">' + bi("查看 App 信息", "View app details") + " ↗</a></div>" + visual(app, true) + "</section>" : "") +
     '<section class="section more-writing"><div class="section-heading"><div><span class="section-number">→</span>' + bi("继续阅读", "Keep reading", "h2") +
-      '</div></div><nav class="post-navigation" aria-label="上一篇和下一篇 / Previous and next articles">' +
-        (previous ? adjacentPostLink(previous, "previous") : '<div class="post-nav-empty" aria-hidden="true"></div>') +
-        (next ? adjacentPostLink(next, "next") : '<div class="post-nav-empty" aria-hidden="true"></div>') +
-      "</nav></section>";
+      '</div></div>' + postNavigation(post, allPosts) + '</section>' +
+    // Inert templates keep the default article URL/canonical shared, while
+    // allowing an explicit App entry point to select its own navigation.
+    (app ? '<template data-post-app="' + app.slug + '">' +
+      '<a class="back-link" href="/apps/' + app.slug + '/">← ' + bi("App 主页", "App home") + '</a>' +
+      postNavigation(post, postsForApp(allPosts, app.slug), app.slug) + '</template>' : "");
 
   const postCanonical = site.url + postUrl(post);
   return pageDocument({
@@ -778,7 +793,7 @@ function appDownloadAction(app) {
 }
 
 function appPage(app, posts) {
-  const appPosts = posts.filter((post) => post.app === app.slug);
+  const appPosts = postsForApp(posts, app.slug);
   const content =
     '<section class="app-hero section app-' + app.accent + '"><div class="app-hero-copy"><a class="back-link" href="/apps/">← ' + bi("所有 App", "All apps") + "</a>" +
       '<div class="app-title-row"><span class="app-icon app-icon-large">' + (app.icon ? '<img src="' + app.icon + '" alt="" loading="lazy">' : app.monogram) + "</span><div><span class=\"eyebrow\">" + bi(app.kind.zh, app.kind.en) + "</span><h1>" + renderAppName(app, true) + "</h1></div></div>" +
@@ -794,7 +809,7 @@ function appPage(app, posts) {
       '<a class="text-link" href="/about/">' + bi("了解开发者", "Meet the developer") + " ↗</a></div></section>" +
     '<section class="section app-writing"><div class="section-heading"><div><span class="section-number">03</span>' + bi("相关文章", "Related writing", "h2") +
       '</div><a class="text-link" href="/journal/">' + bi(ui.allWriting.zh, ui.allWriting.en) + ' ↗</a></div><div class="article-grid">' +
-      (appPosts.length ? appPosts.map((post) => articleCard(post)).join("") : '<p class="empty-state">' + bi("文章正在准备中。", "Writing is on the way.") + "</p>") +
+      (appPosts.length ? appPosts.map((post) => articleCard(post, false, app.slug)).join("") : '<p class="empty-state">' + bi("文章正在准备中。", "Writing is on the way.") + "</p>") +
     "</div></section>";
 
   return pageDocument({
