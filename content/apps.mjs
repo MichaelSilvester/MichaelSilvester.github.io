@@ -115,7 +115,7 @@ export const apps = [
     icon: "/assets/icons/diple.png",
     platform: "iPhone · iPad",
     status: { zh: "持续开发中", en: "In active development" },
-    kind: { zh: "Markdown 编辑器", en: "Markdown editor" },
+    kind: { zh: "Markdown 笔记", en: "Markdown Note" },
     tagline: {
       zh: "写作、整理，并把文稿编成自己的作品。",
       en: "Write, organize, and bring documents together as your own work.",
