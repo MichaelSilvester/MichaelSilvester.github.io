@@ -16,12 +16,12 @@ export const apps = [
       en: "Play, organize, and transfer video.",
     },
     description: {
-      zh: "面向 iPhone 和 iPad 的视频播放器，支持从相册、本地文件、同一 Wi-Fi 下的浏览器和网络地址导入或播放视频，并提供媒体库、播放列表、字幕、画中画等功能。",
-      en: "A video player for iPhone and iPad. Import or play video from Photos, local files, a browser on the same Wi-Fi network, and network URLs, with a media library, playlists, subtitles, Picture in Picture, and more.",
+      zh: "面向 iPhone 和 iPad 的多格式视频播放器，集播放、媒体库整理与浏览器传输于一体，支持文件夹加密、GIF 录制与编辑，并提供多款专属主题。",
+      en: "A multi-format video player for iPhone and iPad, with library organization, browser transfers, folder protection, GIF recording and editing, and exclusive themes.",
     },
     story: {
-      zh: "PrimePlayer 可以从相册与“文件”导入视频，也支持同一 Wi-Fi 下通过浏览器传输文件和添加网络视频。导入内容可通过媒体库、文件夹、收藏和播放列表整理；播放时可以使用字幕与音轨、画中画、倍速、截图和 GIF 录制等功能。",
-      en: "PrimePlayer imports video from Photos and Files, transfers files through a browser on the same Wi-Fi network, and opens network video. Organize media with a library, folders, favorites, and playlists, then use subtitles and audio tracks, Picture in Picture, playback speed, screenshots, and GIF capture while watching.",
+      zh: "PrimePlayer 将本地与网络视频集中到同一个媒体库，支持文件夹、收藏和播放列表整理，以及同一 Wi-Fi 下的浏览器传输。播放时可切换字幕与音轨、使用画中画和倍速，也能将精彩片段录制为 GIF 并编辑保存；支持下载的视频还可离线观看。文件夹、播放列表和收藏可通过密码、面容或指纹保护，多款专属主题让观影界面更合心意。",
+      en: "PrimePlayer brings local and online video into one library, with folders, Favorites, playlists, and browser transfers over the same Wi-Fi network. Switch subtitles and audio tracks, use Picture in Picture and playback speed controls, or record favorite moments as GIFs to edit and save. Download supported videos for offline viewing, protect folders, playlists, and Favorites with a password, Face ID, or Touch ID, and personalize the interface with exclusive themes.",
     },
     accent: "lime",
     version: appStoreVersionFallback,
@@ -32,10 +32,12 @@ export const apps = [
       label: { zh: "前往 App Store", en: "View on the App Store" },
     },
     features: [
-      { zh: "本地与网络视频播放", en: "Local and network playback" },
-      { zh: "媒体库、文件夹与播放列表", en: "Library, folders, and playlists" },
-      { zh: "字幕、画中画与倍速", en: "Subtitles, Picture in Picture, and speed" },
-      { zh: "相册、文件与浏览器导入", en: "Photos, Files, and browser import" },
+      { zh: "多格式播放、字幕与画中画", en: "Multi-format playback, subtitles, and Picture in Picture" },
+      { zh: "媒体库整理与浏览器传输", en: "Library organization and browser transfers" },
+      { zh: "文件夹加密与隐私保护", en: "Folder and privacy protection" },
+      { zh: "GIF 录制与编辑", en: "GIF recording and editing" },
+      { zh: "多款专属主题", en: "Exclusive themes" },
+      { zh: "网络播放与离线观看", en: "Online playback and offline viewing" },
     ],
   },
   {

@@ -803,7 +803,7 @@ function appPage(app, posts) {
     '<section class="app-facts"><div><span>' + bi("平台", "Platform") + "</span><strong>" + app.platform + "</strong></div><div><span>" +
       bi("版本", "Version") + "</span><strong>" + app.version + "</strong></div><div><span>" + bi("系统要求", "Requires") + "</span><strong>" + app.system + "</strong></div></section>" +
     '<section class="section app-features"><div class="section-heading"><div><span class="section-number">01</span>' + bi("核心特点", "Highlights", "h2") +
-      '</div></div><div class="feature-grid">' + app.features.map((feature, index) => '<div class="feature-item"><span>0' + (index + 1) + "</span><h3>" + bi(feature.zh, feature.en) + "</h3></div>").join("") + "</div></section>" +
+      '</div></div><div class="feature-grid' + (app.features.length === 6 ? ' feature-grid-six' : '') + '">' + app.features.map((feature, index) => '<div class="feature-item"><span>0' + (index + 1) + "</span><h3>" + bi(feature.zh, feature.en) + "</h3></div>").join("") + "</div></section>" +
     '<section class="section app-story"><div><span class="section-number">02</span>' + bi("功能概览", "How it works", "h2") + "</div><div>" +
       bi(app.story.zh, app.story.en, "p") +
       '<a class="text-link" href="/about/">' + bi("了解开发者", "Meet the developer") + " ↗</a></div></section>" +
