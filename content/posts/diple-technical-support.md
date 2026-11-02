@@ -6,8 +6,8 @@ category: support
 featured: false
 titleZh: Diple 开发者技术支持
 titleEn: Diple Technical Support
-excerptZh: Diple 常见问题、购买帮助与故障排查，包括文稿、合集、导出、访问保护、废纸篓与恢复购买。
-excerptEn: Diple FAQs, purchase assistance, and troubleshooting for documents, Collections, export, access protection, Trash, and purchase restoration.
+excerptZh: Diple 常见问题、购买帮助与故障排查，包括文稿链接、合集、多格式导出、备份迁移、系统搜索与访问保护。
+excerptEn: Diple FAQs, purchase assistance, and troubleshooting for document links, Collections, export formats, backups, device transfers, system search, and access protection.
 ---
 <!-- zh -->
 使用 Diple 时遇到问题？你可以在下面查看常见问题、购买帮助和故障排查步骤，也可以联系我们获取进一步支持。
@@ -38,9 +38,13 @@ Diple 提供沉浸式（所见即所得）、实时预览、纯预览和源码�
 
 文稿列表还可以显示创建时间、修改时间或不显示时间，这一选项同样位于“文件操作”设置中。
 
-### 免费版可以创建多少个文件夹？
+### 如何使用文件夹整理文稿？
 
-免费版最多可以创建 2 个文件夹。升级到 Diple Pro 后，可以创建不限数量的文件夹和嵌套文件夹。
+可以按主题创建文件夹和嵌套文件夹，文稿与普通文件夹的数量不受限制。长按项目可重命名或移动，也可以进入编辑模式批量整理。
+
+### 如何链接到另一篇文稿？
+
+在正文输入 [[文稿名]]，或在格式工具栏选择“链接到文稿”，再从候选文稿中选择目标。文稿链接支持跳转到标题位置和设置显示文字；“反向链接”可以查看哪些文稿引用了当前文稿，并定位到引用处。
 
 ### 如何创建和整理合集？
 
@@ -52,11 +56,11 @@ Diple 提供沉浸式（所见即所得）、实时预览、纯预览和源码�
 
 ### 如何导出合集或隐藏合集文件夹？
 
-Diple Pro 可以把整册合集导出为一个文档，也可以在“设置”>“文件操作”中隐藏文稿页里的合集文件夹。隐藏后，合集中的文稿仍可从“合集”标签页查看和编辑。
+可以把整册合集导出为一个文档，也可以在“设置”>“文件操作”中隐藏文稿页里的合集文件夹。隐藏后，合集中的文稿仍可从“合集”标签页查看和编辑。
 
 ### 如何加密文件夹？
 
-升级到 Diple Pro 后，在文件夹的操作菜单中选择“加密文件夹”，然后设置密码，或者在设备支持时启用 Face ID / Touch ID。App 进入后台后，加密文件夹会自动重新锁定。
+在文件夹的操作菜单中选择“加密文件夹”，然后设置密码，或者在设备支持时启用 Face ID / Touch ID。App 进入后台后，加密文件夹会自动重新锁定。
 
 ### 忘记加密文件夹密码怎么办？
 
@@ -70,7 +74,19 @@ Diple Pro 可以把整册合集导出为一个文档，也可以在“设置”>
 
 ### 如何导出或分享文稿？
 
-在文稿库中选中一篇文稿，可以导出为 Markdown、TXT、Word 或 PDF；选择分享则会通过系统分享发送到其他 App 或设备。批量导出、整文件夹导出和整册合集导出属于 Diple Pro 功能。
+文稿可按原始类型导出为 Markdown 或 TXT，也可选择 Diple 文稿、Word、PDF、HTML 或图片。图片可按阅读样式导出并保存至相册；Diple 文稿将正文与引用的本地图片、视频打包，在另一台设备的 Diple 中打开即可导入。还支持批量导出、整文件夹导出和整册合集导出。
+
+### 如何备份或迁移文稿库？
+
+在“工具”中打开“数据备份”，可以生成备份、设置密码和密码提示，再导出保存。恢复时按恢复规则合并文稿、文件夹、合集与历史版本。
+
+两台设备都在身边时，打开两边的“工具”>“数据迁移”，连接附近设备并选择全部或部分内容。文稿的本地图片、备注、历史版本和合集编排会一起迁移。无需连接同一个 Wi-Fi，完成前请保持两台设备上的 Diple 都在前台。
+
+### 如何通过 Spotlight 或 Siri 访问文稿？
+
+在“设置”>“数据安全”开启“在 Spotlight 中显示”后，可以通过系统搜索查找文稿标题、正文与合集名称；首次开启或修改内容后，需要等待系统索引更新。
+
+Siri 和快捷指令可以新建、打开文稿、追加文字或打开合集。按名称访问需要开启“Siri 文稿访问”；受保护内容不会向 Spotlight 或 Siri 开放。详细功能介绍见[本次更新文章](/journal/diple-document-links-editing-and-data-portability/)。
 
 ### 如何恢复购买？
 
@@ -143,9 +159,13 @@ Documents and folders support a custom order, or you can sort them by name, modi
 
 The document list can show creation time, modification time, or no timestamp. This option is also available under “File Operations.”
 
-### How many folders can I create on the free version?
+### How do I organize documents with folders?
 
-The free version supports up to 2 folders. Upgrading to Diple Pro lets you create unlimited folders and nested folders.
+Create folders and nested folders by topic. Documents and ordinary folders have no quantity limit. Touch and hold an item to rename or move it, or enter editing mode to organize several items at once.
+
+### How do I link to another document?
+
+Type [[Document Name]] in the body, or choose “Link to Document” from the formatting toolbar and select a matching document. Links can target a heading and use different display text. Backlinks show which documents refer to the current one and let you jump to the reference.
 
 ### How do I create and organize a Collection?
 
@@ -157,11 +177,11 @@ Create a Collection from the “Collections” tab and choose its name, summary,
 
 ### How do I export a Collection or hide Collection folders?
 
-Diple Pro can export a whole Collection as one document. It can also hide Collection folders from the Documents tab through “Settings” > “File Operations.” When hidden, documents in a Collection remain available for viewing and editing from the “Collections” tab.
+Export a whole Collection as one document, or hide Collection folders from the Documents tab through “Settings” > “File Operations.” When hidden, documents in a Collection remain available for viewing and editing from the “Collections” tab.
 
 ### How do I encrypt a folder?
 
-After upgrading to Diple Pro, choose “Encrypt Folder” from the folder action menu, then set a password or enable Face ID / Touch ID if your device supports it. Encrypted folders automatically re-lock when the App enters the background.
+Choose “Encrypt Folder” from the folder action menu, then set a password or enable Face ID / Touch ID if your device supports it. Encrypted folders automatically re-lock when the App enters the background.
 
 ### What if I forget my encrypted-folder password?
 
@@ -175,7 +195,19 @@ Items in Trash are generally retained for approximately one month before being a
 
 ### How do I export or share a document?
 
-Select a document in the library to export it as Markdown, TXT, Word, or PDF. Choose Share to send it to another app or device through the system share sheet. Batch export, whole-folder export, and whole-Collection export are Diple Pro features.
+Export in the document’s original format, Markdown or TXT, or choose a Diple Document, Word, PDF, HTML, or an image. Image export uses the reading layout and can save directly to Photos. A Diple Document packages the body with its referenced local images and videos, ready to open and import in Diple on another device. Batch export, whole-folder export, and whole-Collection export are also supported.
+
+### How do I back up or transfer my library?
+
+Open Tools > Data Backup to generate a backup, add a password and hint, and export it for storage. Restoring merges documents, folders, Collections, and Version History according to the restore rules.
+
+When both devices are nearby, open Tools > Data Migration on each, connect to the other device, and select all or part of the content. Local images, notes, Version History, and Collection organization transfer with the documents. No shared Wi-Fi network is needed. Keep Diple in the foreground on both devices until the transfer finishes.
+
+### How do I access documents through Spotlight or Siri?
+
+Turn on “Show in Spotlight” under Settings > Data Security to search document titles, body text, and Collection names from system search. Allow time for indexing when first enabling it or after editing content.
+
+Siri and Shortcuts can create or open documents, append text, or open Collections. Access by name requires “Siri Document Access.” Protected content stays unavailable to Spotlight and Siri. See the [update article](/journal/diple-document-links-editing-and-data-portability/?lang=en) for more details.
 
 ### How do I restore my purchases?
 

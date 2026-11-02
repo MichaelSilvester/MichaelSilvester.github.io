@@ -16,12 +16,12 @@ export const apps = [
       en: "Play, organize, and transfer video.",
     },
     description: {
-      zh: "面向 iPhone 和 iPad 的多格式视频播放器，集播放、媒体库整理与浏览器传输于一体，支持文件夹加密、GIF 录制与编辑，并提供多款专属主题。",
-      en: "A multi-format video player for iPhone and iPad, with library organization, browser transfers, folder protection, GIF recording and editing, and exclusive themes.",
+      zh: "面向 iPhone 和 iPad 的多格式视频播放器，集本地与网络播放、IPTV 订阅、媒体库整理、投屏与传输于一体，支持内容保护、GIF 录制与编辑及个性主题。",
+      en: "A multi-format video player for iPhone and iPad, with local and online playback, IPTV subscriptions, library organization, casting and transfers, content protection, GIF recording and editing, and themes.",
     },
     story: {
-      zh: "PrimePlayer 将本地与网络视频集中到同一个媒体库，支持文件夹、收藏和播放列表整理，以及同一 Wi-Fi 下的浏览器传输。播放时可切换字幕与音轨、使用画中画和倍速，也能将精彩片段录制为 GIF 并编辑保存；支持下载的视频还可离线观看。文件夹、播放列表和收藏可通过密码、面容或指纹保护，多款专属主题让观影界面更合心意。",
-      en: "PrimePlayer brings local and online video into one library, with folders, Favorites, playlists, and browser transfers over the same Wi-Fi network. Switch subtitles and audio tracks, use Picture in Picture and playback speed controls, or record favorite moments as GIFs to edit and save. Download supported videos for offline viewing, protect folders, playlists, and Favorites with a password, Face ID, or Touch ID, and personalize the interface with exclusive themes.",
+      zh: "用文件夹、收藏和播放列表整理本地与网络视频，也可以导入 M3U 订阅，在独立列表中浏览、筛选和刷新 IPTV 频道。播放时可切换字幕与音轨，使用画中画、倍速、AirPlay 或 DLNA 投屏，也能录制并编辑 GIF；支持下载的视频可离线观看。浏览器传输和附近设备间迁移，让视频与频道列表更方便带走，密码、面容或指纹保护与个性主题则照顾隐私和观影习惯。",
+      en: "Organize local and online videos with folders, Favorites, and playlists, or import M3U subscriptions to browse, filter, and refresh IPTV channels in dedicated lists. Switch subtitles and audio tracks, use Picture in Picture, playback speeds, AirPlay or DLNA casting, and record and edit GIFs. Download supported videos for offline viewing. Browser transfers and nearby-device migration help you take videos and channel lists with you, while password and biometric protection and themes suit your privacy and viewing preferences.",
     },
     accent: "lime",
     version: appStoreVersionFallback,
@@ -33,7 +33,9 @@ export const apps = [
     },
     features: [
       { zh: "多格式播放、字幕与画中画", en: "Multi-format playback, subtitles, and Picture in Picture" },
-      { zh: "媒体库整理与浏览器传输", en: "Library organization and browser transfers" },
+      { zh: "媒体库整理、浏览器传输与设备迁移", en: "Library organization, browser transfers, and device migration" },
+      { zh: "IPTV 订阅、频道分组与筛选", en: "IPTV subscriptions, channel groups, and filters" },
+      { zh: "AirPlay 与 DLNA 投屏", en: "AirPlay and DLNA casting" },
       { zh: "文件夹加密与隐私保护", en: "Folder and privacy protection" },
       { zh: "GIF 录制与编辑", en: "GIF recording and editing" },
       { zh: "多款专属主题", en: "Exclusive themes" },
@@ -123,12 +125,12 @@ export const apps = [
       en: "Write, organize, and bring documents together as your own work.",
     },
     description: {
-      zh: "面向 iPhone 和 iPad 的 Markdown 与纯文本写作工具，支持语音转文字、版本历史、合集连续阅读、主题与稿纸，以及 Markdown、TXT、Word 和 PDF 导出。",
-      en: "A Markdown and plain-text writing tool for iPhone and iPad, with Speech to Text, Version History, continuous reading in Collections, themes and Writing Paper, plus Markdown, TXT, Word, and PDF export.",
+      zh: "面向 iPhone 和 iPad 的 Markdown 与纯文本写作工具，支持文稿链接、合集阅读、字体与稿纸、多格式导出，以及备份迁移、语音转文字和版本历史。",
+      en: "A Markdown and plain-text writing tool for iPhone and iPad, with document links, Collection reading, fonts and Writing Paper, multiple export formats, backups and device transfers, Speech to Text, and Version History.",
     },
     story: {
-      zh: "Diple 将 Markdown 与纯文本写作、本地文稿库和合集阅读放在一起。你可以在四种显示模式间切换，用语音记录灵感，通过版本历史找回修改；再把相关文稿加入或引用到合集，设置封面、章节、编号与阅读顺序。主题、稿纸和 App 图标让写作空间更合心意，内容仍保存在设备本地，并可导出为 Markdown、TXT、Word 或 PDF。",
-      en: "Diple brings Markdown and plain-text writing, a local document library, and Collection reading together. Switch among four display modes, capture ideas with Speech to Text, and revisit edits with Version History. Add or reference related documents in Collections with covers, chapters, numbering, and a reading order. Themes, Writing Paper, and app icons personalize the space, while content stays on your device and can be exported as Markdown, TXT, Word, or PDF.",
+      zh: "在四种显示模式间写作，用语音捕捉灵感，通过版本历史回看修改；用文稿链接与反向链接串联笔记，再把相关内容编成可连续阅读的合集。表格操作、公式、图片编辑，以及主题、字体和稿纸，让记录与阅读更顺手。文稿可导出为 Markdown、TXT、Diple 文稿、Word、PDF、HTML 或图片，也能备份或直接迁移到附近设备；Spotlight 与 Siri 则让你更快回到所需内容。",
+      en: "Write in four display modes, capture ideas with Speech to Text, and revisit edits with Version History. Connect notes with document links and Backlinks, then arrange related work into Collections for continuous reading. Tables, formulas, image editing, themes, fonts, and Writing Paper support writing and reading. Export Markdown, TXT, Diple Documents, Word, PDF, HTML, or images, keep backups, or transfer directly to a nearby device. Spotlight and Siri help you return to the content you need.",
     },
     accent: "sage",
     version: appStoreVersionFallback,
@@ -141,8 +143,11 @@ export const apps = [
     features: [
       { zh: "沉浸式、实时预览、纯预览与源码模式", en: "Immersive, live preview, preview-only, and source modes" },
       { zh: "语音转文字、版本历史与图片插入", en: "Speech to Text, Version History, and image insertion" },
+      { zh: "文稿链接与反向链接", en: "Document links and Backlinks" },
+      { zh: "表格操作、公式与图片编辑", en: "Table tools, formulas, and image editing" },
       { zh: "合集、章节编排与连续阅读", en: "Collections, chapter organization, and continuous reading" },
-      { zh: "主题、稿纸与多格式导出", en: "Themes, Writing Paper, and multi-format export" },
+      { zh: "主题、字体、稿纸与多格式导出", en: "Themes, fonts, Writing Paper, and multi-format export" },
+      { zh: "备份、设备迁移、Spotlight 与 Siri", en: "Backups, device transfers, Spotlight, and Siri" },
     ],
   },
   {

@@ -82,9 +82,11 @@ PrimePlayer 提供多款主题，从保留系统原生外观的经典主题，�
 
 开启“在 Spotlight 中显示”后，媒体库中的视频、文件夹和播放列表可以在系统 Spotlight 搜索中找到。加密的文件夹（包括其中的视频）和播放列表不会被 Siri 识别，也不会出现在搜索结果里。
 
-## 28 种界面语言
+## 32 种界面语言
 
-PrimePlayer 内置 28 种界面语言，可以在 App 中选择使用的语言。
+PrimePlayer 的界面语言现已扩展至 32 种，可以在 App 中选择使用的语言。
+
+后续更新还加入了 [IPTV 频道订阅](/journal/primeplayer-iptv-channel-subscriptions/)，支持频道分组、筛选、刷新与设备间迁移。
 
 <!-- en -->
 Since [Video import and media organization in PrimePlayer](/journal/primeplayer-import-and-library/) and [Playback gestures and quick actions in PrimePlayer](/journal/primeplayer-playback-gestures/), PrimePlayer has gained a number of new features. Here they are by category.
@@ -160,6 +162,8 @@ Use Siri and Shortcuts to resume playback, play videos by name, or open folders 
 
 Turn on “Show in Spotlight” to find videos, folders, and playlists from your library in Spotlight system search. Encrypted folders, including the videos in them, and encrypted playlists are never recognized by Siri and never appear in search results.
 
-## 28 interface languages
+## 32 interface languages
 
-PrimePlayer is available in 28 interface languages, and you can choose the language used in the app.
+PrimePlayer now supports 32 interface languages, and you can choose the language used in the app.
+
+A later update also adds [IPTV channel subscriptions](/journal/primeplayer-iptv-channel-subscriptions/?lang=en), with channel groups, filters, subscription refresh, and device transfers.

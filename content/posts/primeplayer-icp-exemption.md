@@ -9,6 +9,8 @@ excerptZh: Diple 花了好多天才走完 ICP 豁免流程，现在 PrimePlayer 
 excerptEn: Diple’s ICP exemption process took quite a few days. Now PrimePlayer has run into the same issue with online video and IPTV, and I’m waiting for a response to its exemption request.
 ---
 <!-- zh -->
+**10 月 30 日更新：** PrimePlayer 的 ICP 豁免申请已获得苹果批准，详见[申请通过后的记录](/journal/primeplayer-icp-exemption-approved/)。
+
 在国区 App Store 上架，有时还得过 ICP 备案这一关。中国大陆对提供互联网信息服务的 App 有备案要求，苹果在处理国区上架时，也会关注应用中的网络请求。只要检测到可能的网络请求，就可能先把应用排除出中国大陆地区，甚至只是向苹果自己的服务器查询版本号，也可能遇到这种情况。
 
 苹果的处理方式比较简单粗暴：先排除，再由开发者自己联系苹果、提交豁免申请。具体是什么请求、内容从哪里来、为什么不需要备案，都要在申请时由开发者解释清楚，再等苹果核实。
@@ -22,6 +24,8 @@ Diple 之前就碰到了。因为网络图片展示功能，它被排除在中�
 有了 Diple 那次经历，这次算是熟悉流程了，但能不能顺利通过、还要等多久，目前都说不准。做应用除了写代码，还得花时间处理这些上架过程中的事情。希望 PrimePlayer 这次能顺利一些。
 
 <!-- en -->
+**October 30 update:** Apple has approved PrimePlayer’s ICP exemption. Read the [follow-up on its approval](/journal/primeplayer-icp-exemption-approved/?lang=en).
+
 Releasing an app on the App Store in mainland China sometimes means dealing with ICP filing requirements too. Mainland China requires filings for apps that provide internet information services, so Apple also looks at network requests when handling availability there. Detecting a potential network request can lead to an app being excluded from the mainland China storefront first. Even a request to Apple’s own servers just to check a version number can run into this issue.
 
 Apple’s approach is fairly blunt: exclude first, then leave it to the developer to contact Apple and apply for an exemption. The developer has to explain what the requests do, where the content comes from, and why the app should not require an ICP filing, then wait for Apple to review those details.

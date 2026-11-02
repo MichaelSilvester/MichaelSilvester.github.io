@@ -6,8 +6,8 @@ category: support
 featured: false
 titleZh: PrimePlayer 开发者技术支持
 titleEn: PrimePlayer Technical Support
-excerptZh: PrimePlayer 常见问题、订阅帮助与故障排查，包括视频导入、字幕、网络播放、浏览器导入和恢复购买。
-excerptEn: PrimePlayer FAQs, subscription assistance, and troubleshooting for imports, subtitles, network playback, Browser Import, and purchase restoration.
+excerptZh: PrimePlayer 常见问题、订阅帮助与故障排查，包括视频导入、字幕、网络播放、IPTV 订阅、频道迁移与浏览器导入。
+excerptEn: PrimePlayer FAQs, subscription assistance, and troubleshooting for imports, subtitles, online playback, IPTV subscriptions, channel transfers, and Browser Import.
 ---
 <!-- zh -->
 使用 PrimePlayer 时遇到问题？你可以在下面查看常见问题、订阅帮助和故障排查步骤，也可以联系我们获取进一步支持。
@@ -24,8 +24,6 @@ excerptEn: PrimePlayer FAQs, subscription assistance, and troubleshooting for im
 - **“本地文件”：** 从“文件”App 中选择视频。
 - **“浏览器导入”：** 从同一 Wi-Fi 网络中的另一部手机或电脑导入视频。
 - **“网络视频”：** 输入受支持的网络视频链接进行播放或下载。
-
-部分功能需要 PrimePlayer Pro。
 
 ### 支持哪些视频格式？
 
@@ -60,6 +58,16 @@ VobSub 字幕需要文件名相同的 `.idx` 和 `.sub` 两个文件。
 请确认输入的是视频文件或媒体流的直接链接，而不是普通网页地址。
 
 PrimePlayer 支持 HTTP/HTTPS（包括 HLS/M3U8）、FTP/FTPS、RTP、RTSP/RTSPS 和部分 MMS 流。如果链接已经过期、服务器限制访问、网络不稳定或内容受 DRM 保护，播放或下载可能失败。
+
+### 如何导入和整理 IPTV 频道订阅？
+
+在“视频传输”>“网络视频”中粘贴 M3U 订阅地址，点击“解析视频”，确认后导入为频道列表。之后从“播放列表”打开，可以搜索频道、按分组筛选、调整顺序和刷新订阅，也可以移出频道或恢复已移出的频道。IPTV 频道保存在独立列表中，不会混入本地媒体库。
+
+PrimePlayer 不提供频道内容。无法导入或播放时，请确认订阅地址仍然有效、当前网络可以访问，并检查来源是否需要额外授权；部分格式有误或协议不受支持的频道会被跳过，并提示数量。详细介绍见[IPTV 频道订阅文章](/journal/primeplayer-iptv-channel-subscriptions/)。
+
+### IPTV 频道列表能迁移到另一台设备吗？
+
+可以在“视频传输”>“工具”>“数据迁移”中选择 IPTV 订阅，将列表信息、频道顺序、分组和已移出状态迁移到附近设备。接收设备已存在同一订阅时会跳过，保留原有列表。完成前请保持两台设备上的 PrimePlayer 都在前台。
 
 ### 播放缓慢或画面显示异常时应该怎么办？
 
@@ -132,8 +140,6 @@ Open “Video Import” in PrimePlayer and choose one of the following options:
 - **“Browser Import”:** Import videos from another phone or computer on the same WiFi network.
 - **“Online Video”:** Enter a supported online video link to play or download it.
 
-Some features require PrimePlayer Pro.
-
 ### Which video formats are supported?
 
 PrimePlayer supports a wide range of formats, including MP4, MOV, MKV, AVI, WebM, FLV, M4V, MPEG, TS, M3U8, RMVB, WMV, ISO, IMG, BDMV, and VIDEO_TS.
@@ -167,6 +173,16 @@ Some public and guest networks prevent devices from communicating with each othe
 Make sure you entered a direct link to a video file or media stream, rather than a regular webpage address.
 
 PrimePlayer supports HTTP/HTTPS, including HLS/M3U8, FTP/FTPS, RTP, RTSP/RTSPS, and selected MMS streams. Playback or downloads may fail if the link has expired, the server restricts access, the network is unstable, or the content is DRM-protected.
+
+### How do I import and organize IPTV subscriptions?
+
+Paste an M3U subscription URL into Video Transfer > Online Video, tap “Parse Video,” and confirm the import as a channel list. Open it from Playlists to search channels, filter by group, change their order, refresh the subscription, or remove and restore channels. IPTV channels stay in dedicated lists, separate from your local library.
+
+PrimePlayer does not provide channel content. If importing or playback fails, check that the URL remains valid, your network can reach it, and the source does not require additional authorization. Some entries with formatting problems or unsupported protocols are skipped with a count. See the [IPTV subscription article](/journal/primeplayer-iptv-channel-subscriptions/?lang=en) for more details.
+
+### Can I transfer IPTV channel lists to another device?
+
+Select IPTV subscriptions in Video Transfer > Tools > Data Migration to send list information, channel order, groups, and removed-channel states to a nearby device. A subscription already present on the receiving device is skipped, preserving the existing list. Keep PrimePlayer in the foreground on both devices until the transfer finishes.
 
 ### What should I do if playback is slow or the video appears incorrectly?
 
