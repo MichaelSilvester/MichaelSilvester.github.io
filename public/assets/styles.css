@@ -3038,3 +3038,18 @@ html[data-lang="zh"] .app-hero h1 .app-name-localized.lang-zh {
 
 .sudopalace-challenge > span { color: #ffd681; font-size: 1.8em; }
 .sudopalace-notes { color: #e2dfff; }
+
+/* 游戏图标与名称在卡片和详情页共用，长名称随容器换行。 */
+.ashenhunters-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
+  padding: 7%;
+  text-align: center;
+  background: radial-gradient(circle at 50% 0, #6b393d, transparent 65%), #17191d;
+}
+.ashenhunters-visual > img { width: 38%; max-height: 56%; object-fit: contain; border-radius: 20%; }
+.ashenhunters-visual > strong { max-width: 100%; font-size: clamp(16px, 2vw, 28px); line-height: 1.2; overflow-wrap: anywhere; color: #f0e0bd; }
+.ashenhunters-visual > .lang-copy { font-size: clamp(10px, 1.1vw, 14px); color: #d6c7ae; }

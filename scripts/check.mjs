@@ -22,6 +22,7 @@ const required = [
   "dist/apps/diple/index.html",
   "dist/apps/arcula/index.html",
   "dist/apps/sudopalace/index.html",
+  "dist/apps/ashenhunters/index.html",
   "dist/about/index.html",
   "dist/sitemap.xml",
   "dist/rss.xml",
@@ -60,6 +61,9 @@ const requiredProductDocuments = [
   "sudopalace-privacy-policy",
   "sudopalace-terms-of-use",
   "sudopalace-technical-support",
+  "ashenhunters-privacy-policy",
+  "ashenhunters-terms-of-use",
+  "ashenhunters-technical-support",
 ];
 for (const routeName of requiredProductDocuments) {
   if (!postDirs.some((entry) => entry.isDirectory() && entry.name === routeName)) {

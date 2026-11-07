@@ -215,4 +215,39 @@ export const apps = [
       { zh: "无广告、离线解题与自动保存", en: "Ad-free play, offline puzzles, and autosave" },
     ],
   },
+  {
+    slug: "ashenhunters",
+    name: "Ashen Hunters",
+    detailNameZh: "烬夜猎人",
+    monogram: "A",
+    icon: "/assets/icons/ashenhunters.png",
+    platform: "iPhone · iPad",
+    status: { zh: "准备上架", en: "Preparing for release" },
+    kind: { zh: "肉鸽生存动作游戏", en: "Roguelite survival action" },
+    tagline: {
+      zh: "肉鸽割草生存，武器组合进化",
+      en: "Roguelite Bullet Heaven",
+    },
+    description: {
+      zh: "在六片哥特废墟中迎战怪潮，组合武器、被动与进化，带上宠物挑战约 20 分钟的远征。离线单机，无广告。",
+      en: "Face the horde across six gothic realms. Combine weapons, passives, and evolutions, and bring a pet into runs of about 20 minutes. Offline single-player gameplay with no ads.",
+    },
+    story: {
+      zh: "左侧摇杆移动，武器自动攻击，右侧按钮释放主动技能。两名角色、六件基础武器与完整单局免费，六张地图按顺序通关开放；角色、武器、皮肤和宠物可通过永久包或会员解锁，会员不跳过地图和难度进度。战斗获得的魂烬可用于天赋和单局补给。",
+      en: "Move with the left joystick, attack automatically, and trigger your active skill on the right. Two characters, six base weapons, and a full run are free. All six maps unlock through sequential victories. Permanent packs and memberships provide characters, weapons, skins, and pets without skipping map or difficulty progression. Spend earned Soul Embers on talents and run supplies.",
+    },
+    accent: "orange",
+    version: "1.0.0",
+    system: "iOS / iPadOS 17+",
+    // 首版尚无公开商店 ID，使用现有待开放入口。
+    download: "#download-coming-soon",
+    features: [
+      { zh: "六张免费地图，按通关顺序深入", en: "Six free maps with sequential progression" },
+      { zh: "六名角色与各自主动技能", en: "Six characters with distinct active skills" },
+      { zh: "十二件武器及进化、十八项被动", en: "Twelve weapons and evolutions, eighteen passives" },
+      { zh: "三种辅助宠物，每局携带一只", en: "Three support pets, one companion per run" },
+      { zh: "魂烬天赋、补给与永久内容包", en: "Soul Ember talents, supplies, and permanent packs" },
+      { zh: "离线单机，无广告", en: "Offline single-player, no ads" },
+    ],
+  },
 ];

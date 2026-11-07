@@ -473,6 +473,13 @@ function visual(app, compact = false) {
       '</div>'
     );
   }
+  if (app.slug === "ashenhunters") {
+    // 使用游戏现有图标展示品牌，避免为尚未上架的游戏生成 macOS 窗口。
+    return '<div class="product-visual ashenhunters-visual' + compactClass + '" aria-hidden="true">' +
+      '<img src="' + app.icon + '" alt="" loading="lazy">' +
+      '<strong>' + renderAppName(app, true) + '</strong>' +
+      bi("离线单人生存动作游戏", "Offline single-player survival", "span") + '</div>';
+  }
   // Remaining Mac apps share desktop chrome with their own product name.
   return (
     '<div class="product-visual magicdesk-visual' + compactClass + '" aria-hidden="true">' +
